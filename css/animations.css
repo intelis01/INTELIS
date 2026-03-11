@@ -1,0 +1,116 @@
+/* ── Scroll reveal system ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity var(--transition-slow), transform var(--transition-slow);
+}
+.reveal.reveal--visible {
+  opacity: 1;
+  transform: none;
+}
+.reveal--left {
+  transform: translateX(-32px);
+}
+.reveal--left.reveal--visible {
+  transform: none;
+}
+.reveal--right {
+  transform: translateX(32px);
+}
+.reveal--right.reveal--visible {
+  transform: none;
+}
+.reveal--scale {
+  transform: scale(0.92);
+}
+.reveal--scale.reveal--visible {
+  transform: none;
+}
+
+/* ── Hero orb animation ── */
+@keyframes float-slow {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(30px, -20px) scale(1.05); }
+  66%       { transform: translate(-20px, 15px) scale(0.97); }
+}
+@keyframes float-medium {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%       { transform: translate(-40px, 30px) scale(1.08); }
+}
+
+/* ── Pulse glow ── */
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.5; }
+  50%       { opacity: 1; }
+}
+
+/* ── Chart line draw ── */
+@keyframes draw-line {
+  from { stroke-dashoffset: 600; }
+  to   { stroke-dashoffset: 0; }
+}
+.chart-line {
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  animation: draw-line 2s ease forwards 0.5s;
+}
+
+/* ── Shimmer on stats ── */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* ── Step connector animation ── */
+@keyframes progress-line {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+
+/* ── Fade in up (used for trust chips) ── */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ── Nav link underline ── */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-green);
+  border-radius: 2px;
+  transition: width var(--transition-base);
+}
+.nav-link:hover::after,
+.nav-link[aria-current="true"]::after {
+  width: 100%;
+}
+.nav-link[aria-current="true"] {
+  color: var(--color-green);
+}
+
+/* ── Reduce motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

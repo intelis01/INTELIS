@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="INTELIS - Inteligencia financiera para detectar y eliminar fugas de dinero en tu empresa. Recupera hasta el 30% de tus ingresos perdidos." />
+  <title>INTELIS – Detecta y Elimina las Fugas de Dinero</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════════ -->
+<header>
+  <nav class="nav" id="main-nav" aria-label="Navegación principal">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="#" class="nav__logo" aria-label="INTELIS inicio">
+          INTELIS<span class="nav__logo-dot"></span>
+        </a>
+
+        <ul class="nav__links" role="list">
+          <li><a href="#problema"    class="nav__link nav-link" aria-current="false">Problema</a></li>
+          <li><a href="#servicios"   class="nav__link nav-link" aria-current="false">Servicios</a></li>
+          <li><a href="#como-funciona" class="nav__link nav-link" aria-current="false">Cómo Funciona</a></li>
+          <li><a href="#precios"     class="nav__link nav-link" aria-current="false">Precios</a></li>
+          <li><a href="#faq"         class="nav__link nav-link" aria-current="false">FAQ</a></li>
+        </ul>
+
+        <a href="#contacto" class="btn btn-primary nav__cta">Hablar con un Experto</a>
+
+        <button class="nav__hamburger" id="hamburger-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-drawer">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile drawer -->
+  <div class="nav__drawer" id="mobile-drawer" data-open="false" role="dialog" aria-label="Menú de navegación">
+    <a href="#problema"     class="nav__link" data-close-drawer>Problema</a>
+    <a href="#servicios"    class="nav__link" data-close-drawer>Servicios</a>
+    <a href="#como-funciona" class="nav__link" data-close-drawer>Cómo Funciona</a>
+    <a href="#precios"      class="nav__link" data-close-drawer>Precios</a>
+    <a href="#faq"          class="nav__link" data-close-drawer>FAQ</a>
+    <a href="#contacto" class="btn btn-primary" style="width:fit-content" data-close-drawer>Hablar con un Experto</a>
+  </div>
+</header>
+
+<main>
+
+<!-- ══════════════════════════════════════════
+     HERO
+══════════════════════════════════════════ -->
+<section class="hero" id="inicio" aria-labelledby="hero-heading">
+  <canvas id="hero-canvas" aria-hidden="true"></canvas>
+  <div class="container">
+    <div class="hero__inner">
+
+      <!-- Left column -->
+      <div class="hero__content">
+        <div class="hero__eyebrow">
+          <span class="hero__eyebrow-dot"></span>
+          Inteligencia Financiera Empresarial
+        </div>
+
+        <h1 class="hero__title" id="hero-heading">
+          Detecta y Elimina las<br/>
+          <span class="gradient-text">Fugas de Dinero</span><br/>
+          en tu Empresa
+        </h1>
+
+        <p class="hero__subtitle">
+          INTELIS analiza tu flujo financiero, identifica pérdidas ocultas y te ayuda a recuperar hasta el <strong style="color:var(--color-green)">30% de tus ingresos perdidos</strong> en los primeros 30 días.
+        </p>
+
+        <div class="hero__actions">
+          <a href="#contacto" class="btn btn-primary btn-lg">
+            Quiero Recuperar mi Dinero
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#como-funciona" class="btn btn-secondary btn-lg">Ver Cómo Funciona</a>
+        </div>
+
+        <div class="hero__trust">
+          <div class="stat-chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Sin compromiso
+          </div>
+          <div class="stat-chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Resultados en 30 días
+          </div>
+          <div class="stat-chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            Datos 100% seguros
+          </div>
+        </div>
+      </div>
+
+      <!-- Right column: Dashboard mockup -->
+      <div class="hero__visual" aria-hidden="true">
+        <div class="dashboard-card">
+          <div class="dashboard-header">
+            <span class="dashboard-title">Panel de Control · INTELIS</span>
+            <div class="dashboard-dot-group">
+              <span></span><span></span><span></span>
+            </div>
+          </div>
+
+          <div class="dashboard-stats">
+            <div class="dashboard-stat">
+              <div class="dashboard-stat__label">Fugas detectadas</div>
+              <div class="dashboard-stat__value" data-counter-end="47" data-suffix="">47</div>
+            </div>
+            <div class="dashboard-stat">
+              <div class="dashboard-stat__label">Ahorro mensual</div>
+              <div class="dashboard-stat__value" data-counter-end="8400" data-prefix="$">$8.4k</div>
+            </div>
+            <div class="dashboard-stat">
+              <div class="dashboard-stat__label">ROI obtenido</div>
+              <div class="dashboard-stat__value" data-counter-end="312" data-suffix="%">312%</div>
+            </div>
+          </div>
+
+          <div class="dashboard-chart">
+            <svg viewBox="0 0 400 80" preserveAspectRatio="none" aria-label="Gráfica de ahorro acumulado">
+              <!-- Grid lines -->
+              <line x1="0" y1="20" x2="400" y2="20" stroke="#1A3050" stroke-width="1"/>
+              <line x1="0" y1="40" x2="400" y2="40" stroke="#1A3050" stroke-width="1"/>
+              <line x1="0" y1="60" x2="400" y2="60" stroke="#1A3050" stroke-width="1"/>
+              <!-- Area fill -->
+              <path d="M0 70 L40 65 L80 55 L120 50 L160 40 L200 32 L240 25 L280 18 L320 12 L360 8 L400 5 L400 80 L0 80 Z"
+                    fill="url(#chartGrad)" opacity="0.3"/>
+              <!-- Line -->
+              <path d="M0 70 L40 65 L80 55 L120 50 L160 40 L200 32 L240 25 L280 18 L320 12 L360 8 L400 5"
+                    fill="none" stroke="#00C896" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                    class="chart-line"/>
+              <defs>
+                <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#00C896"/>
+                  <stop offset="100%" stop-color="#00C896" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+
+          <div class="dashboard-footer">
+            <span style="font-size:var(--text-xs);color:var(--color-gray-400)">Ahorro acumulado · Últimos 6 meses</span>
+            <span class="dashboard-badge-green">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+              +28.4%
+            </span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     PROBLEM
+══════════════════════════════════════════ -->
+<section class="section bg-light" id="problema" aria-labelledby="problema-heading">
+  <div class="container">
+
+    <div class="problem__stat reveal" data-delay="0">
+      <div class="problem__stat-number"
+           data-counter-end="30" data-suffix="%" aria-live="polite">30%</div>
+      <p class="problem__stat-desc">
+        de los ingresos empresariales se pierden anualmente en fugas financieras invisibles
+      </p>
+    </div>
+
+    <div class="section-header reveal" data-delay="100">
+      <span class="section-label">El Problema</span>
+      <h2 id="problema-heading" style="color:var(--color-navy)">
+        ¿Por qué tu empresa pierde dinero sin saberlo?
+      </h2>
+      <p class="text-muted-dark">
+        Las fugas financieras son silenciosas y acumulativas. Identificarlas a tiempo puede marcar la diferencia entre crecer o estancarte.
+      </p>
+    </div>
+
+    <div class="grid-4">
+      <div class="pain-card reveal" data-delay="0">
+        <div class="pain-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <div class="pain-card__stat" data-counter-end="68" data-suffix="%" aria-label="68 por ciento">68%</div>
+        <h3 class="pain-card__title">Gastos No Rastreados</h3>
+        <p class="pain-card__desc">Más del 68% de las pymes no tiene visibilidad completa de sus gastos recurrentes, generando pérdidas silenciosas mes a mes.</p>
+      </div>
+
+      <div class="pain-card reveal" data-delay="100">
+        <div class="pain-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <div class="pain-card__stat" data-counter-end="2400" data-prefix="$" aria-label="2400 dólares promedio">$2.4k</div>
+        <h3 class="pain-card__title">Comisiones Ocultas</h3>
+        <p class="pain-card__desc">Las empresas pagan en promedio $2,400 anuales en comisiones bancarias y de proveedores que jamás revisaron.</p>
+      </div>
+
+      <div class="pain-card reveal" data-delay="200">
+        <div class="pain-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        </div>
+        <div class="pain-card__stat" data-counter-end="12" data-suffix=" subs" aria-label="12 suscripciones promedio">12 subs</div>
+        <h3 class="pain-card__title">Suscripciones Olvidadas</h3>
+        <p class="pain-card__desc">La empresa promedio paga 12 suscripciones activas de las cuales solo usa activamente 4 o 5.</p>
+      </div>
+
+      <div class="pain-card reveal" data-delay="300">
+        <div class="pain-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        </div>
+        <div class="pain-card__stat" data-counter-end="91" data-suffix="%" aria-label="91 por ciento">91%</div>
+        <h3 class="pain-card__title">Falta de Visibilidad</h3>
+        <p class="pain-card__desc">El 91% de los directivos toma decisiones financieras sin datos en tiempo real, lo que incrementa el riesgo de pérdidas.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     SERVICES
+══════════════════════════════════════════ -->
+<section class="section bg-navy" id="servicios" aria-labelledby="servicios-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Nuestros Servicios</span>
+      <h2 id="servicios-heading">Soluciones a medida para cada fuga</h2>
+      <p class="text-muted">
+        Combinamos tecnología de análisis financiero con expertos humanos para ofrecerte resultados concretos y medibles.
+      </p>
+    </div>
+
+    <div class="grid-4">
+      <div class="card reveal" data-delay="0">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <h3 class="service-card__title">Auditoría Financiera</h3>
+        <p class="service-card__desc">Análisis exhaustivo de tus cuentas, contratos y pagos recurrentes para detectar ineficiencias y costos innecesarios.</p>
+        <a href="#contacto" class="service-card__link">
+          Saber más
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="card reveal" data-delay="100">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <h3 class="service-card__title">Rastreo de Gastos</h3>
+        <p class="service-card__desc">Monitoreo continuo y categorización inteligente de todos tus gastos en tiempo real, con alertas automáticas ante anomalías.</p>
+        <a href="#contacto" class="service-card__link">
+          Saber más
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="card reveal" data-delay="200">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        </div>
+        <h3 class="service-card__title">Eliminación de Fugas</h3>
+        <p class="service-card__desc">Plan de acción personalizado para cerrar cada fuga detectada, negociar mejores tarifas y cancelar servicios no utilizados.</p>
+        <a href="#contacto" class="service-card__link">
+          Saber más
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="card reveal" data-delay="300">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        </div>
+        <h3 class="service-card__title">Inteligencia Financiera</h3>
+        <p class="service-card__desc">Dashboards en tiempo real, reportes ejecutivos mensuales y recomendaciones basadas en IA para decisiones más inteligentes.</p>
+        <a href="#contacto" class="service-card__link">
+          Saber más
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     HOW IT WORKS
+══════════════════════════════════════════ -->
+<section class="section bg-navy-mid" id="como-funciona" aria-labelledby="como-funciona-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Proceso</span>
+      <h2 id="como-funciona-heading">Tres pasos para recuperar tu dinero</h2>
+      <p class="text-muted">
+        Sin complicaciones, sin configuraciones interminables. Empezamos a trabajar desde el primer día.
+      </p>
+    </div>
+
+    <div class="steps">
+      <div class="step reveal" data-delay="0">
+        <div class="step__number" aria-hidden="true">1</div>
+        <h3 class="step__title">Conecta tus Cuentas</h3>
+        <p class="step__desc">
+          Integra tus cuentas bancarias, tarjetas y sistemas contables de forma segura en menos de 15 minutos. Conexión encriptada y con lectura de solo lectura.
+        </p>
+      </div>
+      <div class="step reveal" data-delay="150">
+        <div class="step__number" aria-hidden="true">2</div>
+        <h3 class="step__title">Analizamos tus Datos</h3>
+        <p class="step__desc">
+          Nuestros algoritmos y expertos financieros analizan cada transacción, identifican patrones anómalos y generan un mapa completo de tus fugas activas.
+        </p>
+      </div>
+      <div class="step reveal" data-delay="300">
+        <div class="step__number" aria-hidden="true">3</div>
+        <h3 class="step__title">Ahorramos Juntos</h3>
+        <p class="step__desc">
+          Recibes un plan de acción priorizado. Ejecutamos contigo cada optimización y monitoreamos el ahorro real generado en tiempo real semana a semana.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     FEATURES / BENEFITS
+══════════════════════════════════════════ -->
+<section class="section bg-light" id="beneficios" aria-labelledby="beneficios-heading">
+  <div class="container">
+    <div class="features__inner">
+
+      <div class="reveal reveal--left">
+        <span class="section-label">Ventajas</span>
+        <h2 id="beneficios-heading" style="color:var(--color-navy);margin-bottom:var(--space-4)">
+          Todo lo que necesitas para tener control financiero total
+        </h2>
+        <p class="text-muted-dark" style="margin-bottom:var(--space-8)">
+          INTELIS no solo detecta el problema, te acompaña en cada paso hasta que el ahorro sea una realidad sostenible.
+        </p>
+
+        <ul class="check-list">
+          <li>Detección automática de gastos duplicados y suscripciones activas sin uso</li>
+          <li>Alertas en tiempo real cuando un gasto supera tu presupuesto definido</li>
+          <li>Negociación directa con proveedores para reducir tarifas hasta un 40%</li>
+          <li>Reportes ejecutivos semanales con KPIs financieros clave</li>
+          <li>Dashboard unificado con todas tus cuentas en un solo lugar</li>
+          <li>Equipo de asesores financieros disponibles vía chat de lunes a sábado</li>
+          <li>Cumplimiento normativo y privacidad de datos garantizada (ISO 27001)</li>
+        </ul>
+      </div>
+
+      <div class="features__panel reveal reveal--right">
+        <div class="features__panel-title">Impacto por categoría · Mes actual</div>
+
+        <div class="feature-row">
+          <div>
+            <div class="feature-row__label">Suscripciones redundantes</div>
+            <div class="feature-row__bar">
+              <div class="feature-row__fill" style="width:82%"></div>
+            </div>
+          </div>
+          <div class="feature-row__value">-$1,240</div>
+        </div>
+
+        <div class="feature-row">
+          <div>
+            <div class="feature-row__label">Comisiones bancarias</div>
+            <div class="feature-row__bar">
+              <div class="feature-row__fill" style="width:65%"></div>
+            </div>
+          </div>
+          <div class="feature-row__value">-$890</div>
+        </div>
+
+        <div class="feature-row">
+          <div>
+            <div class="feature-row__label">Gastos sin aprobación</div>
+            <div class="feature-row__bar">
+              <div class="feature-row__fill" style="width:48%"></div>
+            </div>
+          </div>
+          <div class="feature-row__value">-$620</div>
+        </div>
+
+        <div class="feature-row">
+          <div>
+            <div class="feature-row__label">Contratos sobrevaluados</div>
+            <div class="feature-row__bar">
+              <div class="feature-row__fill" style="width:73%"></div>
+            </div>
+          </div>
+          <div class="feature-row__value">-$3,100</div>
+        </div>
+
+        <div class="feature-row">
+          <div>
+            <div class="feature-row__label">Cargos erróneos de proveedores</div>
+            <div class="feature-row__bar">
+              <div class="feature-row__fill" style="width:35%"></div>
+            </div>
+          </div>
+          <div class="feature-row__value">-$420</div>
+        </div>
+
+        <div style="margin-top:var(--space-6);padding-top:var(--space-6);border-top:1px solid var(--color-navy-light);display:flex;justify-content:space-between;align-items:center;">
+          <span style="font-size:var(--text-sm);color:var(--color-gray-400)">Ahorro total del mes</span>
+          <span style="font-size:var(--text-2xl);font-weight:var(--font-bold);color:var(--color-green)">-$6,270</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     TESTIMONIALS
+══════════════════════════════════════════ -->
+<section class="section bg-navy" id="testimonios" aria-labelledby="testimonios-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Casos de Éxito</span>
+      <h2 id="testimonios-heading">Empresas que ya recuperaron su dinero</h2>
+      <p class="text-muted">
+        Resultados reales de empresas reales. Sin trucos, sin letra pequeña.
+      </p>
+    </div>
+
+    <div class="grid-3">
+
+      <div class="card reveal" data-delay="0" style="display:flex;flex-direction:column;">
+        <div class="testimonial-card">
+          <p class="testimonial-card__quote">
+            En el primer mes INTELIS identificó 14 suscripciones que nadie en el equipo recordaba haber contratado. Recuperamos más de $3,800 mensuales sin tocar nuestras operaciones.
+          </p>
+          <div class="testimonial-card__result">Ahorro mensual: +$3,800</div>
+          <div class="testimonial-card__author">
+            <div class="avatar" aria-hidden="true">ML</div>
+            <div class="testimonial-card__info">
+              <strong>María López</strong>
+              <span>CFO · Distribuidora Monterrey S.A.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card reveal" data-delay="150" style="display:flex;flex-direction:column;border-color:var(--color-green);">
+        <div class="testimonial-card">
+          <p class="testimonial-card__quote">
+            Teníamos contratos con proveedores que llevaban 3 años sin renegociar. INTELIS negoció por nosotros y bajamos costos logísticos un 31%. Fue la mejor inversión del año.
+          </p>
+          <div class="testimonial-card__result">Reducción de costos: 31%</div>
+          <div class="testimonial-card__author">
+            <div class="avatar" aria-hidden="true">CR</div>
+            <div class="testimonial-card__info">
+              <strong>Carlos Ramírez</strong>
+              <span>Director General · Grupo Nexo MX</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card reveal" data-delay="300" style="display:flex;flex-direction:column;">
+        <div class="testimonial-card">
+          <p class="testimonial-card__quote">
+            Lo que más me sorprendió fue la velocidad. En 72 horas ya tenía un reporte completo de 23 fugas detectadas. En 30 días habíamos cerrado 18 de ellas y el ROI fue del 480%.
+          </p>
+          <div class="testimonial-card__result">ROI alcanzado: 480%</div>
+          <div class="testimonial-card__author">
+            <div class="avatar" aria-hidden="true">SA</div>
+            <div class="testimonial-card__info">
+              <strong>Sofía Ávila</strong>
+              <span>CEO · TechOps Bogotá</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     PRICING
+══════════════════════════════════════════ -->
+<section class="section bg-navy-mid" id="precios" aria-labelledby="precios-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Planes</span>
+      <h2 id="precios-heading">Precios que se pagan solos</h2>
+      <p class="text-muted">
+        El primer mes de ahorro cubre el costo de cualquier plan. Elige el nivel de profundidad que tu empresa necesita.
+      </p>
+    </div>
+
+    <!-- Toggle -->
+    <div class="billing-toggle reveal" role="group" aria-label="Ciclo de facturación">
+      <span class="active" id="label-monthly">Mensual</span>
+      <div class="toggle-switch">
+        <input type="checkbox" id="billing-toggle" aria-labelledby="label-monthly label-annual" />
+        <label for="billing-toggle"><span class="sr-only">Cambiar a facturación anual</span></label>
+      </div>
+      <span id="label-annual">
+        Anual
+        <span class="annual-badge">Ahorra 20%</span>
+      </span>
+    </div>
+
+    <div class="pricing-grid" id="pricing-section" data-billing="monthly">
+
+      <!-- Básico -->
+      <div class="pricing-card reveal" data-delay="0">
+        <div class="pricing-card__name">Básico</div>
+        <p class="pricing-card__desc">Para freelancers y pequeñas empresas que quieren dar el primer paso.</p>
+        <div class="pricing-card__price">
+          <div class="price-monthly">
+            <div class="pricing-card__amount">$297<span style="font-size:var(--text-lg);font-weight:var(--font-normal);color:var(--color-gray-400)">/mes</span></div>
+          </div>
+          <div class="price-annual">
+            <div class="pricing-card__amount">$237<span style="font-size:var(--text-lg);font-weight:var(--font-normal);color:var(--color-gray-400)">/mes</span></div>
+          </div>
+          <div class="pricing-card__period">Facturado mensualmente · Sin contrato</div>
+        </div>
+        <ul class="pricing-card__features">
+          <li class="pricing-card__feature pricing-card__feature--yes">Hasta 3 cuentas conectadas</li>
+          <li class="pricing-card__feature pricing-card__feature--yes">Detección de suscripciones activas</li>
+          <li class="pricing-card__feature pricing-card__feature--yes">Reporte mensual de fugas</li>
+          <li class="pricing-card__feature pricing-card__feature--yes">Dashboard básico</li>
+          <li class="pricing-card__feature pricing-card__feature--yes">Soporte por email</li>
+          <li class="pricing-card__feature pricing-card__feature--no">Negociación con proveedores</li>
+          <li class="pricing-card__feature pricing-card__feature--no">Asesor financiero dedicado</li>
+          <li class="pricing-card__feature pricing-card__feature--no">Reportes en tiempo real</li>
+        </ul>
+        <a href="#contacto" class="btn btn-secondary" style="text-align:center;justify-content:center;">Empezar Gratis 14 días</a>
+      </div>
+
+      <!-- Profesional (Popular) -->
+      <div class="pricing-card pricing-card--popular reveal" data-delay="150">
+        <div class="pricing-card__popular-label">
+          <span class="badge badge-popular">Más Popular</span>
+        </div>
+        <div class="pricing-card__name gradient-text">Profesional</div>
+        <p class="pricing-card__desc">Para empresas en crecimiento que buscan resultados tangibles y rápidos.</p>
+        <div class="pricing-card__price">
+          <div class="price-monthly">
+            <div class="pricing-card__amount">$697<span style="font-size:var(--text-lg);font-weight:var(--font-normal);color:var(--color-gray-400)">/mes</span></div>
+          </div>
+          <div class="price-annual">
+            <div class="pricing-card__amount">$557<span style="font-size:var(--text-lg);font-weight:var(--font-normal);color:var(--color-gray-400)">/mes</span></div>
+          </div>
+          <div class="pricing-card__period">Facturado mensualmente · Sin contrato</div>
+        </div>
+        <ul class="pricing-card__features">
+          <li class="pricing-card__feature pricing-card__feature--yes">Hasta 10 cuentas conectadas</li>
+          <li class="pricing-card__feature pricing-card__feature--yes">Detección avanzada de fugas</li>
+          <li class="pricing-card__feature pricing-card__feature--yes">Reportes semanales detallados</li>
+          <li class="pricing-card__feature pricing-card__feature--yes">Dashboard en tiempo real</li>
+          <li class="pricing-card__feature pricing-card__feature--yes">Soporte prioritario por chat</li>
+          <li class="pricing-card__feature pricing-card__feature--yes">Negociación con proveedores</li>
+          <li class="pricing-card__feature pricing-card__feature--yes">1 asesor financiero dedicado</li>
+          <li class="pricing-card__feature pricing-card__feature--no">API e integraciones enterprise</li>
+        </ul>
+        <a href="#contacto" class="btn btn-primary" style="text-align:center;justify-content:center;">Empezar Gratis 14 días</a>
+      </div>
+
+      <!-- Empresarial -->
+      <div class="pricing-card reveal" data-delay="300">
+        <div class="pricing-card__name">Empresarial</div>
+        <p class="pricing-card__desc">Para corporativos y grupos empresariales con necesidades avanzadas y múltiples entidades.</p>
+        <div class="pricing-card__price">
+          <div class="price-monthly">
+            <div class="pricing-card__amount" style="font-size:var(--text-3xl)">A medida</div>
+          </div>
+          <div class="price-annual">
+            <div class="pricing-card__amount" style="font-size:var(--text-3xl)">A medida</div>
+          </div>
+          <div class="pricing-card__period">Precio personalizado según volumen</div>
+        </div>
+        <ul class="pricing-card__features">
+          <li class="pricing-card__feature pricing-card__feature--yes">Cuentas ilimitadas</li>
+          <li class="pricing-card__feature pricing-card__feature--yes">Detección IA personalizada</li>
+          <li class="pricing-card__feature pricing-card__feature--yes">Reportes en tiempo real 24/7</li>
+          <li class="pricing-card__feature pricing-card__feature--yes">Dashboard multi-entidad</li>
+          <li class="pricing-card__feature pricing-card__feature--yes">Soporte 24/7 con SLA garantizado</li>
+          <li class="pricing-card__feature pricing-card__feature--yes">Negociación avanzada</li>
+          <li class="pricing-card__feature pricing-card__feature--yes">Equipo de asesores dedicados</li>
+          <li class="pricing-card__feature pricing-card__feature--yes">API, webhooks e integraciones</li>
+        </ul>
+        <a href="#contacto" class="btn btn-secondary" style="text-align:center;justify-content:center;">Contactar Ventas</a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     FAQ
+══════════════════════════════════════════ -->
+<section class="section bg-navy" id="faq" aria-labelledby="faq-heading">
+  <div class="container" style="max-width:800px">
+    <div class="section-header reveal">
+      <span class="section-label">Preguntas Frecuentes</span>
+      <h2 id="faq-heading">Resolvemos tus dudas</h2>
+    </div>
+
+    <div class="reveal" data-delay="100">
+
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-1">
+          ¿Cuánto tiempo tarda en verse el primer resultado?
+          <span class="accordion-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </span>
+        </button>
+        <div class="accordion-content" id="faq-1" role="region">
+          <div class="accordion-body">
+            El análisis inicial se completa en menos de 72 horas tras conectar tus cuentas. En ese tiempo recibirás el primer reporte con fugas detectadas priorizadas por impacto económico. La mayoría de nuestros clientes comienza a ver ahorros reales en los primeros 7-14 días de implementar las recomendaciones.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-2">
+          ¿Mis datos financieros están seguros?
+          <span class="accordion-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </span>
+        </button>
+        <div class="accordion-content" id="faq-2" role="region">
+          <div class="accordion-body">
+            La seguridad es nuestra prioridad número uno. Utilizamos conexiones OAuth de solo lectura (nunca almacenamos credenciales bancarias), cifrado AES-256 en reposo y TLS 1.3 en tránsito. Cumplimos con ISO 27001, PCI-DSS y las normativas de protección de datos de cada país. Nuestros servidores están auditados trimestralmente por firmas de seguridad independientes.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-3">
+          ¿Funciona para empresas de cualquier tamaño?
+          <span class="accordion-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </span>
+        </button>
+        <div class="accordion-content" id="faq-3" role="region">
+          <div class="accordion-body">
+            Sí. Tenemos clientes desde freelancers con facturación de $5,000 mensuales hasta corporativos con más de 500 empleados. El plan Básico está optimizado para negocios pequeños, el Profesional para pymes en crecimiento, y el Empresarial para grupos corporativos con múltiples entidades y necesidades complejas.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-4">
+          ¿Qué pasa si no encuentran fugas en mi empresa?
+          <span class="accordion-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </span>
+        </button>
+        <div class="accordion-content" id="faq-4" role="region">
+          <div class="accordion-body">
+            Nunca ha ocurrido — en más de 500 análisis realizados, hemos encontrado fugas en absolutamente todos los casos. Sin embargo, si en tu caso no detectáramos ningún ahorro potencial durante los 14 días de prueba, te devolvemos el dinero sin preguntas. Es nuestra garantía de resultados.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-5">
+          ¿Necesito conocimientos financieros para usar INTELIS?
+          <span class="accordion-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </span>
+        </button>
+        <div class="accordion-content" id="faq-5" role="region">
+          <div class="accordion-body">
+            No. INTELIS está diseñado para que cualquier dueño de negocio, aunque no tenga formación financiera, pueda entender sus resultados y tomar decisiones con confianza. El dashboard es visual e intuitivo, los reportes usan lenguaje simple, y siempre tienes un asesor disponible para explicarte cualquier punto.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-6">
+          ¿Puedo cancelar en cualquier momento?
+          <span class="accordion-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </span>
+        </button>
+        <div class="accordion-content" id="faq-6" role="region">
+          <div class="accordion-body">
+            Absolutamente. No hay contratos de permanencia ni penalizaciones. Puedes cancelar tu suscripción en cualquier momento desde tu panel de control con un solo clic. Si cancelas, sigues teniendo acceso hasta el final del período pagado. Tus datos son tuyos y puedes exportarlos en cualquier momento.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-7">
+          ¿Con qué bancos y sistemas contables son compatibles?
+          <span class="accordion-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </span>
+        </button>
+        <div class="accordion-content" id="faq-7" role="region">
+          <div class="accordion-body">
+            Tenemos integración directa con más de 2,000 instituciones financieras en México, Colombia, Argentina, Chile y España. En cuanto a software contable, conectamos con SAP, QuickBooks, Contpaq, Aspel, Xero, Zoho Books y muchos más. Si tu banco o sistema no está en la lista, podemos incorporarlo en días mediante importación de estados de cuenta.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     FINAL CTA
+══════════════════════════════════════════ -->
+<section class="section cta-section" id="contacto" aria-labelledby="cta-heading">
+  <div class="container">
+    <div class="cta-section__inner reveal">
+      <h2 id="cta-heading" style="font-size:var(--text-4xl);margin-bottom:var(--space-4)">
+        Deja de perder dinero hoy mismo
+      </h2>
+      <p style="font-size:var(--text-xl);margin-bottom:var(--space-10);max-width:560px;margin-inline:auto;">
+        Agenda una llamada de 30 minutos sin costo. Analizamos tu situación y te mostramos exactamente cuánto podrías estar recuperando.
+      </p>
+      <div style="display:flex;flex-wrap:wrap;gap:var(--space-4);justify-content:center;">
+        <a href="mailto:hola@intelis.io" class="btn btn-dark btn-lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Agendar Llamada Gratis
+        </a>
+        <a href="#precios" class="btn btn-secondary btn-lg" style="border-color:rgba(10,22,40,0.3);color:var(--color-navy);">Ver Planes</a>
+      </div>
+      <p style="margin-top:var(--space-6);font-size:var(--text-sm);opacity:0.6;">
+        Sin tarjeta de crédito · 14 días gratis · Cancela cuando quieras
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+
+<!-- ══════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════ -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__grid">
+
+      <div class="footer__brand">
+        <a href="#" class="nav__logo" style="font-size:var(--text-xl)">
+          INTELIS<span class="nav__logo-dot"></span>
+        </a>
+        <p>Inteligencia financiera para empresas que quieren dejar de perder dinero y empezar a crecer con control y confianza.</p>
+        <div class="footer__social" style="margin-top:var(--space-5)">
+          <a href="#" aria-label="LinkedIn de INTELIS">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#" aria-label="Twitter/X de INTELIS">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram de INTELIS">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <div class="footer__col-title">Servicios</div>
+        <ul>
+          <li><a href="#servicios">Auditoría Financiera</a></li>
+          <li><a href="#servicios">Rastreo de Gastos</a></li>
+          <li><a href="#servicios">Eliminación de Fugas</a></li>
+          <li><a href="#servicios">Inteligencia Financiera</a></li>
+          <li><a href="#precios">Planes y Precios</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <div class="footer__col-title">Empresa</div>
+        <ul>
+          <li><a href="#">Sobre INTELIS</a></li>
+          <li><a href="#">Blog Financiero</a></li>
+          <li><a href="#">Casos de Éxito</a></li>
+          <li><a href="#">Trabaja con Nosotros</a></li>
+          <li><a href="#">Prensa</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <div class="footer__col-title">Contacto</div>
+        <ul>
+          <li><a href="mailto:hola@intelis.io">hola@intelis.io</a></li>
+          <li><a href="tel:+525512345678">+52 55 1234 5678</a></li>
+          <li><a href="#">Centro de Ayuda</a></li>
+          <li><a href="#">Estado del Sistema</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <span>© 2026 INTELIS Technologies S.A. de C.V. Todos los derechos reservados.</span>
+      <div style="display:flex;gap:var(--space-6)">
+        <a href="#">Privacidad</a>
+        <a href="#">Términos de Uso</a>
+        <a href="#">Cookies</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

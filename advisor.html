@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="INTELIS Advisor – Descubre dónde invertir en Mérida, Yucatán. Análisis en tiempo real de zonas residenciales y comerciales con IA." />
+  <title>Asesor de Inversiones Mérida – INTELIS</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/advisor.css" />
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════════ -->
+<header>
+  <nav class="nav" id="main-nav" aria-label="Navegación principal">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="index.html" class="nav__logo" aria-label="INTELIS inicio">
+          INTELIS<span class="nav__logo-dot"></span>
+        </a>
+
+        <ul class="nav__links" role="list">
+          <li><a href="index.html#problema"     class="nav__link nav-link" aria-current="false">Problema</a></li>
+          <li><a href="index.html#servicios"    class="nav__link nav-link" aria-current="false">Servicios</a></li>
+          <li><a href="index.html#como-funciona" class="nav__link nav-link" aria-current="false">Cómo Funciona</a></li>
+          <li><a href="index.html#precios"      class="nav__link nav-link" aria-current="false">Precios</a></li>
+          <li><a href="advisor.html"            class="nav__link advisor-active" aria-current="page">Asesor Mérida</a></li>
+        </ul>
+
+        <a href="index.html#contacto" class="btn btn-primary nav__cta">Hablar con un Experto</a>
+
+        <button class="nav__hamburger" id="hamburger-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-drawer">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile drawer -->
+  <div class="nav__drawer" id="mobile-drawer" data-open="false" role="dialog" aria-label="Menú de navegación">
+    <a href="index.html#problema"      class="nav__link" data-close-drawer>Problema</a>
+    <a href="index.html#servicios"     class="nav__link" data-close-drawer>Servicios</a>
+    <a href="index.html#como-funciona" class="nav__link" data-close-drawer>Cómo Funciona</a>
+    <a href="index.html#precios"       class="nav__link" data-close-drawer>Precios</a>
+    <a href="advisor.html"             class="nav__link advisor-active" data-close-drawer>Asesor Mérida</a>
+    <a href="index.html#contacto" class="btn btn-primary" style="width:fit-content" data-close-drawer>Hablar con un Experto</a>
+  </div>
+</header>
+
+<main style="padding-top: var(--space-20);">
+
+<!-- ══════════════════════════════════════════
+     HERO
+══════════════════════════════════════════ -->
+<section class="section bg-navy advisor-hero">
+  <div class="container">
+    <div class="advisor-hero__content reveal">
+      <div class="hero__eyebrow">
+        <span class="hero__eyebrow-dot"></span>
+        Análisis con IA en tiempo real · Mérida, Yucatán
+      </div>
+      <h1 class="advisor-hero__title">
+        Invierte con inteligencia en
+        <span class="gradient-text">Mérida</span>
+      </h1>
+      <p class="advisor-hero__subtitle text-muted">
+        Selecciona el tipo de inversión y las zonas de interés. Nuestra IA busca datos actualizados del mercado inmobiliario y te entrega un análisis con ROI, tendencias y recomendaciones personalizadas.
+      </p>
+      <div class="advisor-trust reveal" data-delay="100">
+        <div class="stat-chip">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Datos en tiempo real
+        </div>
+        <div class="stat-chip">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          12+ zonas de Mérida
+        </div>
+        <div class="stat-chip">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+          ROI y plusvalía estimados
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     FORM
+══════════════════════════════════════════ -->
+<section class="section bg-navy-mid" id="advisor-form-section">
+  <div class="container">
+    <div class="advisor-form card reveal">
+
+      <!-- Tipo de inversión -->
+      <div class="advisor-field">
+        <label class="advisor-field__label">Tipo de Inversión</label>
+        <div class="advisor-type-pills">
+          <button class="advisor-pill active" data-type="residential" type="button">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            Comprar Casa
+          </button>
+          <button class="advisor-pill" data-type="commercial" type="button">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+            Abrir Negocio
+          </button>
+          <button class="advisor-pill" data-type="mixed" type="button">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            Análisis Mixto
+          </button>
+        </div>
+      </div>
+
+      <!-- Zonas de interés -->
+      <div class="advisor-field">
+        <label class="advisor-field__label">Zonas de Interés</label>
+        <p class="advisor-field__hint text-muted">Selecciona una o más (deja vacío para análisis general de Mérida)</p>
+        <div class="advisor-zone-grid" id="zone-grid">
+          <button class="zone-chip" data-zone="Altabrisa" type="button">Altabrisa</button>
+          <button class="zone-chip" data-zone="Montebello" type="button">Montebello</button>
+          <button class="zone-chip" data-zone="Temozón Norte" type="button">Temozón Norte</button>
+          <button class="zone-chip" data-zone="Dzityá" type="button">Dzityá</button>
+          <button class="zone-chip" data-zone="Centro Histórico" type="button">Centro Histórico</button>
+          <button class="zone-chip" data-zone="Cholul" type="button">Cholul</button>
+          <button class="zone-chip" data-zone="Santa Gertrudis Copó" type="button">Sta. Gertrudis Copó</button>
+          <button class="zone-chip" data-zone="Montecristo" type="button">Montecristo</button>
+          <button class="zone-chip" data-zone="Campestre" type="button">Campestre</button>
+          <button class="zone-chip" data-zone="La Ceiba" type="button">La Ceiba</button>
+          <button class="zone-chip" data-zone="Xcumpich" type="button">Xcumpich</button>
+          <button class="zone-chip" data-zone="Privada Cholul" type="button">Privada Cholul</button>
+          <button class="zone-chip" data-zone="Prolongación Montejo" type="button">Prol. Montejo</button>
+          <button class="zone-chip" data-zone="Periférico" type="button">Periférico</button>
+        </div>
+      </div>
+
+      <!-- Presupuesto -->
+      <div class="advisor-field">
+        <label class="advisor-field__label" for="budget-input">Presupuesto Aproximado</label>
+        <div class="advisor-budget-row">
+          <select id="currency-select" class="advisor-select" aria-label="Moneda">
+            <option value="MXN">MXN $</option>
+            <option value="USD">USD $</option>
+          </select>
+          <input
+            type="number"
+            id="budget-input"
+            class="advisor-input"
+            placeholder="2,000,000"
+            min="100000"
+            step="100000"
+            aria-label="Presupuesto"
+          />
+        </div>
+        <p class="advisor-budget-hint text-muted" id="budget-error" hidden>Ingresa un presupuesto mayor a $100,000 MXN.</p>
+      </div>
+
+      <!-- Submit -->
+      <button id="advisor-submit" class="btn btn-primary btn-lg advisor-submit" type="button">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        Analizar Ahora
+      </button>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     RESULTS
+══════════════════════════════════════════ -->
+<section class="section bg-navy" id="results-section" hidden>
+  <div class="container">
+
+    <!-- Loading -->
+    <div id="results-loading" class="advisor-loading">
+      <div class="advisor-spinner"></div>
+      <p class="advisor-loading__title">Analizando mercado inmobiliario de Mérida...</p>
+      <p class="advisor-loading__sub text-muted" id="loading-status">Buscando datos actualizados en internet</p>
+    </div>
+
+    <!-- Content -->
+    <div id="results-content" class="advisor-results" hidden></div>
+
+    <!-- Error -->
+    <div id="results-error" class="advisor-error card" hidden>
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--color-green)"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <p id="error-message" class="text-muted">Ocurrió un error al obtener el análisis.</p>
+      <button class="btn btn-secondary" id="retry-btn" type="button">Reintentar</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     DISCLAIMER
+══════════════════════════════════════════ -->
+<section class="advisor-disclaimer">
+  <div class="container">
+    <p class="text-muted">
+      <strong style="color:var(--color-gray-300)">Aviso:</strong>
+      Este análisis es generado con inteligencia artificial y datos públicos disponibles en internet. No constituye asesoría financiera o inmobiliaria certificada. Los valores son estimaciones de referencia. Consulta siempre con un asesor inmobiliario profesional antes de tomar decisiones de inversión.
+    </p>
+  </div>
+</section>
+
+</main>
+
+<script type="module" src="js/advisor.js"></script>
+</body>
+</html>

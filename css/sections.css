@@ -13,7 +13,7 @@
   transition: background var(--transition-base), backdrop-filter var(--transition-base), box-shadow var(--transition-base);
 }
 .nav.scrolled {
-  background: rgba(12,46,136,0.85);
+  background: rgba(0,0,0,0.82);
   backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
   box-shadow: 0 1px 0 var(--border-subtle);
@@ -91,7 +91,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(10,37,120,0.95);
+  background: rgba(0,0,0,0.95);
   backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(30px);
   transform: translateX(100%);
@@ -130,9 +130,9 @@
   position: absolute;
   inset: 0;
   background-image:
-    radial-gradient(ellipse 80% 60% at 20% 40%, rgba(0,212,255,0.10) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 60% at 80% 20%, rgba(139,92,246,0.12) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 50% at 50% 80%, rgba(0,229,168,0.07) 0%, transparent 60%);
+    radial-gradient(ellipse 80% 60% at 20% 40%, rgba(0,212,255,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 60% at 80% 20%, rgba(139,92,246,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 50% at 50% 80%, rgba(0,229,168,0.04) 0%, transparent 60%);
   pointer-events: none;
   z-index: 0;
 }
@@ -936,7 +936,7 @@
    FOOTER
 ══════════════════════════════════════════ */
 .footer {
-  background-color: var(--color-footer);
+  background-color: #000;
   padding-block: var(--space-16);
   position: relative;
   border-top: 1px solid var(--border-subtle);

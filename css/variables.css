@@ -1,15 +1,15 @@
 :root {
   /* ── Backgrounds ── */
-  --bg-void:    #000000;
-  --bg-deep:    #04040a;
-  --bg-mid:     #07070f;
-  --bg-glass:   rgba(255,255,255,0.03);
-  --bg-hover:   rgba(255,255,255,0.055);
+  --bg-void:    #0C2E88;
+  --bg-deep:    #0A2578;
+  --bg-mid:     #0E3698;
+  --bg-glass:   rgba(255,255,255,0.05);
+  --bg-hover:   rgba(255,255,255,0.08);
 
   /* ── Borders ── */
-  --border-subtle: rgba(255,255,255,0.055);
-  --border-mid:    rgba(255,255,255,0.1);
-  --border-bright: rgba(255,255,255,0.18);
+  --border-subtle: rgba(255,255,255,0.1);
+  --border-mid:    rgba(255,255,255,0.18);
+  --border-bright: rgba(255,255,255,0.28);
 
   /* ── Iridescent Palette ── */
   --iris-green:  #00E5A8;
@@ -24,18 +24,18 @@
   --text-tertiary:  rgba(255,255,255,0.32);
 
   /* ── Legacy compatibility ── */
-  --color-navy:        #04040a;
-  --color-navy-mid:    #07070f;
-  --color-navy-light:  rgba(255,255,255,0.07);
+  --color-navy:        #0C2E88;
+  --color-navy-mid:    #0A2578;
+  --color-navy-light:  rgba(255,255,255,0.1);
   --color-green:       #00E5A8;
   --color-green-dark:  #00C896;
   --color-green-glow:  rgba(0,229,168,0.1);
   --color-white:       #FFFFFF;
-  --color-gray-50:     #06060f;
+  --color-gray-50:     #0E3698;
   --color-gray-200:    rgba(255,255,255,0.15);
   --color-gray-400:    rgba(255,255,255,0.5);
   --color-gray-600:    rgba(255,255,255,0.36);
-  --color-footer:      #000000;
+  --color-footer:      #08205E;
   --color-red-soft:    rgba(239,68,68,0.1);
   --color-red:         #FF6B6B;
 

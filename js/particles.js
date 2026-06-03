@@ -35,12 +35,12 @@ export function initParticles() {
     const w = canvas.width;
     const h = canvas.height;
     orbs = [
-      { x: w * 0.15, y: h * 0.35, r: 280, vx:  0.12, vy:  0.07,  color: COLORS[0], alpha: 0.07, phase: 0 },
-      { x: w * 0.82, y: h * 0.22, r: 320, vx: -0.09, vy:  0.10,  color: COLORS[1], alpha: 0.05, phase: 1 },
-      { x: w * 0.55, y: h * 0.72, r: 240, vx:  0.10, vy: -0.08,  color: COLORS[2], alpha: 0.055, phase: 2 },
-      { x: w * 0.88, y: h * 0.78, r: 180, vx: -0.07, vy: -0.09,  color: COLORS[3], alpha: 0.04, phase: 3 },
-      { x: w * 0.40, y: h * 0.15, r: 200, vx:  0.08, vy:  0.11,  color: COLORS[4], alpha: 0.045, phase: 4 },
-      { x: w * 0.70, y: h * 0.55, r: 160, vx: -0.11, vy:  0.06,  color: COLORS[5], alpha: 0.05, phase: 5 },
+      { x: w * 0.15, y: h * 0.35, r: 280, vx:  0.12, vy:  0.07,  color: COLORS[0], alpha: 0.13, phase: 0 },
+      { x: w * 0.82, y: h * 0.22, r: 320, vx: -0.09, vy:  0.10,  color: COLORS[1], alpha: 0.10, phase: 1 },
+      { x: w * 0.55, y: h * 0.72, r: 240, vx:  0.10, vy: -0.08,  color: COLORS[2], alpha: 0.11, phase: 2 },
+      { x: w * 0.88, y: h * 0.78, r: 180, vx: -0.07, vy: -0.09,  color: COLORS[3], alpha: 0.08, phase: 3 },
+      { x: w * 0.40, y: h * 0.15, r: 200, vx:  0.08, vy:  0.11,  color: COLORS[4], alpha: 0.09, phase: 4 },
+      { x: w * 0.70, y: h * 0.55, r: 160, vx: -0.11, vy:  0.06,  color: COLORS[5], alpha: 0.10, phase: 5 },
     ];
   }
 

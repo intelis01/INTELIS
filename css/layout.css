@@ -27,7 +27,7 @@
 .bg-navy-mid   { background-color: var(--bg-deep); }
 .bg-light      { background-color: var(--bg-mid); }
 .bg-green      { background-color: var(--iris-green); }
-.bg-footer     { background-color: #000000; }
+.bg-footer     { background-color: var(--color-footer); }
 
 /* ── Section header ── */
 .section-header {

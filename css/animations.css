@@ -1,50 +1,108 @@
-/* ── Scroll reveal system ── */
+/* ══════════════════════════════════════════
+   SCROLL REVEAL
+══════════════════════════════════════════ */
 .reveal {
   opacity: 0;
-  transform: translateY(32px);
-  transition: opacity var(--transition-slow), transform var(--transition-slow);
+  transform: translateY(40px);
+  filter: blur(6px);
+  transition:
+    opacity  0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    filter   0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .reveal.reveal--visible {
   opacity: 1;
   transform: none;
+  filter: blur(0);
 }
 .reveal--left {
-  transform: translateX(-32px);
+  transform: translateX(-40px);
+  filter: blur(6px);
 }
 .reveal--left.reveal--visible {
   transform: none;
+  filter: blur(0);
 }
 .reveal--right {
-  transform: translateX(32px);
+  transform: translateX(40px);
+  filter: blur(6px);
 }
 .reveal--right.reveal--visible {
   transform: none;
+  filter: blur(0);
 }
 .reveal--scale {
-  transform: scale(0.92);
+  transform: scale(0.9);
+  filter: blur(8px);
 }
 .reveal--scale.reveal--visible {
   transform: none;
+  filter: blur(0);
 }
 
-/* ── Hero orb animation ── */
+/* Stagger delays */
+[data-delay="0"]   { transition-delay: 0ms; }
+[data-delay="100"] { transition-delay: 100ms; }
+[data-delay="150"] { transition-delay: 150ms; }
+[data-delay="200"] { transition-delay: 200ms; }
+[data-delay="300"] { transition-delay: 300ms; }
+
+/* ══════════════════════════════════════════
+   IRIDESCENT GRADIENT SHIFT
+══════════════════════════════════════════ */
+@keyframes iris-shift {
+  0%   { background-position: 0%   50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0%   50%; }
+}
+
+/* ══════════════════════════════════════════
+   IRIDESCENT BORDER ROTATION
+══════════════════════════════════════════ */
+@keyframes iris-border-spin {
+  0%   { background-position: 0%   0%;   }
+  50%  { background-position: 100% 100%; }
+  100% { background-position: 0%   0%;   }
+}
+
+/* ══════════════════════════════════════════
+   FLOATING ELEMENTS
+══════════════════════════════════════════ */
 @keyframes float-slow {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33%       { transform: translate(30px, -20px) scale(1.05); }
-  66%       { transform: translate(-20px, 15px) scale(0.97); }
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33%       { transform: translateY(-12px) rotate(0.5deg); }
+  66%       { transform: translateY(-6px) rotate(-0.5deg); }
 }
 @keyframes float-medium {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50%       { transform: translate(-40px, 30px) scale(1.08); }
+  0%, 100% { transform: translate(0, 0); }
+  50%       { transform: translate(-8px, -16px); }
 }
 
-/* ── Pulse glow ── */
+/* ══════════════════════════════════════════
+   PULSE GLOW (nav dot, eyebrow dot)
+══════════════════════════════════════════ */
 @keyframes pulse-glow {
-  0%, 100% { opacity: 0.5; }
-  50%       { opacity: 1; }
+  0%, 100% {
+    opacity: 0.6;
+    box-shadow: 0 0 6px currentColor;
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 14px currentColor, 0 0 28px rgba(0,229,168,0.3);
+  }
 }
 
-/* ── Chart line draw ── */
+/* ══════════════════════════════════════════
+   AURORA PULSE (CTA section)
+══════════════════════════════════════════ */
+@keyframes aurora-pulse {
+  0%, 100% { opacity: 1;   transform: translate(-50%, -50%) scale(1); }
+  50%       { opacity: 0.7; transform: translate(-50%, -50%) scale(1.1); }
+}
+
+/* ══════════════════════════════════════════
+   CHART LINE DRAW
+══════════════════════════════════════════ */
 @keyframes draw-line {
   from { stroke-dashoffset: 600; }
   to   { stroke-dashoffset: 0; }
@@ -52,34 +110,28 @@
 .chart-line {
   stroke-dasharray: 600;
   stroke-dashoffset: 600;
-  animation: draw-line 2s ease forwards 0.5s;
+  animation: draw-line 2.5s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.6s;
 }
 
-/* ── Shimmer on stats ── */
+/* ══════════════════════════════════════════
+   SHIMMER (for hero stats)
+══════════════════════════════════════════ */
 @keyframes shimmer {
   0%   { background-position: -200% center; }
   100% { background-position: 200% center; }
 }
 
-/* ── Step connector animation ── */
-@keyframes progress-line {
-  from { width: 0; }
-  to   { width: 100%; }
-}
-
-/* ── Fade in up (used for trust chips) ── */
+/* ══════════════════════════════════════════
+   FADE IN UP (trust chips)
+══════════════════════════════════════════ */
 @keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(16px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
+  from { opacity: 0; transform: translateY(16px); filter: blur(4px); }
+  to   { opacity: 1; transform: none; filter: blur(0); }
 }
 
-/* ── Nav link underline ── */
+/* ══════════════════════════════════════════
+   NAV LINK UNDERLINE
+══════════════════════════════════════════ */
 .nav-link {
   position: relative;
 }
@@ -89,8 +141,8 @@
   bottom: -4px;
   left: 0;
   width: 0;
-  height: 2px;
-  background-color: var(--color-green);
+  height: 1px;
+  background: linear-gradient(90deg, var(--iris-green), var(--iris-cyan));
   border-radius: 2px;
   transition: width var(--transition-base);
 }
@@ -99,10 +151,12 @@
   width: 100%;
 }
 .nav-link[aria-current="true"] {
-  color: var(--color-green);
+  color: var(--text-primary);
 }
 
-/* ── Reduce motion ── */
+/* ══════════════════════════════════════════
+   REDUCE MOTION
+══════════════════════════════════════════ */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -112,5 +166,6 @@
   .reveal {
     opacity: 1;
     transform: none;
+    filter: none;
   }
 }

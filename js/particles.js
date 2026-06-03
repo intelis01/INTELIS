@@ -1,5 +1,5 @@
 /**
- * Hero canvas background – floating gradient orbs
+ * Aurora canvas – multi-color iridescent orbs
  * Respects prefers-reduced-motion
  */
 
@@ -10,8 +10,19 @@ export function initParticles() {
   if (!canvas || prefersReducedMotion) return;
 
   const ctx = canvas.getContext('2d');
-  let rafId;
+  let rafId = null;
   let orbs = [];
+  let t = 0;
+
+  /* Color definitions for each orb: [r, g, b] */
+  const COLORS = [
+    [0,  229, 168],   // iris green
+    [0,  212, 255],   // iris cyan
+    [139, 92, 246],   // iris purple
+    [236, 72, 153],   // iris pink
+    [0,  180, 255],   // iris blue
+    [0,  229, 168],   // iris green (second)
+  ];
 
   function resize() {
     const parent = canvas.parentElement;
@@ -21,45 +32,63 @@ export function initParticles() {
   }
 
   function createOrbs() {
+    const w = canvas.width;
+    const h = canvas.height;
     orbs = [
-      { x: canvas.width * 0.15, y: canvas.height * 0.3,  r: 220, vx: 0.15, vy: 0.08,  alpha: 0.06 },
-      { x: canvas.width * 0.8,  y: canvas.height * 0.2,  r: 280, vx: -0.1, vy: 0.12,  alpha: 0.04 },
-      { x: canvas.width * 0.5,  y: canvas.height * 0.7,  r: 180, vx: 0.12, vy: -0.09, alpha: 0.05 },
-      { x: canvas.width * 0.9,  y: canvas.height * 0.75, r: 140, vx: -0.08, vy: -0.1, alpha: 0.07 },
+      { x: w * 0.15, y: h * 0.35, r: 280, vx:  0.12, vy:  0.07,  color: COLORS[0], alpha: 0.07, phase: 0 },
+      { x: w * 0.82, y: h * 0.22, r: 320, vx: -0.09, vy:  0.10,  color: COLORS[1], alpha: 0.05, phase: 1 },
+      { x: w * 0.55, y: h * 0.72, r: 240, vx:  0.10, vy: -0.08,  color: COLORS[2], alpha: 0.055, phase: 2 },
+      { x: w * 0.88, y: h * 0.78, r: 180, vx: -0.07, vy: -0.09,  color: COLORS[3], alpha: 0.04, phase: 3 },
+      { x: w * 0.40, y: h * 0.15, r: 200, vx:  0.08, vy:  0.11,  color: COLORS[4], alpha: 0.045, phase: 4 },
+      { x: w * 0.70, y: h * 0.55, r: 160, vx: -0.11, vy:  0.06,  color: COLORS[5], alpha: 0.05, phase: 5 },
     ];
   }
 
-  function drawOrb(orb) {
-    const grad = ctx.createRadialGradient(orb.x, orb.y, 0, orb.x, orb.y, orb.r);
-    grad.addColorStop(0,   `rgba(0, 200, 150, ${orb.alpha})`);
-    grad.addColorStop(0.5, `rgba(0, 200, 150, ${orb.alpha * 0.5})`);
-    grad.addColorStop(1,   'rgba(0, 200, 150, 0)');
+  function drawOrb(orb, time) {
+    const pulse = 1 + 0.15 * Math.sin(time * 0.0008 + orb.phase * 1.2);
+    const r = orb.r * pulse;
+    const [cr, cg, cb] = orb.color;
+
+    /* Slowly shift hue over time per orb */
+    const hShift = (time * 0.0003 + orb.phase * 0.5) % (Math.PI * 2);
+    const rf = Math.round(cr + 40 * Math.sin(hShift));
+    const gf = Math.round(cg + 20 * Math.cos(hShift * 1.3));
+    const bf = Math.round(cb + 30 * Math.sin(hShift * 0.7));
+
+    const grad = ctx.createRadialGradient(orb.x, orb.y, 0, orb.x, orb.y, r);
+    grad.addColorStop(0,   `rgba(${rf},${gf},${bf},${orb.alpha})`);
+    grad.addColorStop(0.4, `rgba(${rf},${gf},${bf},${orb.alpha * 0.55})`);
+    grad.addColorStop(0.75,`rgba(${rf},${gf},${bf},${orb.alpha * 0.15})`);
+    grad.addColorStop(1,   `rgba(${rf},${gf},${bf},0)`);
+
     ctx.fillStyle = grad;
     ctx.beginPath();
-    ctx.arc(orb.x, orb.y, orb.r, 0, Math.PI * 2);
+    ctx.arc(orb.x, orb.y, r, 0, Math.PI * 2);
     ctx.fill();
   }
 
-  function tick() {
+  function tick(timestamp) {
+    t = timestamp;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     orbs.forEach(orb => {
-      orb.x += orb.vx;
-      orb.y += orb.vy;
+      /* Subtle sine wander on top of linear drift */
+      orb.x += orb.vx + 0.06 * Math.sin(t * 0.0004 + orb.phase);
+      orb.y += orb.vy + 0.04 * Math.cos(t * 0.0005 + orb.phase);
 
-      // Wrap around
+      /* Wrap around */
       if (orb.x < -orb.r) orb.x = canvas.width + orb.r;
       if (orb.x > canvas.width + orb.r)  orb.x = -orb.r;
       if (orb.y < -orb.r) orb.y = canvas.height + orb.r;
       if (orb.y > canvas.height + orb.r) orb.y = -orb.r;
 
-      drawOrb(orb);
+      drawOrb(orb, t);
     });
 
     rafId = requestAnimationFrame(tick);
   }
 
-  // Stop animation when hero is off-screen
+  /* Pause when hero off-screen */
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {

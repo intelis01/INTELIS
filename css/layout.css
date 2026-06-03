@@ -14,60 +14,65 @@
 }
 
 .section {
-  padding-block: var(--space-20);
+  padding-block: var(--space-24);
+  position: relative;
 }
 
 @media (min-width: 1024px) {
   .section { padding-block: var(--space-32); }
 }
 
-/* Background variants */
-.bg-navy       { background-color: var(--color-navy); }
-.bg-navy-mid   { background-color: var(--color-navy-mid); }
-.bg-light      { background-color: var(--color-gray-50); }
-.bg-green      { background-color: var(--color-green); }
-.bg-footer     { background-color: var(--color-footer); }
+/* ── Background variants ── */
+.bg-navy       { background-color: var(--bg-void); }
+.bg-navy-mid   { background-color: var(--bg-deep); }
+.bg-light      { background-color: var(--bg-mid); }
+.bg-green      { background-color: var(--iris-green); }
+.bg-footer     { background-color: #000000; }
 
-/* Section header */
+/* ── Section header ── */
 .section-header {
   text-align: center;
   margin-bottom: var(--space-16);
 }
-
+.section-header h2 {
+  margin-bottom: var(--space-4);
+  margin-top: var(--space-2);
+  color: var(--text-primary);
+}
 .section-header p {
   max-width: 600px;
   margin-inline: auto;
-  margin-top: var(--space-4);
   font-size: var(--text-lg);
+  color: var(--text-secondary);
+  margin-top: var(--space-4);
 }
 
-/* Grids */
-.grid-2 {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-8);
-}
-
-.grid-3 {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-6);
-}
-
-.grid-4 {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-6);
-}
+/* ── Grids ── */
+.grid-2 { display: grid; grid-template-columns: 1fr; gap: var(--space-8); }
+.grid-3 { display: grid; grid-template-columns: 1fr; gap: var(--space-6); }
+.grid-4 { display: grid; grid-template-columns: 1fr; gap: var(--space-6); }
 
 @media (min-width: 640px) {
   .grid-2 { grid-template-columns: repeat(2, 1fr); }
   .grid-3 { grid-template-columns: repeat(2, 1fr); }
   .grid-4 { grid-template-columns: repeat(2, 1fr); }
 }
-
 @media (min-width: 1024px) {
   .grid-2 { grid-template-columns: repeat(2, 1fr); }
   .grid-3 { grid-template-columns: repeat(3, 1fr); }
   .grid-4 { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* ── Section divider: subtle gradient line ── */
+.section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  max-width: 600px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-subtle), transparent);
+  pointer-events: none;
 }

@@ -781,3 +781,137 @@
   width: 16px;
   height: 16px;
 }
+
+/* ═══════════════════════════════════════
+   WALLPAPER PREVIEW
+═══════════════════════════════════════ */
+.wallpaper-preview {
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(0, 200, 150, 0.34), transparent 28rem),
+    radial-gradient(circle at 86% 18%, rgba(49, 216, 255, 0.22), transparent 24rem),
+    radial-gradient(circle at 70% 78%, rgba(0, 200, 150, 0.18), transparent 22rem),
+    linear-gradient(135deg, #041021 0%, var(--color-navy) 42%, var(--color-navy-mid) 100%);
+  isolation: isolate;
+}
+
+.wallpaper-preview::before,
+.wallpaper-preview::after {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  z-index: -2;
+  pointer-events: none;
+}
+
+.wallpaper-preview::before {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(circle at center, black 0 42%, transparent 78%);
+  transform: perspective(900px) rotateX(58deg) translateY(10%);
+  animation: grid-drift 18s linear infinite;
+}
+
+.wallpaper-preview::after {
+  z-index: -1;
+  background: conic-gradient(from 90deg, transparent, rgba(0, 200, 150, 0.24), transparent, rgba(49, 216, 255, 0.18), transparent);
+  filter: blur(70px);
+  opacity: 0.65;
+  animation: aurora-spin 16s ease-in-out infinite alternate;
+}
+
+.wallpaper-preview__content {
+  position: relative;
+  z-index: 1;
+  width: min(92vw, 900px);
+  margin-inline: auto;
+  padding: clamp(2rem, 6vw, 5rem);
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-2xl);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.035));
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.wallpaper-preview__content h2 {
+  max-width: 760px;
+  margin-inline: auto;
+  font-size: clamp(3rem, 9vw, 7rem);
+  line-height: 0.95;
+  letter-spacing: -0.08em;
+  text-wrap: balance;
+}
+
+.wallpaper-preview__content p {
+  max-width: 640px;
+  margin: var(--space-6) auto var(--space-8);
+  color: rgba(247, 251, 255, 0.78);
+  font-size: var(--text-lg);
+}
+
+.wallpaper-preview__orb {
+  position: absolute;
+  width: clamp(12rem, 24vw, 25rem);
+  aspect-ratio: 1;
+  border-radius: var(--radius-full);
+  background: radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.55), rgba(0, 200, 150, 0.28) 28%, rgba(49, 216, 255, 0.08) 62%, transparent 72%);
+  box-shadow: 0 0 80px rgba(0, 200, 150, 0.32);
+  filter: blur(1px);
+  opacity: 0.75;
+  animation: float-wallpaper 8s ease-in-out infinite;
+}
+
+.wallpaper-preview__orb--one { top: 9%; left: 8%; }
+.wallpaper-preview__orb--two {
+  right: 7%;
+  bottom: 8%;
+  width: clamp(10rem, 18vw, 18rem);
+  animation-delay: -3.5s;
+  animation-duration: 10s;
+}
+
+.wallpaper-preview__rings {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  width: min(82vw, 760px);
+  aspect-ratio: 1;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  translate: -50% -50%;
+  z-index: -1;
+  animation: pulse-wallpaper 5s ease-in-out infinite;
+}
+
+.wallpaper-preview__rings::before,
+.wallpaper-preview__rings::after {
+  content: "";
+  position: absolute;
+  inset: 12%;
+  border-radius: inherit;
+  border: inherit;
+}
+.wallpaper-preview__rings::after { inset: 25%; }
+
+@keyframes grid-drift {
+  to { background-position: 72px 72px; }
+}
+
+@keyframes aurora-spin {
+  to { transform: rotate(22deg) scale(1.12); }
+}
+
+@keyframes float-wallpaper {
+  50% { transform: translate3d(1.4rem, -1.8rem, 0) scale(1.04); }
+}
+
+@keyframes pulse-wallpaper {
+  50% { opacity: 0.35; transform: scale(1.05); }
+}

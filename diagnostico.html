@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="INTELIS · Motor de Diagnóstico Organizacional. Detecta errores, embudos, gastos innecesarios, estructuras fallidas y estrategias comerciales erróneas, y emite soluciones sustentadas en siete campos." />
+  <title>INTELIS · Motor de Diagnóstico Organizacional</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/diagnostico.css" />
+</head>
+<body class="mdo">
+
+<header class="mdo-head">
+  <div class="mdo-wrap">
+    <div class="mdo-head__bar">
+      <a href="index.html" class="mdo-logo">INTELIS<span>.</span></a>
+      <span id="mdo-version" style="font-size:12px;color:var(--mdo-muted);font-family:ui-monospace,monospace"></span>
+    </div>
+
+    <h1>Motor de Diagnóstico Organizacional</h1>
+    <p>
+      Siete detectores analizan procesos, embudos, gastos, plantilla, estructura, estrategia comercial y solvencia.
+      Cada hallazgo se cuantifica como un intervalo, no como una cifra puntual, y cada solución se emite con sustento
+      matemático, estadístico, financiero, jurídico, operativo, de riesgo y de evidencia. El cómputo ocurre íntegramente
+      en este navegador: los datos no se transmiten a ningún servidor.
+    </p>
+
+    <div class="mdo-controls">
+      <button class="mdo-btn mdo-btn--primary" id="btn-demo">Ejecutar con datos de demostración</button>
+      <button class="mdo-btn mdo-btn--ghost" id="btn-cargar">Cargar mis datos (JSON)</button>
+      <button class="mdo-btn mdo-btn--ghost" id="btn-esquema">Descargar esquema de datos</button>
+      <button class="mdo-btn mdo-btn--ghost" id="btn-json">Exportar informe (JSON)</button>
+      <button class="mdo-btn mdo-btn--ghost" id="btn-imprimir">Imprimir / PDF</button>
+      <input type="file" id="file-datos" class="mdo-file" accept="application/json,.json" />
+    </div>
+  </div>
+</header>
+
+<main class="mdo-wrap" id="mdo-out">
+  <div class="mdo-empty">Inicializando el motor…</div>
+</main>
+
+<footer class="mdo-foot">
+  <div class="mdo-wrap">
+    El análisis normativo de este informe es orientativo y automatizado; no constituye asesoría legal, contable ni médica.
+    Antes de ejecutar cualquier medida con efectos laborales, fiscales, contractuales o de competencia económica debe
+    obtenerse opinión profesional, cotejando el texto vigente publicado en el Diario Oficial de la Federación.
+  </div>
+</footer>
+
+<script type="module" src="js/diagnostico-app.js"></script>
+</body>
+</html>

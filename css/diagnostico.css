@@ -1,0 +1,249 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   INTELIS · Motor de Diagnóstico Organizacional — Interfaz
+   Reutiliza los tokens de css/variables.css del sitio principal.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  --mdo-bg:       var(--color-navy);
+  --mdo-panel:    #0E1D36;
+  --mdo-panel-2:  #132441;
+  --mdo-border:   rgba(255,255,255,.09);
+  --mdo-text:     #E8EEF7;
+  --mdo-muted:    #8DA2BF;
+  --mdo-amber:    #F5A524;
+  --mdo-red:      #F04E4E;
+  --mdo-blue:     #4D8DF0;
+  --mdo-purple:   #A78BFA;
+}
+
+body.mdo {
+  background: var(--mdo-bg);
+  color: var(--mdo-text);
+  font-family: var(--font-primary);
+  font-size: 15px;
+  line-height: 1.65;
+  min-height: 100vh;
+}
+
+.mdo-wrap { max-width: 1180px; margin: 0 auto; padding: 0 var(--space-5); }
+
+/* ── Encabezado ─────────────────────────────────────────────────────── */
+.mdo-head {
+  border-bottom: 1px solid var(--mdo-border);
+  background: linear-gradient(180deg, #0B1930 0%, var(--mdo-bg) 100%);
+  padding: var(--space-8) 0 var(--space-6);
+  position: sticky; top: 0; z-index: 50;
+  backdrop-filter: blur(12px);
+}
+.mdo-head__bar { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); flex-wrap: wrap; }
+.mdo-logo { font-weight: var(--font-bold); font-size: var(--text-xl); letter-spacing: -.02em; color: #fff; text-decoration: none; }
+.mdo-logo span { color: var(--color-green); }
+.mdo-head h1 { font-size: clamp(1.4rem, 3vw, 2rem); line-height: 1.2; margin: var(--space-5) 0 var(--space-2); letter-spacing: -.02em; }
+.mdo-head p  { color: var(--mdo-muted); max-width: 74ch; margin: 0; font-size: var(--text-sm); }
+
+/* ── Controles ──────────────────────────────────────────────────────── */
+.mdo-controls {
+  display: flex; gap: var(--space-3); flex-wrap: wrap; align-items: center;
+  margin-top: var(--space-5);
+}
+.mdo-btn {
+  font: inherit; font-weight: var(--font-semibold); font-size: var(--text-sm);
+  border-radius: var(--radius-md); padding: .6rem 1.1rem; cursor: pointer;
+  border: 1px solid transparent; transition: all var(--transition-fast);
+  display: inline-flex; align-items: center; gap: .5rem;
+}
+.mdo-btn--primary { background: var(--color-green); color: #062018; }
+.mdo-btn--primary:hover { background: #00e0a8; transform: translateY(-1px); }
+.mdo-btn--ghost { background: transparent; color: var(--mdo-text); border-color: var(--mdo-border); }
+.mdo-btn--ghost:hover { border-color: var(--color-green); color: var(--color-green); }
+.mdo-btn:disabled { opacity: .45; cursor: not-allowed; transform: none; }
+
+.mdo-file { display: none; }
+
+/* ── Bloques ────────────────────────────────────────────────────────── */
+.mdo-section { padding: var(--space-8) 0; border-bottom: 1px solid var(--mdo-border); }
+.mdo-section:last-child { border-bottom: 0; }
+.mdo-section > h2 {
+  font-size: var(--text-xs); text-transform: uppercase; letter-spacing: .12em;
+  color: var(--mdo-muted); font-weight: var(--font-semibold); margin: 0 0 var(--space-5);
+}
+
+.mdo-grid { display: grid; gap: var(--space-4); }
+.mdo-grid--4 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+.mdo-grid--3 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.mdo-grid--2 { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+
+.mdo-card {
+  background: var(--mdo-panel); border: 1px solid var(--mdo-border);
+  border-radius: var(--radius-lg); padding: var(--space-5);
+}
+.mdo-stat__label { font-size: var(--text-xs); color: var(--mdo-muted); text-transform: uppercase; letter-spacing: .08em; }
+.mdo-stat__value { font-size: var(--text-3xl); font-weight: var(--font-bold); letter-spacing: -.03em; margin: var(--space-2) 0 0; line-height: 1.1; }
+.mdo-stat__sub   { font-size: var(--text-xs); color: var(--mdo-muted); margin-top: var(--space-2); }
+.mdo-stat--green .mdo-stat__value { color: var(--color-green); }
+.mdo-stat--amber .mdo-stat__value { color: var(--mdo-amber); }
+.mdo-stat--red   .mdo-stat__value { color: var(--mdo-red); }
+
+/* ── Distintivos ────────────────────────────────────────────────────── */
+.mdo-chip {
+  display: inline-flex; align-items: center; gap: .35rem;
+  font-size: 11px; font-weight: var(--font-semibold); letter-spacing: .04em;
+  padding: .22rem .6rem; border-radius: var(--radius-full);
+  border: 1px solid currentColor; white-space: nowrap;
+}
+.mdo-chip--obligatorio { color: var(--mdo-purple); background: rgba(167,139,250,.12); }
+.mdo-chip--critica { color: var(--mdo-red); background: rgba(240,78,78,.12); }
+.mdo-chip--alta   { color: var(--mdo-amber); background: rgba(245,165,36,.12); }
+.mdo-chip--media  { color: var(--mdo-blue); background: rgba(77,141,240,.12); }
+.mdo-chip--baja   { color: var(--mdo-muted); background: rgba(141,162,191,.10); }
+.mdo-chip--conf-alta  { color: var(--color-green); background: rgba(0,200,150,.12); }
+.mdo-chip--conf-media { color: var(--mdo-amber); background: rgba(245,165,36,.10); }
+.mdo-chip--conf-baja  { color: var(--mdo-muted); background: rgba(141,162,191,.10); }
+.mdo-chip--toc { color: var(--color-green); background: rgba(0,200,150,.12); }
+
+/* ── Aviso ──────────────────────────────────────────────────────────── */
+.mdo-alert {
+  border-radius: var(--radius-md); padding: var(--space-4) var(--space-5);
+  border-left: 3px solid; margin-bottom: var(--space-3); font-size: var(--text-sm);
+}
+.mdo-alert--alta  { border-color: var(--mdo-red);   background: rgba(240,78,78,.07); }
+.mdo-alert--media { border-color: var(--mdo-amber); background: rgba(245,165,36,.07); }
+.mdo-alert--info  { border-color: var(--mdo-blue);  background: rgba(77,141,240,.07); }
+.mdo-alert strong { display: block; margin-bottom: .25rem; }
+
+/* ── Hallazgo ───────────────────────────────────────────────────────── */
+.mdo-finding {
+  background: var(--mdo-panel); border: 1px solid var(--mdo-border);
+  border-radius: var(--radius-lg); margin-bottom: var(--space-3); overflow: hidden;
+  transition: border-color var(--transition-fast);
+}
+.mdo-finding:hover { border-color: rgba(0,200,150,.28); }
+.mdo-finding__head {
+  width: 100%; text-align: left; background: none; border: 0; color: inherit; font: inherit;
+  padding: var(--space-5); cursor: pointer; display: grid;
+  grid-template-columns: 1fr auto; gap: var(--space-4); align-items: start;
+}
+.mdo-finding__head:focus-visible { outline: 2px solid var(--color-green); outline-offset: -2px; }
+.mdo-finding__meta { display: flex; gap: .4rem; flex-wrap: wrap; margin-bottom: var(--space-2); }
+.mdo-finding__title { font-weight: var(--font-semibold); font-size: var(--text-base); line-height: 1.4; margin: 0; }
+.mdo-finding__num { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11px; color: var(--mdo-muted); }
+.mdo-finding__impact { text-align: right; white-space: nowrap; }
+.mdo-finding__impact b { display: block; font-size: var(--text-lg); color: var(--color-green); letter-spacing: -.02em; }
+.mdo-finding__impact small { color: var(--mdo-muted); font-size: 11px; }
+.mdo-finding__body { padding: 0 var(--space-5) var(--space-5); border-top: 1px solid var(--mdo-border); }
+.mdo-finding[data-open="false"] .mdo-finding__body { display: none; }
+
+.mdo-desc { color: #C9D6E8; font-size: var(--text-sm); margin: var(--space-4) 0; }
+
+/* ── Campos de sustento ─────────────────────────────────────────────── */
+.mdo-sustento {
+  background: var(--mdo-panel-2); border: 1px solid var(--mdo-border);
+  border-radius: var(--radius-md); padding: var(--space-4); margin-bottom: var(--space-3);
+}
+.mdo-sustento__head {
+  display: flex; align-items: center; gap: .5rem; margin-bottom: var(--space-3);
+  font-size: var(--text-xs); text-transform: uppercase; letter-spacing: .1em;
+  font-weight: var(--font-semibold); color: var(--color-green);
+}
+.mdo-sustento__head .n {
+  width: 20px; height: 20px; border-radius: var(--radius-full);
+  background: rgba(0,200,150,.15); display: grid; place-items: center;
+  font-size: 11px; letter-spacing: 0;
+}
+.mdo-sustento--falta .mdo-sustento__head { color: var(--mdo-muted); }
+.mdo-sustento--falta .mdo-sustento__head .n { background: rgba(141,162,191,.14); }
+
+.mdo-kv { display: grid; grid-template-columns: minmax(130px, auto) 1fr; gap: .4rem var(--space-4); font-size: var(--text-sm); }
+.mdo-kv dt { color: var(--mdo-muted); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: .06em; padding-top: 3px; }
+.mdo-kv dd { margin: 0; }
+
+.mdo-formula {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12.5px; line-height: 1.75; background: #0A1526;
+  border: 1px solid var(--mdo-border); border-radius: var(--radius-sm);
+  padding: var(--space-3) var(--space-4); overflow-x: auto;
+  color: #BFD4EE; white-space: pre-wrap; word-break: break-word;
+}
+
+.mdo-steps { list-style: none; padding: 0; margin: 0; counter-reset: paso; }
+.mdo-steps li {
+  position: relative; padding-left: 2rem; margin-bottom: .55rem; font-size: var(--text-sm);
+}
+.mdo-steps li::before {
+  counter-increment: paso; content: counter(paso);
+  position: absolute; left: 0; top: 1px; width: 20px; height: 20px;
+  border-radius: var(--radius-full); background: rgba(0,200,150,.14);
+  color: var(--color-green); font-size: 11px; font-weight: var(--font-bold);
+  display: grid; place-items: center;
+}
+
+.mdo-risk { border-left: 2px solid var(--mdo-amber); padding-left: var(--space-3); margin-bottom: var(--space-3); font-size: var(--text-sm); }
+.mdo-risk b { color: var(--mdo-amber); }
+.mdo-law  { border-left: 2px solid var(--mdo-blue); padding-left: var(--space-3); margin-bottom: var(--space-3); font-size: var(--text-sm); }
+.mdo-law b { color: var(--mdo-blue); }
+.mdo-hard { border-left: 2px solid var(--mdo-red); padding-left: var(--space-3); margin-bottom: var(--space-2); font-size: var(--text-sm); color: #F6C0C0; }
+
+.mdo-note { font-size: var(--text-xs); color: var(--mdo-muted); font-style: italic; margin-top: var(--space-3); }
+
+/* ── Tabla ──────────────────────────────────────────────────────────── */
+.mdo-table { width: 100%; border-collapse: collapse; font-size: var(--text-sm); }
+.mdo-table th, .mdo-table td { padding: .55rem .7rem; text-align: left; border-bottom: 1px solid var(--mdo-border); }
+.mdo-table th { font-size: var(--text-xs); text-transform: uppercase; letter-spacing: .07em; color: var(--mdo-muted); font-weight: var(--font-semibold); }
+.mdo-table td.num, .mdo-table th.num { text-align: right; font-variant-numeric: tabular-nums; }
+.mdo-table tr:last-child td { border-bottom: 0; }
+
+/* ── Barra de suficiencia ───────────────────────────────────────────── */
+.mdo-bar { height: 6px; border-radius: var(--radius-full); background: rgba(255,255,255,.08); overflow: hidden; margin-top: .4rem; }
+.mdo-bar > i { display: block; height: 100%; border-radius: inherit; background: var(--color-green); }
+.mdo-bar--low > i { background: var(--mdo-red); }
+.mdo-bar--mid > i { background: var(--mdo-amber); }
+
+.mdo-empty { color: var(--mdo-muted); font-size: var(--text-sm); text-align: center; padding: var(--space-12) 0; }
+
+.mdo-foot { padding: var(--space-8) 0; color: var(--mdo-muted); font-size: var(--text-xs); border-top: 1px solid var(--mdo-border); }
+
+@media (max-width: 640px) {
+  .mdo-finding__head { grid-template-columns: 1fr; }
+  .mdo-finding__impact { text-align: left; }
+  .mdo-kv { grid-template-columns: 1fr; gap: .15rem; }
+  .mdo-kv dt { margin-top: .5rem; }
+}
+
+@media print {
+  body.mdo { background: #fff; color: #111; }
+  .mdo-head, .mdo-controls { position: static; }
+  .mdo-btn { display: none; }
+  .mdo-finding[data-open="false"] .mdo-finding__body { display: block; }
+  .mdo-card, .mdo-finding, .mdo-sustento { border-color: #ccc; background: #fff; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Contención de desbordamiento horizontal
+   Los elementos de ancho intrínseco grande (tablas de solapamiento, bloques de
+   fórmula, cadenas largas sin espacios) empujan el ancho del documento en
+   pantallas estrechas. Las reglas siguientes los confinan a su contenedor.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+html, body.mdo { overflow-x: hidden; }
+
+/* Los hijos de un grid o flex tienen min-width:auto por defecto, lo que impide
+   que se encojan por debajo de su contenido. min-width:0 restituye el encogido. */
+.mdo-grid > *, .mdo-finding__head > *, .mdo-head__bar > * { min-width: 0; }
+
+.mdo-card, .mdo-finding, .mdo-sustento, .mdo-alert { overflow-wrap: anywhere; }
+
+.mdo-table { display: block; overflow-x: auto; white-space: normal; }
+.mdo-table thead, .mdo-table tbody { display: table; width: 100%; table-layout: fixed; }
+.mdo-table td, .mdo-table th { overflow-wrap: anywhere; }
+
+.mdo-formula { max-width: 100%; }
+
+.mdo-kv dd, .mdo-kv dt { overflow-wrap: anywhere; min-width: 0; }
+
+.mdo-finding__num { overflow-wrap: anywhere; }
+
+@media (max-width: 720px) {
+  .mdo-table { font-size: var(--text-xs); }
+  .mdo-table td, .mdo-table th { padding: .45rem .4rem; }
+  .mdo-formula { font-size: 11.5px; }
+}

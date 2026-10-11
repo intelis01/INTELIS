@@ -1,0 +1,17 @@
+# Dependencias
+node_modules/
+
+# Artefactos de agent-browser
+.agent-browser/
+*.har
+
+# Sistema operativo y editores
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Registros y temporales
+*.log
+npm-debug.log*

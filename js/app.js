@@ -67,20 +67,7 @@
   window.addEventListener('resize', function(){ measure(); onScroll(); }, {passive:true});
   window.addEventListener('load', function(){ measure(); onScroll(); });
 
-  var navA = $$('.nav a');
-  if (IO){
-    var map = {};
-    navA.forEach(function(a){ map[a.getAttribute('href').slice(1)] = a; });
-    var sio = new IntersectionObserver(function(es){
-      es.forEach(function(e){
-        if (!e.isIntersecting) return;
-        var a = map[e.target.id];
-        navA.forEach(function(x){ x.classList.toggle('on', x === a); });
-      });
-    }, {rootMargin:'-45% 0px -50% 0px'});
-    /* Se observan todas las secciones: en las que no tienen enlace, ninguno queda marcado */
-    $$('main > section').forEach(function(s){ sio.observe(s); });
-  }
+  /* La página activa y su marca en el menú se resuelven en CSS (:target) */
 
   /* ── Consola de la portada: el interruptor enciende las cinco placas ── */
   var sw = $('#sw'), plates = $$('#plates .plate'), timers = [];

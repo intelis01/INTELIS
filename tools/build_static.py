@@ -36,6 +36,7 @@ STATIC_CSS = """
 .g-grp{grid-column:1/-1;font-size:11px;font-weight:600;color:#00357A;padding:18px 0 4px}
 .g-grp:first-child{padding-top:10px}
 .az-name{animation-play-state:running}
+@media(max-width:560px){.g-list{grid-template-columns:1fr 1fr;column-gap:16px}.g-it{flex-direction:column;gap:4px}.g-it .gt span{display:none}.g-src{margin-top:0}}
 """
 
 

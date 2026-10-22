@@ -172,9 +172,17 @@ p,li{text-wrap:pretty}
 .nav a.nav-home{display:inline-flex;align-items:center;gap:7px}
 .nav-home svg,.home-ic svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
 .home-ic{display:none;width:44px;height:44px;padding:0;justify-content:center}
-@media(max-width:1040px){.home-ic{display:inline-flex}}
 .prog{position:absolute;left:0;right:0;bottom:-1px;height:2px;transform-origin:0 50%;transform:scaleX(0);background-image:var(--azul);will-change:transform}
-@media(max-width:1040px){.nav{display:none}}
+/* En pantallas angostas el menú baja a una segunda fila deslizable: todas las páginas a un toque */
+@media(max-width:1040px){
+  :root{--hdr:116px}
+  .hdr{height:auto;padding-top:calc(10px + env(safe-area-inset-top,0px));padding-bottom:8px}
+  .hdr-in{flex-wrap:wrap;row-gap:8px}
+  .nav{order:3;width:100%;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:2px 0;gap:0}
+  .nav::-webkit-scrollbar{display:none}
+  .nav a{flex-shrink:0;padding:9px 12px}
+  .home-ic{display:none!important}
+}
 @media(max-width:560px){.hdr-m,.hdr-div,.hdr .btn-l{display:none}}
 
 /* ═══ PORTADA DE INTELIS ═══ */
@@ -199,6 +207,43 @@ p,li{text-wrap:pretty}
 @keyframes fadeIn{to{opacity:1}}
 @keyframes bob{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(0,4px,0)}}
 @media(max-height:560px){.cover-go{display:none}}
+
+/* ═══ PÁGINAS ═══
+   Una página por opción del menú. Se cambia sólo con CSS (:target), sin
+   JavaScript: funciona igual dentro de Canva. Sin destino en la dirección
+   se muestra Inicio, y la portada sólo aparece en la primera visita. */
+.page{display:none}
+.page:target,.page:has(:target){display:block;animation:pageIn .5s var(--e-out) both}
+main:not(:has(.page:target,.page :target)) > .page:first-of-type{display:block}
+body:has(.page:target,.page :target) .cover{display:none}
+.page > .sec:first-child,.page > .hero:first-child{padding-top:clamp(40px,6vw,72px)}
+@keyframes pageIn{from{opacity:0;transform:translate3d(0,14px,0)}to{opacity:1;transform:none}}
+body:has(#inicio:target,#inicio :target) .nav a[href="#inicio"],
+body:has(#metodo:target,#metodo :target) .nav a[href="#metodo"],
+body:has(#diagnostico:target,#diagnostico :target) .nav a[href="#diagnostico"],
+body:has(#motor:target,#motor :target) .nav a[href="#motor"],
+body:has(#giros:target,#giros :target) .nav a[href="#giros"],
+body:has(#inversion:target,#inversion :target) .nav a[href="#inversion"],
+body:has(#preguntas:target,#preguntas :target) .nav a[href="#preguntas"],
+body:not(:has(.page:target,.page :target)) .nav a[href="#inicio"]{color:var(--ink)}
+body:has(#inicio:target,#inicio :target) .nav a[href="#inicio"]::after,
+body:has(#metodo:target,#metodo :target) .nav a[href="#metodo"]::after,
+body:has(#diagnostico:target,#diagnostico :target) .nav a[href="#diagnostico"]::after,
+body:has(#motor:target,#motor :target) .nav a[href="#motor"]::after,
+body:has(#giros:target,#giros :target) .nav a[href="#giros"]::after,
+body:has(#inversion:target,#inversion :target) .nav a[href="#inversion"]::after,
+body:has(#preguntas:target,#preguntas :target) .nav a[href="#preguntas"]::after,
+body:not(:has(.page:target,.page :target)) .nav a[href="#inicio"]::after{opacity:1}
+.pager{display:flex;justify-content:space-between;gap:var(--gap);padding-top:clamp(48px,7vw,80px)}
+.pg{display:inline-flex;align-items:center;gap:14px;padding:14px 20px;border-radius:var(--r2);min-height:60px;max-width:48%;color:var(--ink)}
+.pg svg{width:18px;height:18px;flex-shrink:0;fill:none;stroke:var(--ink2);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform var(--t2) var(--e)}
+.pg span{display:flex;flex-direction:column;font-size:15px;font-weight:600;letter-spacing:-.016em;line-height:1.3}
+.pg i{font-style:normal;font-size:11px;font-weight:500;color:var(--ink3);letter-spacing:0}
+.pg-next{margin-left:auto;text-align:right}
+.pg-next span{align-items:flex-end}
+.pg-next:hover svg{transform:translate3d(3px,0,0)}
+.pg-prev:hover svg{transform:translate3d(-3px,0,0)}
+@media(max-width:480px){.pg{padding:12px 14px;gap:10px}.pg span{font-size:13px}}
 
 /* ═══ INTERRUPTOR (idéntico al de la portada de MERIDIAN) ═══ */
 .sw{display:inline-flex;align-items:center;gap:16px;border:0;background:none;cursor:pointer;padding:6px;border-radius:999px;text-align:left;-webkit-tap-highlight-color:transparent}
@@ -561,6 +606,7 @@ p,li{text-wrap:pretty}
 
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
+  .page:target,.page:has(:target){animation:none}
   .cover-plate,.cover-go{opacity:1;transform:none;animation:none}
   .cover-rim::before{animation:none}
   *,*::before,*::after{transition-duration:1ms!important;animation-duration:1ms!important;animation-iteration-count:1!important}

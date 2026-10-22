@@ -36,7 +36,7 @@
 <header class="hdr" id="hdr">
   <div class="hdr-in">
     <div class="hdr-l">
-      <a class="logo-plate" href="#top" aria-label="INTELIS — inicio"><span class="wm">INTELIS</span></a>
+      <a class="logo-plate" href="#top" aria-label="INTELIS — inicio"><img class="logo-wm" src="assets/intelis-wordmark.png" alt="INTELIS" width="99" height="18"></a>
       <span class="hdr-div" aria-hidden="true"></span>
       <span class="hdr-m"><img src="assets/meridian.png" alt="MERIDIAN" width="83" height="13"></span>
     </div>
@@ -274,7 +274,7 @@
     </div>
     <div class="cmp">
       <article class="cmp-c me well-l rv"><span class="cmp-tag">MERIDIAN</span><h3>Encuentra la fuga y le pone precio.</h3><p>Toma las cifras que ya produce su empresa, las contrasta con su giro y devuelve el monto que se escurre.</p>
-        <div class="cmp-rows"><div class="cmp-r"><span>¿Detecta la fuga?</span><b>Sí. Es su única función.</b></div><div class="cmp-r"><span>¿Cuándo entrega la cifra?</span><b>En menos de un minuto.</b></div><div class="cmp-r"><span>¿Para arrancar?</span><b>Una sesión.</b></div><div class="cmp-r"><span>¿Cómo se paga?</span><b>Tarifa por facturación anual, publicada.</b></div></div></article>
+        <div class="cmp-rows"><div class="cmp-r"><span>¿Detecta la fuga?</span><b>Sí. Es su única función.</b></div><div class="cmp-r"><span>¿Cuándo entrega la cifra?</span><b>En menos de un minuto.</b></div><div class="cmp-r"><span>¿Para arrancar?</span><b>Una sesión.</b></div><div class="cmp-r"><span>¿Cómo se paga?</span><b>Según facturación anual; seguimiento de máximo seis meses.</b></div></div></article>
       <article class="cmp-c up rv" style="--d:.05s"><span class="cmp-tag">Equipo contable</span><h3>Registra lo que ya se fue.</h3><p>Estados financieros, declaraciones y nómina sobre el mes ya cerrado.</p>
         <div class="cmp-rows"><div class="cmp-r"><span>¿Detecta la fuga?</span><b>No es su encargo.</b></div><div class="cmp-r"><span>¿Cuándo entrega la cifra?</span><b>En el cierre mensual.</b></div><div class="cmp-r"><span>¿Para arrancar?</span><b>Ya está adentro.</b></div><div class="cmp-r"><span>¿Cómo se paga?</span><b>Costo fijo mensual.</b></div></div></article>
       <article class="cmp-c up rv" style="--d:.1s"><span class="cmp-tag">Software ERP</span><h3>Ordena lo que alguien capturó.</h3><p>Lo que no se registró no existe para el sistema: ahí vive la fuga.</p>
@@ -315,48 +315,15 @@
 <section class="sec" id="inversion" aria-labelledby="h-inv">
   <div class="wrap">
     <div class="head split">
-      <div class="rv"><p class="eyebrow">Inversión</p><h2 class="h2" id="h-inv">Precio por tamaño de empresa. <span class="mute">Publicado, sin letras chiquitas.</span></h2></div>
-      <p class="sub rv" style="--d:.08s">El diagnóstico se paga una sola vez. El seguimiento, mes a mes y como máximo seis meses. Mueva los controles para calcular su caso.</p>
+      <div class="rv"><p class="eyebrow">Inversión</p><h2 class="h2" id="h-inv">Se cotiza por tamaño de empresa. <span class="mute">Sin contratos indefinidos.</span></h2></div>
+      <p class="sub rv" style="--d:.08s">El honorario depende de la facturación anual de la empresa, no del monto que se encuentre. Así nadie tiene incentivo para inflar la cifra.</p>
     </div>
-    <div class="inv" id="inv">
-      <div class="inv-calc up rv">
-        <div class="inv-row">
-          <div class="inv-lbl"><b id="lFact">Facturación anual de la empresa</b><output id="oFact" for="rFact">$3.0 M</output></div>
-          <input type="range" id="rFact" min="0" max="1000" step="1" value="500" aria-labelledby="lFact">
-          <div class="inv-ends"><span>$300 mil</span><span>$30 M</span></div>
-        </div>
-        <div class="inv-row" style="border-bottom:0">
-          <div class="inv-lbl"><b id="lMes">Meses de seguimiento</b><output id="oMes" for="rMes">6 meses</output></div>
-          <input type="range" id="rMes" min="0" max="6" step="1" value="6" aria-labelledby="lMes">
-          <div class="inv-ends"><span>Sólo diagnóstico</span><span>6 meses</span></div>
-        </div>
-        <div class="inv-out">
-          <div class="fee"><span>Diagnóstico</span><b id="fDx">$5,500</b><i>Pago único</i></div>
-          <div class="fee"><span>Seguimiento</span><b id="fMes">$2,500</b><i id="fMesN">por mes · 6 meses</i></div>
-          <div class="fee mine"><span>Total</span><b id="fTot">$20,500</b><i>antes de IVA</i></div>
-        </div>
-        <div class="inv-medida">Para empresas que facturan más de <b>$25 millones</b> al año, el diagnóstico y el seguimiento se cotizan a la medida. <a href="#contacto" style="color:var(--acc);text-decoration:underline">Escríbanos</a>.</div>
-      </div>
-      <div class="inv-tbl up rv" style="--d:.08s">
-        <h3 class="h3">Tabla base</h3>
-        <table class="tbl" id="tbl">
-          <thead><tr><th>Facturación anual</th><th class="r">Diagnóstico</th><th class="r">Por mes</th></tr></thead>
-          <tbody>
-            <tr><td>hasta $1.2 millones</td><td class="r">$3,500</td><td class="r">$1,500</td></tr>
-            <tr><td>de $1.2 a $3.6 millones</td><td class="r">$5,500</td><td class="r">$2,500</td></tr>
-            <tr><td>de $3.6 a $6 millones</td><td class="r">$8,500</td><td class="r">$5,500</td></tr>
-            <tr><td>de $6 a $12 millones</td><td class="r">$12,000</td><td class="r">$7,500</td></tr>
-            <tr><td>de $12 a $25 millones</td><td class="r">$18,000</td><td class="r">$10,000</td></tr>
-            <tr><td>más de $25 millones</td><td class="r" colspan="2">A la medida</td></tr>
-          </tbody>
-        </table>
-        <ul class="inv-notes">
-          <li>Precios en pesos mexicanos, antes de IVA.</li>
-          <li>El seguimiento dura como máximo seis meses. Sin contratos indefinidos.</li>
-          <li>Los honorarios cubren el diagnóstico y el acompañamiento; la decisión de implementar y sus resultados corresponden a la empresa.</li>
-        </ul>
-      </div>
+    <div class="req">
+      <div class="req-c up-s rv"><span class="step-n">1</span><b>Diagnóstico</b><p>Pago único, según el rango de facturación anual de la empresa. Incluye las 18 cartas y el reporte con fuente citada.</p></div>
+      <div class="req-c up-s rv" style="--d:.06s"><span class="step-n">2</span><b>Seguimiento mensual</b><p>Opcional, mes a mes y como máximo seis meses. Se mide lo que realmente ocurrió frente a lo que se predijo.</p></div>
+      <div class="req-c up-s rv" style="--d:.12s"><span class="step-n">3</span><b>Empresas grandes</b><p>Arriba de $25 millones de facturación anual, el diagnóstico y el seguimiento se cotizan a la medida.</p></div>
     </div>
+    <p class="ref-note rv"><b>Montos de referencia, antes de IVA.</b> Diagnóstico de $3,500 (hasta $1.2 millones de facturación anual) a $18,000 (de $12 a $25 millones); seguimiento de $1,500 a $10,000 por mes en los mismos rangos. Son valores orientativos sujetos a cambio: la cotización definitiva se entrega por escrito antes de iniciar. Los honorarios cubren el diagnóstico y el acompañamiento; la decisión de implementar los cambios y sus resultados corresponden a la empresa.</p>
   </div>
 </section>
 
@@ -378,7 +345,7 @@
     <div class="who-card up rv">
       <div class="who-av grad" aria-hidden="true">JH</div>
       <b>Javier Hernández</b><span>Fundador de INTELIS · Mérida, Yucatán</span>
-      <span class="wm">INTELIS</span>
+      <img class="who-logo" loading="lazy" decoding="async" src="assets/intelis.png" alt="INTELIS — Alto rendimiento empresarial" width="240" height="59">
     </div>
     <div class="rv" style="--d:.08s">
       <p class="eyebrow">Quién está detrás</p>
@@ -403,7 +370,7 @@
       <div class="card up"><button class="card-tab" aria-expanded="false"><span class="card-name">¿Qué es MERIDIAN?</span><svg class="card-chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="card-body"><div><p>La herramienta propietaria de INTELIS que localiza por dónde se va el dinero de una empresa, lo cuantifica en pesos y documenta cada hallazgo con su fuente. Cubre 73 giros de negocio.</p></div></div></div>
       <div class="card up"><button class="card-tab" aria-expanded="false"><span class="card-name">¿En qué empresas funciona?</span><svg class="card-chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="card-body"><div><p>En cualquier negocio que factura y lleva al menos tres meses de registros. No aplica a negocios que operan mayormente en efectivo y sin registro, porque no dejan la huella documental necesaria.</p></div></div></div>
       <div class="card up"><button class="card-tab" aria-expanded="false"><span class="card-name">¿Cuánto tarda?</span><svg class="card-chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="card-body"><div><p>El cálculo tarda menos de un minuto una vez que la información está completa. Reunir los datos depende de cada empresa; la primera sesión usa cifras que el dueño conoce de memoria.</p></div></div></div>
-      <div class="card up"><button class="card-tab" aria-expanded="false"><span class="card-name">¿Cuánto cuesta?</span><svg class="card-chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="card-body"><div><p>Depende de la facturación anual: el diagnóstico va de $3,500 a $18,000 y el seguimiento de $1,500 a $10,000 por mes, hasta seis meses, antes de IVA. Arriba de $25 millones se cotiza a la medida. La tabla completa está en la sección Inversión.</p></div></div></div>
+      <div class="card up"><button class="card-tab" aria-expanded="false"><span class="card-name">¿Cuánto cuesta?</span><svg class="card-chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="card-body"><div><p>El diagnóstico se cotiza según la facturación anual de la empresa y se paga una sola vez. El seguimiento es mensual y dura como máximo seis meses. Al pie de la sección Inversión encontrará los montos de referencia.</p></div></div></div>
       <div class="card up"><button class="card-tab" aria-expanded="false"><span class="card-name">¿Usa inteligencia artificial?</span><svg class="card-chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="card-body"><div><p>No. El diagnóstico corre sobre AZIMUT, un motor de reglas determinístico: los mismos datos producen siempre el mismo resultado, y ninguna cifra proviene de un modelo generativo.</p></div></div></div>
       <div class="card up"><button class="card-tab" aria-expanded="false"><span class="card-name">¿Sustituye a mi contador o a mi ERP?</span><svg class="card-chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="card-body"><div><p>No. MERIDIAN no lleva la contabilidad ni ordena la operación. Trabaja con las cifras que la empresa ya produce y responde otra pregunta: cuánto dinero se está yendo, por dónde y cuánto vale corregirlo.</p></div></div></div>
       <div class="card up"><button class="card-tab" aria-expanded="false"><span class="card-name">¿Qué tan exacta es la cifra?</span><svg class="card-chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="card-body"><div><p>Tanto como el dato que la respalda. Cada cifra lleva un nivel de evidencia de A (documentada, ±5%) a E (supuesto, ±50%), y la recuperación se presenta en tres escenarios en lugar de una promesa única.</p></div></div></div>
@@ -431,7 +398,7 @@
 
 <footer class="footer">
   <div class="wrap">
-    <div class="f-logos"><span class="wm" style="font-size:12px">INTELIS</span><span class="hdr-div" aria-hidden="true"></span><img src="assets/meridian.png" alt="MERIDIAN" width="76" height="12"></div>
+    <div class="f-logos"><img class="f-intelis" loading="lazy" decoding="async" src="assets/intelis-wordmark.png" alt="INTELIS" width="72" height="13"><span class="hdr-div" aria-hidden="true"></span><img loading="lazy" decoding="async" src="assets/meridian.png" alt="MERIDIAN" width="76" height="12"></div>
     INTELIS · Innovación empresarial y reingeniería de procesos · Mérida, Yucatán · 999 141 2506<br>
     MERIDIAN · Motor de reglas determinístico · Sin IA generativa en los cálculos<br>
     Referentes sectoriales: INEGI, Censos Económicos 2024 (datos 2023), negocios de 0–50 empleados<br>

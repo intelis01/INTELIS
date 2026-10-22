@@ -184,47 +184,4 @@
   }
   if (window.GIROS) initGiros(); else window.addEventListener('load', initGiros);
 
-  /* ── Inversión · tabla base de MERIDIAN (honorarios antes de IVA) ── */
-  var SEG = [
-    {hasta:1200000,  dx:3500,  mes:1500},
-    {hasta:3600000,  dx:5500,  mes:2500},
-    {hasta:6000000,  dx:8500,  mes:5500},
-    {hasta:12000000, dx:12000, mes:7500},
-    {hasta:25000000, dx:18000, mes:10000}
-  ];
-  var rF = $('#rFact'), rM = $('#rMes'), inv = $('#inv'), rows = $$('#tbl tbody tr');
-  var peso = new Intl.NumberFormat('es-MX', {style:'currency', currency:'MXN', maximumFractionDigits:0});
-  var MIN = 300000, MAX = 30000000;
-  /* Escala logarítmica: la empresa de $500 mil y la de $20 M tienen el mismo recorrido de dedo */
-  var toFact = function(v){ var f = MIN * Math.pow(MAX/MIN, v/1000); return f < 1e6 ? Math.round(f/10000)*10000 : Math.round(f/100000)*100000; };
-  var fmtM = function(f){ return f >= 1e6 ? '$' + (f/1e6).toFixed(1) + ' M' : '$' + Math.round(f/1000) + ' mil'; };
-  var shown = {dx:0, mes:0, tot:0}, raf = 0;
-  function tween(to){
-    cancelAnimationFrame(raf);
-    var from = {dx:shown.dx, mes:shown.mes, tot:shown.tot}, t0 = performance.now();
-    (function step(now){
-      var k = RM ? 1 : Math.min(1,(now-t0)/320), e = 1-Math.pow(1-k,3);
-      ['dx','mes','tot'].forEach(function(key){ shown[key] = from[key] + (to[key]-from[key])*e; });
-      $('#fDx').textContent = peso.format(shown.dx);
-      $('#fMes').textContent = peso.format(shown.mes);
-      $('#fTot').textContent = peso.format(shown.tot);
-      if (k < 1) raf = requestAnimationFrame(step);
-    })(t0);
-  }
-  function calc(){
-    var f = toFact(+rF.value), m = +rM.value;
-    $('#oFact').textContent = fmtM(f);
-    $('#oMes').textContent = m === 0 ? 'Sólo diagnóstico' : m + (m === 1 ? ' mes' : ' meses');
-    rF.setAttribute('aria-valuetext', fmtM(f));
-    rM.setAttribute('aria-valuetext', $('#oMes').textContent);
-    var si = -1; for (var i = 0; i < SEG.length; i++){ if (f <= SEG[i].hasta){ si = i; break; } }
-    rows.forEach(function(r,i){ r.classList.toggle('on', i === (si < 0 ? SEG.length : si)); });
-    inv.classList.toggle('custom', si < 0);
-    if (si < 0) return;
-    var s = SEG[si];
-    $('#fMesN').textContent = m === 0 ? 'sin seguimiento' : 'por mes · ' + m + (m === 1 ? ' mes' : ' meses');
-    tween({dx:s.dx, mes:m ? s.mes : 0, tot:s.dx + s.mes*m});
-  }
-  [rF, rM].forEach(function(r){ r.addEventListener('input', calc); });
-  calc();
 })();

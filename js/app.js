@@ -69,6 +69,16 @@
 
   /* La página activa y su marca en el menú se resuelven en CSS (:target) */
 
+  /* ── Botones de página: se ve el push completo y luego se cambia de página ── */
+  $$('.pg, .cover-go').forEach(function(a){
+    a.addEventListener('click', function(e){
+      if (RM) return;
+      e.preventDefault();
+      a.classList.remove('push'); void a.offsetWidth; a.classList.add('push');
+      setTimeout(function(){ a.classList.remove('push'); location.hash = a.getAttribute('href'); }, 260);
+    });
+  });
+
   /* ── Consola de la portada: el interruptor enciende las cinco placas ── */
   var sw = $('#sw'), plates = $$('#plates .plate'), timers = [];
   var roMods = $('#roMods'), roBar = $('#roBar'), roCards = $('#roCards'), roTime = $('#roTime');

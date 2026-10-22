@@ -211,10 +211,10 @@ p,li{text-wrap:pretty}
 /* ═══ PÁGINAS ═══
    Una página por opción del menú. Se cambia sólo con CSS (:target), sin
    JavaScript: funciona igual dentro de Canva. Sin destino en la dirección
-   se muestra Inicio, y la portada sólo aparece en la primera visita. */
+   sólo se ve la portada, sola en pantalla; al elegir una página se oculta. */
 .page{display:none}
 .page:target,.page:has(:target){display:block;animation:pageIn .5s var(--e-out) both}
-main:not(:has(.page:target,.page :target)) > .page:first-of-type{display:block}
+body:not(:has(.page:target,.page :target)) :is(.hdr,main,.footer,.float,.prog){display:none}
 body:has(.page:target,.page :target) .cover{display:none}
 .page > .sec:first-child,.page > .hero:first-child{padding-top:clamp(40px,6vw,72px)}
 @keyframes pageIn{from{opacity:0;transform:translate3d(0,14px,0)}to{opacity:1;transform:none}}
@@ -234,16 +234,32 @@ body:has(#giros:target,#giros :target) .nav a[href="#giros"]::after,
 body:has(#inversion:target,#inversion :target) .nav a[href="#inversion"]::after,
 body:has(#preguntas:target,#preguntas :target) .nav a[href="#preguntas"]::after,
 body:not(:has(.page:target,.page :target)) .nav a[href="#inicio"]::after{opacity:1}
-.pager{display:flex;justify-content:space-between;gap:var(--gap);padding-top:clamp(48px,7vw,80px)}
-.pg{display:inline-flex;align-items:center;gap:14px;padding:14px 20px;border-radius:var(--r2);min-height:60px;max-width:48%;color:var(--ink)}
-.pg svg{width:18px;height:18px;flex-shrink:0;fill:none;stroke:var(--ink2);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform var(--t2) var(--e)}
-.pg span{display:flex;flex-direction:column;font-size:15px;font-weight:600;letter-spacing:-.016em;line-height:1.3}
-.pg i{font-style:normal;font-size:11px;font-weight:500;color:var(--ink3);letter-spacing:0}
+.pager{display:flex;justify-content:space-between;align-items:center;gap:var(--gap);padding-top:clamp(48px,7vw,80px)}
+.pg{display:inline-flex;align-items:center;gap:16px;max-width:48%;color:var(--ink);-webkit-tap-highlight-color:transparent}
 .pg-next{margin-left:auto;text-align:right}
-.pg-next span{align-items:flex-end}
-.pg-next:hover svg{transform:translate3d(3px,0,0)}
-.pg-prev:hover svg{transform:translate3d(-3px,0,0)}
-@media(max-width:480px){.pg{padding:12px 14px;gap:10px}.pg span{font-size:13px}}
+.pg-t{display:flex;flex-direction:column;font-size:15px;font-weight:600;letter-spacing:-.016em;line-height:1.3}
+.pg-t i{font-style:normal;font-size:11px;font-weight:500;color:var(--ink3);letter-spacing:.02em}
+.pg-next .pg-t{align-items:flex-end}
+/* Botón circular: anillo en relieve con un pozo fino al centro */
+.pg-c{position:relative;isolation:isolate;flex-shrink:0;width:64px;height:64px;border-radius:50%;display:grid;place-items:center;
+  background:var(--bg);background-image:var(--sheen);box-shadow:var(--up-s);transition:transform var(--t2) var(--e)}
+.pg-c::before{content:"";position:absolute;inset:9px;border-radius:50%;box-shadow:var(--well-s);opacity:.6;z-index:-1}
+.pg-c::after{content:"";position:absolute;inset:0;border-radius:50%;background:var(--bg);box-shadow:var(--well);opacity:0;z-index:-1;
+  transition:opacity var(--t1) var(--e)}
+.pg-c svg{width:20px;height:20px;fill:none;stroke:var(--ink2);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform var(--t2) var(--e)}
+.pg-next:hover .pg-c svg{transform:translate3d(3px,0,0)}
+.pg-prev:hover .pg-c svg{transform:translate3d(-3px,0,0)}
+.pg:active .pg-c{transform:scale(.93)}
+.pg:active .pg-c::after{opacity:1}
+/* Push: el botón se hunde y regresa con rebote antes de cambiar de página */
+.pg.push .pg-c{animation:push .44s var(--e-out)}
+.pg.push .pg-c::after{animation:pushWell .44s var(--e-out)}
+.pg.push .pg-c svg{animation:pushIco .44s var(--e-out)}
+.cover-go.push{opacity:1;animation:push .44s var(--e-out)}
+@keyframes push{0%{transform:scale(1)}30%{transform:scale(.88)}65%{transform:scale(1.03)}100%{transform:scale(1)}}
+@keyframes pushWell{0%{opacity:0}30%{opacity:1}100%{opacity:0}}
+@keyframes pushIco{0%,100%{transform:none}30%{transform:scale(.86)}}
+@media(max-width:480px){.pg{gap:12px}.pg-c{width:56px;height:56px}.pg-t{font-size:13px}}
 
 /* ═══ INTERRUPTOR (idéntico al de la portada de MERIDIAN) ═══ */
 .sw{display:inline-flex;align-items:center;gap:16px;border:0;background:none;cursor:pointer;padding:6px;border-radius:999px;text-align:left;-webkit-tap-highlight-color:transparent}
@@ -607,6 +623,7 @@ body:not(:has(.page:target,.page :target)) .nav a[href="#inicio"]::after{opacity
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .page:target,.page:has(:target){animation:none}
+  .pg.push .pg-c,.pg.push .pg-c::after,.pg.push .pg-c svg{animation:none}
   .cover-plate,.cover-go{opacity:1;transform:none;animation:none}
   .cover-rim::before{animation:none}
   *,*::before,*::after{transition-duration:1ms!important;animation-duration:1ms!important;animation-iteration-count:1!important}

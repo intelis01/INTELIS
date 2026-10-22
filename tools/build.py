@@ -40,8 +40,9 @@ def data_uri(path, mime):
 def aviso_section():
     doc = (ROOT / 'aviso-privacidad.html').read_text(encoding='utf-8')
     article = re.search(r'<article class="doc up"[^>]*>.*?</article>', doc, flags=re.S).group(0)
-    back = ('<nav class="pager wrap" aria-label="Páginas"><span></span><a class="pg pg-next up-s press" href="#inicio">'
-            '<span><i>Volver a</i>Inicio</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></nav>')
+    back = ('<nav class="pager wrap" aria-label="Páginas"><span></span><a class="pg pg-next" href="#inicio">'
+            '<span class="pg-t"><i>Volver a</i>Inicio</span><span class="pg-c"><svg viewBox="0 0 24 24" aria-hidden="true">'
+            '<path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></nav>')
     return ('<div class="page" id="aviso"><section class="sec" aria-labelledby="h-aviso"><div class="wrap">'
             '<div class="head"><p class="eyebrow">Aviso de privacidad · versión simplificada</p>'
             '<h2 class="h2" id="h-aviso">Sus datos, para su diagnóstico.</h2></div>'

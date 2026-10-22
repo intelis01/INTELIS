@@ -1,841 +1,447 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-MX">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="INTELIS - Inteligencia financiera para detectar y eliminar fugas de dinero en tu empresa. Recupera hasta el 30% de tus ingresos perdidos." />
-  <title>INTELIS – Detecta y Elimina las Fugas de Dinero</title>
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/variables.css" />
-  <link rel="stylesheet" href="css/reset.css" />
-  <link rel="stylesheet" href="css/base.css" />
-  <link rel="stylesheet" href="css/layout.css" />
-  <link rel="stylesheet" href="css/components.css" />
-  <link rel="stylesheet" href="css/sections.css" />
-  <link rel="stylesheet" href="css/animations.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#F7F8FA">
+<title>MERIDIAN — Cuánto dinero se está fugando de su empresa | INTELIS Mérida</title>
+<meta name="description" content="INTELIS, Mérida, Yucatán. MERIDIAN localiza por dónde se fuga el dinero de su empresa, lo cuantifica en pesos y documenta cada hallazgo con su fuente. 73 giros, 64 con referencia del INEGI.">
+<link rel="canonical" href="https://intelisconsulting.com/">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="INTELIS">
+<meta property="og:locale" content="es_MX">
+<meta property="og:title" content="MERIDIAN — Cuánto dinero se está fugando de su empresa">
+<meta property="og:description" content="Diagnóstico de fugas de dinero para empresas de cualquier giro: una cifra en pesos, con fuente citada.">
+<meta property="og:url" content="https://intelisconsulting.com/">
+<link rel="stylesheet" href="css/meridian.css">
+<script>document.documentElement.classList.add('js')</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"ProfessionalService","@id":"https://intelisconsulting.com/#intelis","name":"INTELIS","alternateName":"INTELIS — Alto rendimiento empresarial",
+  "description":"Innovación empresarial y reingeniería de procesos. Diagnóstico de fugas de dinero en empresas con MERIDIAN.",
+  "url":"https://intelisconsulting.com/","email":"jhernandez@intelis.mx","telephone":"+52-999-141-2506",
+  "areaServed":{"@type":"State","name":"Yucatán, México"},
+  "address":{"@type":"PostalAddress","addressLocality":"Mérida","addressRegion":"Yucatán","addressCountry":"MX"},
+  "founder":{"@type":"Person","name":"Javier Hernández"}},
+ {"@type":"SoftwareApplication","name":"MERIDIAN","applicationCategory":"BusinessApplication","operatingSystem":"Web",
+  "description":"Herramienta propietaria de INTELIS que localiza la fuga de dinero de una empresa, la cuantifica en pesos y documenta el hallazgo con su fuente. Cubre 73 giros de negocio; 64 con referencia del INEGI, Censos Económicos 2024.",
+  "publisher":{"@id":"https://intelisconsulting.com/#intelis"}}]}
+</script>
 </head>
 <body>
+<a class="skip" href="#main">Saltar al contenido</a>
 
-<!-- ══════════════════════════════════════════
-     NAVIGATION
-══════════════════════════════════════════ -->
-<header>
-  <nav class="nav" id="main-nav" aria-label="Navegación principal">
-    <div class="container">
-      <div class="nav__inner">
-        <a href="#" class="nav__logo" aria-label="INTELIS inicio">
-          INTELIS<span class="nav__logo-dot"></span>
-        </a>
-
-        <ul class="nav__links" role="list">
-          <li><a href="#problema"    class="nav__link nav-link" aria-current="false">Problema</a></li>
-          <li><a href="#servicios"   class="nav__link nav-link" aria-current="false">Servicios</a></li>
-          <li><a href="#como-funciona" class="nav__link nav-link" aria-current="false">Cómo Funciona</a></li>
-          <li><a href="#precios"     class="nav__link nav-link" aria-current="false">Precios</a></li>
-          <li><a href="#faq"         class="nav__link nav-link" aria-current="false">FAQ</a></li>
-        </ul>
-
-        <a href="#contacto" class="btn btn-primary nav__cta">Hablar con un Experto</a>
-
-        <button class="nav__hamburger" id="hamburger-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-drawer">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
+<header class="hdr" id="hdr">
+  <div class="hdr-in">
+    <div class="hdr-l">
+      <a class="logo-plate" href="#top" aria-label="INTELIS — inicio"><span class="wm">INTELIS</span></a>
+      <span class="hdr-div" aria-hidden="true"></span>
+      <span class="hdr-m"><img src="assets/meridian.png" alt="MERIDIAN" width="83" height="13"></span>
     </div>
-  </nav>
-
-  <!-- Mobile drawer -->
-  <div class="nav__drawer" id="mobile-drawer" data-open="false" role="dialog" aria-label="Menú de navegación">
-    <a href="#problema"     class="nav__link" data-close-drawer>Problema</a>
-    <a href="#servicios"    class="nav__link" data-close-drawer>Servicios</a>
-    <a href="#como-funciona" class="nav__link" data-close-drawer>Cómo Funciona</a>
-    <a href="#precios"      class="nav__link" data-close-drawer>Precios</a>
-    <a href="#faq"          class="nav__link" data-close-drawer>FAQ</a>
-    <a href="#contacto" class="btn btn-primary" style="width:fit-content" data-close-drawer>Hablar con un Experto</a>
+    <nav class="nav" aria-label="Secciones">
+      <a href="#metodo">Método</a>
+      <a href="#diagnostico">Diagnóstico</a>
+      <a href="#motor">Motor</a>
+      <a href="#giros">Giros</a>
+      <a href="#inversion">Inversión</a>
+      <a href="#preguntas">Preguntas</a>
+    </nav>
+    <div class="hdr-r">
+      <a class="btn press btn-l" href="#contacto">Contacto</a>
+      <a class="cta press" style="padding:10px 18px;min-height:44px;font-size:13px" href="https://wa.me/529991412506?text=Hola,%20quiero%20saber%20cu%C3%A1nto%20se%20est%C3%A1%20fugando%20en%20mi%20empresa." target="_blank" rel="noopener">Solicitar diagnóstico</a>
+    </div>
   </div>
+  <div class="prog" id="prog" aria-hidden="true"></div>
 </header>
 
-<main>
+<main id="main">
 
-<!-- ══════════════════════════════════════════
-     HERO
-══════════════════════════════════════════ -->
-<section class="hero" id="inicio" aria-labelledby="hero-heading">
-  <canvas id="hero-canvas" aria-hidden="true"></canvas>
-  <div class="container">
-    <div class="hero__inner">
-
-      <!-- Left column -->
-      <div class="hero__content">
-        <div class="hero__eyebrow">
-          <span class="hero__eyebrow-dot"></span>
-          Inteligencia Financiera Empresarial
-        </div>
-
-        <h1 class="hero__title" id="hero-heading">
-          Detecta y Elimina las<br/>
-          <span class="gradient-text">Fugas de Dinero</span><br/>
-          en tu Empresa
-        </h1>
-
-        <p class="hero__subtitle">
-          INTELIS analiza tu flujo financiero, identifica pérdidas ocultas y te ayuda a recuperar hasta el <strong style="color:var(--color-green)">30% de tus ingresos perdidos</strong> en los primeros 30 días.
-        </p>
-
-        <div class="hero__actions">
-          <a href="#contacto" class="btn btn-primary btn-lg">
-            Quiero Recuperar mi Dinero
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-          <a href="#como-funciona" class="btn btn-secondary btn-lg">Ver Cómo Funciona</a>
-        </div>
-
-        <div class="hero__trust">
-          <div class="stat-chip">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            Sin compromiso
-          </div>
-          <div class="stat-chip">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            Resultados en 30 días
-          </div>
-          <div class="stat-chip">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-            Datos 100% seguros
-          </div>
+<!-- ═══ PORTADA ═══ -->
+<section class="hero" id="top" aria-labelledby="h-hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <img class="hero-mark rv" src="assets/meridian.png" alt="MERIDIAN" width="407" height="64">
+        <h1 class="h1 rv" id="h-hero" style="--d:.06s">La fuga tiene <span class="grad">forma.</span></h1>
+        <p class="sub rv" style="--d:.14s">MERIDIAN localiza por dónde se va el dinero de su empresa, lo convierte en una cifra en pesos y deja cada hallazgo documentado con su fuente. Setenta y tres giros de negocio, un motor de reglas, menos de un minuto de cálculo.</p>
+        <div class="hero-cta rv" style="--d:.22s">
+          <a class="cta press" href="https://wa.me/529991412506?text=Hola,%20quiero%20saber%20cu%C3%A1nto%20se%20est%C3%A1%20fugando%20en%20mi%20empresa." target="_blank" rel="noopener">Solicitar diagnóstico <span class="arw" aria-hidden="true">→</span></a>
+          <a class="cta alt press" href="#metodo">Ver cómo funciona</a>
         </div>
       </div>
 
-      <!-- Right column: Dashboard mockup -->
-      <div class="hero__visual" aria-hidden="true">
-        <div class="dashboard-card">
-          <div class="dashboard-header">
-            <span class="dashboard-title">Panel de Control · INTELIS</span>
-            <div class="dashboard-dot-group">
-              <span></span><span></span><span></span>
-            </div>
-          </div>
-
-          <div class="dashboard-stats">
-            <div class="dashboard-stat">
-              <div class="dashboard-stat__label">Fugas detectadas</div>
-              <div class="dashboard-stat__value" data-counter-end="47" data-suffix="">47</div>
-            </div>
-            <div class="dashboard-stat">
-              <div class="dashboard-stat__label">Ahorro mensual</div>
-              <div class="dashboard-stat__value" data-counter-end="8400" data-prefix="$">$8.4k</div>
-            </div>
-            <div class="dashboard-stat">
-              <div class="dashboard-stat__label">ROI obtenido</div>
-              <div class="dashboard-stat__value" data-counter-end="312" data-suffix="%">312%</div>
-            </div>
-          </div>
-
-          <div class="dashboard-chart">
-            <svg viewBox="0 0 400 80" preserveAspectRatio="none" aria-label="Gráfica de ahorro acumulado">
-              <!-- Grid lines -->
-              <line x1="0" y1="20" x2="400" y2="20" stroke="#1A3050" stroke-width="1"/>
-              <line x1="0" y1="40" x2="400" y2="40" stroke="#1A3050" stroke-width="1"/>
-              <line x1="0" y1="60" x2="400" y2="60" stroke="#1A3050" stroke-width="1"/>
-              <!-- Area fill -->
-              <path d="M0 70 L40 65 L80 55 L120 50 L160 40 L200 32 L240 25 L280 18 L320 12 L360 8 L400 5 L400 80 L0 80 Z"
-                    fill="url(#chartGrad)" opacity="0.3"/>
-              <!-- Line -->
-              <path d="M0 70 L40 65 L80 55 L120 50 L160 40 L200 32 L240 25 L280 18 L320 12 L360 8 L400 5"
-                    fill="none" stroke="#00C896" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
-                    class="chart-line"/>
-              <defs>
-                <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#00C896"/>
-                  <stop offset="100%" stop-color="#00C896" stop-opacity="0"/>
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
-
-          <div class="dashboard-footer">
-            <span style="font-size:var(--text-xs);color:var(--color-gray-400)">Ahorro acumulado · Últimos 6 meses</span>
-            <span class="dashboard-badge-green">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
-              +28.4%
-            </span>
-          </div>
+      <div class="console up rv" style="--d:.18s" aria-label="Así se enciende un diagnóstico en MERIDIAN">
+        <div class="con-head">
+          <button class="sw" id="sw" role="switch" aria-checked="false" aria-label="Encender el diagnóstico de muestra">
+            <span class="sw-track"><span class="sw-on-bg"></span><span class="sw-knob"></span><span class="sw-glass"><span class="sw-shine"></span><span class="sw-rim"></span></span></span>
+            <span class="sw-l"><b>Encienda el diagnóstico</b><span>Signos vitales del negocio</span></span>
+          </button>
+          <span class="con-tag">Captura · 5 módulos</span>
         </div>
+        <div class="plates" id="plates">
+          <div class="plate" style="--mc:38,176,150"><div class="pl-h"><span class="pl-n">01</span><span class="pl-d"></span></div><span class="pl-t">Ingresos del mes</span><span class="pl-s"><i class="pend">Pendiente</i><i class="done">Medido</i></span></div>
+          <div class="plate" style="--mc:58,134,232"><div class="pl-h"><span class="pl-n">02</span><span class="pl-d"></span></div><span class="pl-t">Costos del producto</span><span class="pl-s"><i class="pend">Pendiente</i><i class="done">Medido</i></span></div>
+          <div class="plate" style="--mc:150,118,232"><div class="pl-h"><span class="pl-n">03</span><span class="pl-d"></span></div><span class="pl-t">Gastos fijos</span><span class="pl-s"><i class="pend">Pendiente</i><i class="done">Medido</i></span></div>
+          <div class="plate" style="--mc:236,118,100"><div class="pl-h"><span class="pl-n">04</span><span class="pl-d"></span></div><span class="pl-t">Fugas ocultas</span><span class="pl-s"><i class="pend">Pendiente</i><i class="done">Medido</i></span></div>
+          <div class="plate" style="--mc:210,158,60"><div class="pl-h"><span class="pl-n">05</span><span class="pl-d"></span></div><span class="pl-t">Punto de equilibrio</span><span class="pl-s"><i class="pend">Pendiente</i><i class="done">Medido</i></span></div>
+        </div>
+        <div class="readout">
+          <div class="ro"><span>Módulos medidos</span><b><span id="roMods">0</span><span class="u"> / 5</span></b><div class="ro-bar"><i id="roBar"></i></div></div>
+          <div class="ro"><span>Cartas del diagnóstico</span><b id="roCards">0</b></div>
+          <div class="ro"><span>Tiempo de cálculo</span><b><span id="roTime">—</span></b></div>
+        </div>
+        <p class="con-foot">Muestra ilustrativa: la consola enciende los cinco módulos de captura que usa MERIDIAN. Sus cifras reales se capturan en la sesión.</p>
       </div>
+    </div>
 
+    <div class="facts">
+      <div class="fact rv"><b data-count="73">73</b><span>giros de negocio con parámetros propios</span></div>
+      <div class="fact rv" style="--d:.06s"><b data-count="64">64</b><span>con referencia citada del INEGI por código SCIAN</span></div>
+      <div class="fact rv" style="--d:.12s"><b data-count="18">18</b><span>cartas en cada diagnóstico</span></div>
+      <div class="fact rv" style="--d:.18s"><b>&lt; 60 s</b><span>de cálculo con la información completa</span></div>
     </div>
   </div>
 </section>
 
-
-<!-- ══════════════════════════════════════════
-     PROBLEM
-══════════════════════════════════════════ -->
-<section class="section bg-light" id="problema" aria-labelledby="problema-heading">
-  <div class="container">
-
-    <div class="problem__stat reveal" data-delay="0">
-      <div class="problem__stat-number"
-           data-counter-end="30" data-suffix="%" aria-live="polite">30%</div>
-      <p class="problem__stat-desc">
-        de los ingresos empresariales se pierden anualmente en fugas financieras invisibles
-      </p>
+<!-- ═══ QUÉ RESPONDE ═══ -->
+<section class="sec" aria-labelledby="h-que">
+  <div class="wrap">
+    <div class="head split">
+      <div class="rv"><p class="eyebrow">La pregunta</p>
+        <h2 class="h2" id="h-que">No le dice cómo va su negocio. <span class="mute">Le dice cuánto le está costando.</span></h2></div>
+      <p class="sub rv" style="--d:.08s">La contabilidad registra lo que pasó. El ERP ordena lo que se capturó. MERIDIAN toma las cifras de operación, las contrasta contra el parámetro de su propio giro y devuelve el monto que se escurre, el punto exacto por donde se va y lo que vale taparlo. El mismo dato ingresado dos veces devuelve exactamente el mismo resultado.</p>
     </div>
-
-    <div class="section-header reveal" data-delay="100">
-      <span class="section-label">El Problema</span>
-      <h2 id="problema-heading" style="color:var(--color-navy)">
-        ¿Por qué tu empresa pierde dinero sin saberlo?
-      </h2>
-      <p class="text-muted-dark">
-        Las fugas financieras son silenciosas y acumulativas. Identificarlas a tiempo puede marcar la diferencia entre crecer o estancarte.
-      </p>
+    <div class="metrics">
+      <div class="metric rv"><div class="metric-l">Giros parametrizados</div><div class="metric-v grad" data-count="73">73</div><div class="metric-s">Del taller mecánico a la clínica, en 12 grupos de actividad.</div></div>
+      <div class="metric rv" style="--d:.06s"><div class="metric-l">Con fuente INEGI</div><div class="metric-v grad" data-count="64">64</div><div class="metric-s">Censos Económicos 2024 (datos 2023), negocios de 0 a 50 empleados.</div></div>
+      <div class="metric rv" style="--d:.12s"><div class="metric-l">Sin fuente oficial</div><div class="metric-v grad" data-count="9">9</div><div class="metric-s">Giros donde el motor lo declara en pantalla en vez de inventar un número.</div></div>
+      <div class="metric rv" style="--d:.18s"><div class="metric-l">Modelos generativos</div><div class="metric-v grad">0</div><div class="metric-s">Reglas escritas y revisables. Ninguna cifra proviene de inteligencia artificial.</div></div>
     </div>
-
-    <div class="grid-4">
-      <div class="pain-card reveal" data-delay="0">
-        <div class="pain-card__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-        </div>
-        <div class="pain-card__stat" data-counter-end="68" data-suffix="%" aria-label="68 por ciento">68%</div>
-        <h3 class="pain-card__title">Gastos No Rastreados</h3>
-        <p class="pain-card__desc">Más del 68% de las pymes no tiene visibilidad completa de sus gastos recurrentes, generando pérdidas silenciosas mes a mes.</p>
-      </div>
-
-      <div class="pain-card reveal" data-delay="100">
-        <div class="pain-card__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-        </div>
-        <div class="pain-card__stat" data-counter-end="2400" data-prefix="$" aria-label="2400 dólares promedio">$2.4k</div>
-        <h3 class="pain-card__title">Comisiones Ocultas</h3>
-        <p class="pain-card__desc">Las empresas pagan en promedio $2,400 anuales en comisiones bancarias y de proveedores que jamás revisaron.</p>
-      </div>
-
-      <div class="pain-card reveal" data-delay="200">
-        <div class="pain-card__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-        </div>
-        <div class="pain-card__stat" data-counter-end="12" data-suffix=" subs" aria-label="12 suscripciones promedio">12 subs</div>
-        <h3 class="pain-card__title">Suscripciones Olvidadas</h3>
-        <p class="pain-card__desc">La empresa promedio paga 12 suscripciones activas de las cuales solo usa activamente 4 o 5.</p>
-      </div>
-
-      <div class="pain-card reveal" data-delay="300">
-        <div class="pain-card__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-        </div>
-        <div class="pain-card__stat" data-counter-end="91" data-suffix="%" aria-label="91 por ciento">91%</div>
-        <h3 class="pain-card__title">Falta de Visibilidad</h3>
-        <p class="pain-card__desc">El 91% de los directivos toma decisiones financieras sin datos en tiempo real, lo que incrementa el riesgo de pérdidas.</p>
-      </div>
-    </div>
-
   </div>
 </section>
 
-
-<!-- ══════════════════════════════════════════
-     SERVICES
-══════════════════════════════════════════ -->
-<section class="section bg-navy" id="servicios" aria-labelledby="servicios-heading">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="section-label">Nuestros Servicios</span>
-      <h2 id="servicios-heading">Soluciones a medida para cada fuga</h2>
-      <p class="text-muted">
-        Combinamos tecnología de análisis financiero con expertos humanos para ofrecerte resultados concretos y medibles.
-      </p>
+<!-- ═══ MÉTODO · 5 MÓDULOS ═══ -->
+<section class="sec" id="metodo" aria-labelledby="h-met">
+  <div class="wrap">
+    <div class="head rv"><p class="eyebrow">Captura · Módulo por módulo</p>
+      <h2 class="h2" id="h-met">Encienda su negocio, <span class="mute">módulo por módulo.</span></h2>
+      <p class="sub">Cada placa que se enciende es una parte de su operación ya medida. Al completar las cinco se calcula el diagnóstico completo. Son cifras que el dueño conoce de memoria; no hace falta reunir documentos para empezar.</p></div>
+    <div class="mods">
+      <article class="mod up rv" style="--mc:38,176,150"><span class="mod-n">01</span><h3>Ingresos del mes</h3><p>Todo lo que entró y lo que aún no entra. De aquí sale la base de todos los cálculos.</p>
+        <ul><li>Ingresos cobrados</li><li>Trabajo entregado sin cobrar</li><li>Descuentos y rebajas</li></ul></article>
+      <article class="mod up rv" style="--mc:58,134,232;--d:.05s"><span class="mod-n">02</span><h3>Costos del producto</h3><p>Lo que cuesta producir o entregar lo que vende. Define su margen bruto.</p>
+        <ul><li>Sueldos y salarios</li><li>Materia prima o mercancía</li><li>Servicios contratados</li><li>Equipo y sistemas</li></ul></article>
+      <article class="mod up rv" style="--mc:150,118,232;--d:.1s"><span class="mod-n">03</span><h3>Gastos fijos</h3><p>Lo que se paga exista o no venta. El peso que su negocio carga cada mes.</p>
+        <ul><li>Renta</li><li>Servicios básicos</li><li>Publicidad</li><li>Trámites y administración</li></ul></article>
+      <article class="mod up rv" style="--mc:236,118,100;--d:.15s"><span class="mod-n">04</span><h3>Fugas ocultas</h3><p>El dinero que se pierde sin aparecer en ningún estado de resultados.</p>
+        <ul><li>Horas trabajadas sin cobrar</li><li>Clientes que dejaron de comprar</li><li>Merma y desperdicio</li></ul></article>
+      <article class="mod up rv" style="--mc:210,158,60;--d:.2s"><span class="mod-n">05</span><h3>Punto de equilibrio</h3><p>Cuántas unidades necesita vender para dejar de perder.</p>
+        <ul><li>Precio promedio de venta</li><li>Costo por unidad</li></ul></article>
     </div>
-
-    <div class="grid-4">
-      <div class="card reveal" data-delay="0">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-        </div>
-        <h3 class="service-card__title">Auditoría Financiera</h3>
-        <p class="service-card__desc">Análisis exhaustivo de tus cuentas, contratos y pagos recurrentes para detectar ineficiencias y costos innecesarios.</p>
-        <a href="#contacto" class="service-card__link">
-          Saber más
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-
-      <div class="card reveal" data-delay="100">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        </div>
-        <h3 class="service-card__title">Rastreo de Gastos</h3>
-        <p class="service-card__desc">Monitoreo continuo y categorización inteligente de todos tus gastos en tiempo real, con alertas automáticas ante anomalías.</p>
-        <a href="#contacto" class="service-card__link">
-          Saber más
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-
-      <div class="card reveal" data-delay="200">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-        </div>
-        <h3 class="service-card__title">Eliminación de Fugas</h3>
-        <p class="service-card__desc">Plan de acción personalizado para cerrar cada fuga detectada, negociar mejores tarifas y cancelar servicios no utilizados.</p>
-        <a href="#contacto" class="service-card__link">
-          Saber más
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-
-      <div class="card reveal" data-delay="300">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-        </div>
-        <h3 class="service-card__title">Inteligencia Financiera</h3>
-        <p class="service-card__desc">Dashboards en tiempo real, reportes ejecutivos mensuales y recomendaciones basadas en IA para decisiones más inteligentes.</p>
-        <a href="#contacto" class="service-card__link">
-          Saber más
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-    </div>
-
   </div>
 </section>
 
-
-<!-- ══════════════════════════════════════════
-     HOW IT WORKS
-══════════════════════════════════════════ -->
-<section class="section bg-navy-mid" id="como-funciona" aria-labelledby="como-funciona-heading">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="section-label">Proceso</span>
-      <h2 id="como-funciona-heading">Tres pasos para recuperar tu dinero</h2>
-      <p class="text-muted">
-        Sin complicaciones, sin configuraciones interminables. Empezamos a trabajar desde el primer día.
-      </p>
+<!-- ═══ DIAGNÓSTICO · 18 CARTAS ═══ -->
+<section class="sec" id="diagnostico" aria-labelledby="h-dx">
+  <div class="wrap">
+    <div class="head rv"><p class="eyebrow">Diagnóstico</p>
+      <h2 class="h2" id="h-dx">Su negocio, <span class="mute">carta por carta.</span></h2>
+      <p class="sub">Dieciocho cartas, presentadas en cuatro pantallas para el dueño. Toque cualquiera para ver qué responde.</p></div>
+    <div class="deck-grid rv">
+      <div class="screens" role="tablist" aria-label="Pantallas del diagnóstico">
+        <button class="scr" role="tab" aria-selected="true" aria-controls="p1" id="t1"><span class="scr-n"><i>1</i></span><span><b>Su situación</b><span>5 cartas</span></span></button>
+        <button class="scr" role="tab" aria-selected="false" aria-controls="p2" id="t2" tabindex="-1"><span class="scr-n"><i>2</i></span><span><b>Dónde se fuga</b><span>5 cartas</span></span></button>
+        <button class="scr" role="tab" aria-selected="false" aria-controls="p3" id="t3" tabindex="-1"><span class="scr-n"><i>3</i></span><span><b>Lo que puede ahorrar</b><span>1 carta</span></span></button>
+        <button class="scr" role="tab" aria-selected="false" aria-controls="p4" id="t4" tabindex="-1"><span class="scr-n"><i>4</i></span><span><b>Por dónde empezar</b><span>3 cartas</span></span></button>
+      </div>
+      <div class="deck">
+        <div class="deck-panel on" role="tabpanel" id="p1" aria-labelledby="t1">
+          <div class="card up"><button class="card-tab" aria-expanded="false"><span class="card-idx">01</span><span class="card-name">Calidad de los datos</span><svg class="card-chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="card-body"><div><p>Se evalúa <b>antes</b> de diagnosticar. Si falta información, los hallazgos afectados se marcan como no determinables; si hay cifras incoherentes entre sí, se señalan para resolverlas antes de presentar nada.</p></div></div></div>
+          <div class="card up"><button class="card-tab" aria-expanded="false"><span class="card-idx">02</span><span class="card-name">Diagnóstico final</span><svg class="card-chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="card-body"><div><p>El veredicto ejecutivo en una sola lectura: la situación del negocio, las cifras que la sostienen y los pasos inmediatos.</p></div></div></div>
+          <div class="card up"><button class="card-tab" aria-expanded="false"><span class="card-idx">03</span><span class="card-name">MERIDIAN Score</span><svg class="card-chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="card-body"><div><p>Una calificación global ponderada, desglosada en sub-calificaciones para que se vea qué parte del negocio la sube y cuál la baja.</p></div></div></div>
+          <div class="card up"><button class="card-tab" aria-expanded="false"><span class="card-idx">04</span><span class="card-name">Signos vitales</span><svg class="card-chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="card-body"><div><p>Margen bruto, margen neto, peso del gasto y cobertura: las lecturas que dicen si el negocio respira bien este mes.</p></div></div></div>
+          <div class="card up"><button class="card-tab" aria-expanded="false"><span class="card-idx">05</span><span class="card-name">Comparativa sectorial</span><svg class="card-chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="card-body"><div><p>Cada indicador se coloca sobre el rango de referencia de su giro. Cuando el giro no tiene fuente oficial publicada, se dice.</p></div></div></div>
+        </div>
+        <div class="deck-panel" role="tabpanel" id="p2" aria-labelledby="t2">
+          <div class="card up"><button class="card-tab" aria-expanded="false"><span class="card-idx">06</span><span class="card-name">Clasificación económica</span><svg class="card-chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="card-body"><div><p>El impacto no es una sola cifra. <b>Dinero perdido, ineficiencia, ingreso no capturado y capital inmovilizado</b> tienen naturaleza distinta y no se suman como si fueran lo mismo: una libera efectivo, otra crea utilidad.</p></div></div></div>
+          <div class="card up"><button class="card-tab" aria-expanded="false"><span class="card-idx">07</span><span class="card-name">Hallazgos por impacto</span><svg class="card-chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="card-body"><div><p>Cada fuga encontrada, ordenada por lo que cuesta en pesos, con la acción que la cierra.</p></div></div></div>
+          <div class="card up"><button class="card-tab" aria-expanded="false"><span class="card-idx">08</span><span class="card-name">Distribución del dinero</span><svg class="card-chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="card-body"><div><p>A dónde va cada peso que entra: sueldos, materia prima, renta, servicios, publicidad y el resto.</p></div></div></div>
+          <div class="card up"><button class="card-tab" aria-expanded="false"><span class="card-idx">09</span><span class="card-name">Control interno</span><svg class="card-chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="card-body"><div><p>Todo hallazgo tiene detrás una falla de control. Se identifica la causa, el tipo de falla, el control que la corrige y el área responsable. <b>Corregir el monto sin instalar el control significa que el problema reaparece el mes siguiente.</b></p></div></div></div>
+          <div class="card up"><button class="card-tab" aria-expanded="false"><span class="card-idx">10</span><span class="card-name">Matriz de riesgo</span><svg class="card-chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="card-body"><div><p>Cada hallazgo se clasifica por su peso sobre el ingreso y por la probabilidad de que se repita. Un problema pequeño que ocurre todos los meses puede ser más grave que uno grande que pasó una vez.</p></div></div></div>
+        </div>
+        <div class="deck-panel" role="tabpanel" id="p3" aria-labelledby="t3">
+          <div class="card up"><button class="card-tab" aria-expanded="false"><span class="card-idx">11</span><span class="card-name">Escenarios de recuperación</span><svg class="card-chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="card-body"><div><p>MERIDIAN no aplica un porcentaje único de recuperación. Cada alternativa se modela con su propio alcance, factibilidad y persistencia; las de un mismo hallazgo se combinan de forma saturante, sin sumarse, y el resultado se presenta en <b>tres escenarios: conservador, base y favorable</b>.</p></div></div></div>
+        </div>
+        <div class="deck-panel" role="tabpanel" id="p4" aria-labelledby="t4">
+          <div class="card up"><button class="card-tab" aria-expanded="false"><span class="card-idx">12</span><span class="card-name">Decisiones prioritarias</span><svg class="card-chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="card-body"><div><p>El orden no es por monto bruto: cada acción se pondera por su dificultad y por el nivel de evidencia del hallazgo, y se divide entre los meses que tarda en rendir. Una acción poco sustentada no puede encabezar el plan.</p></div></div></div>
+          <div class="card up"><button class="card-tab" aria-expanded="false"><span class="card-idx">13</span><span class="card-name">Palancas de mayor rendimiento</span><svg class="card-chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="card-body"><div><p>Responde lo que el dueño pregunta en voz alta: <b>si sólo puedo mover una cosa, ¿cuál me deja más dinero este mes?</b> Cada renglón mide cuántos pesos entran a la utilidad por cada punto de mejora.</p></div></div></div>
+          <div class="card up"><button class="card-tab" aria-expanded="false"><span class="card-idx">14</span><span class="card-name">Plan de acción 90 días</span><svg class="card-chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="card-body"><div><p>Las alternativas de cada hallazgo, con el área que debe aportar la información y qué tanto toca la operación. Ninguna exige detener el negocio.</p></div></div></div>
+        </div>
+      </div>
     </div>
 
-    <div class="steps">
-      <div class="step reveal" data-delay="0">
-        <div class="step__number" aria-hidden="true">1</div>
-        <h3 class="step__title">Conecta tus Cuentas</h3>
-        <p class="step__desc">
-          Integra tus cuentas bancarias, tarjetas y sistemas contables de forma segura en menos de 15 minutos. Conexión encriptada y con lectura de solo lectura.
-        </p>
-      </div>
-      <div class="step reveal" data-delay="150">
-        <div class="step__number" aria-hidden="true">2</div>
-        <h3 class="step__title">Analizamos tus Datos</h3>
-        <p class="step__desc">
-          Nuestros algoritmos y expertos financieros analizan cada transacción, identifican patrones anómalos y generan un mapa completo de tus fugas activas.
-        </p>
-      </div>
-      <div class="step reveal" data-delay="300">
-        <div class="step__number" aria-hidden="true">3</div>
-        <h3 class="step__title">Ahorramos Juntos</h3>
-        <p class="step__desc">
-          Recibes un plan de acción priorizado. Ejecutamos contigo cada optimización y monitoreamos el ahorro real generado en tiempo real semana a semana.
-        </p>
-      </div>
+    <div class="tools">
+      <div class="tool up-s rv"><span class="tool-i"><svg viewBox="0 0 24 24"><rect x="4" y="11" width="4" height="8" rx="1.2"/><rect x="10" y="6" width="4" height="13" rx="1.2"/><rect x="16" y="9" width="4" height="10" rx="1.2"/></svg></span><div><b>15 · Simulador de escenarios</b><span>Mueva una variable frente al cliente y el número se rehace en el momento.</span></div></div>
+      <div class="tool up-s rv" style="--d:.05s"><span class="tool-i"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6"/><circle cx="12" cy="17" r=".6" fill="currentColor"/></svg></span><div><b>16 · Asesor MERIDIAN</b><span>Ocho preguntas del dueño respondidas con el mismo motor de reglas.</span></div></div>
+      <div class="tool up-s rv" style="--d:.1s"><span class="tool-i"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span><div><b>17 · Reporte y respaldo</b><span>Informe ejecutivo en PDF, con cada cifra referida a su fuente.</span></div></div>
+      <div class="tool up-s rv" style="--d:.15s"><span class="tool-i"><svg viewBox="0 0 24 24"><polyline points="3 16 9 10 13 14 21 6"/></svg></span><div><b>18 · Seguimiento mensual</b><span>Lo que realmente ocurrió frente a lo que se predijo, mes a mes.</span></div></div>
     </div>
-
   </div>
 </section>
 
+<!-- ═══ MOTOR AZIMUT ═══ -->
+<section class="sec" id="motor" aria-labelledby="h-az">
+  <div class="wrap">
+    <div class="az-hero well-l rv">
+      <div>
+        <p class="eyebrow">El motor de cálculo</p>
+        <h2 class="az-name grad" id="h-az">AZIMUT</h2>
+      </div>
+      <div>
+        <p>En navegación, el azimut es el ángulo exacto que separa un rumbo de su referencia. Eso mide este motor: cuánto se ha desviado su operación del parámetro de su propio giro, y cuánto cuesta esa desviación en pesos.</p>
+        <div class="az-time"><b class="grad" id="azNum">60</b><span>segundos o menos, una vez que la información está completa</span></div>
+      </div>
+    </div>
 
-<!-- ══════════════════════════════════════════
-     FEATURES / BENEFITS
-══════════════════════════════════════════ -->
-<section class="section bg-light" id="beneficios" aria-labelledby="beneficios-heading">
-  <div class="container">
-    <div class="features__inner">
+    <div class="flow">
+      <div class="step rv"><span class="step-n">1</span><b>Entrada</b><p>Ventas, compras, inventario, nómina, mermas y el giro exacto de la empresa.</p></div>
+      <div class="step rv" style="--d:.06s"><span class="step-n">2</span><b>Contraste</b><p>Cada cifra se enfrenta al rango de referencia del giro. Ahí aparece la desviación.</p></div>
+      <div class="step rv" style="--d:.12s"><span class="step-n">3</span><b>Atribución</b><p>La desviación se reparte entre sus puntos de origen y se ordena por lo que cuesta.</p></div>
+      <div class="step rv" style="--d:.18s"><span class="step-n">4</span><b>Cifra con fuente</b><p>Cada resultado sale con el dato del que proviene, rastreable hasta el documento.</p></div>
+    </div>
 
-      <div class="reveal reveal--left">
-        <span class="section-label">Ventajas</span>
-        <h2 id="beneficios-heading" style="color:var(--color-navy);margin-bottom:var(--space-4)">
-          Todo lo que necesitas para tener control financiero total
-        </h2>
-        <p class="text-muted-dark" style="margin-bottom:var(--space-8)">
-          INTELIS no solo detecta el problema, te acompaña en cada paso hasta que el ahorro sea una realidad sostenible.
-        </p>
+    <div class="props">
+      <div class="prop rv"><b>Determinístico</b><p>Misma entrada, mismo resultado. Dos corridas separadas por meses devuelven el número idéntico.</p></div>
+      <div class="prop rv" style="--d:.05s"><b>Sin inteligencia artificial</b><p>Reglas escritas y revisables una por una, que no improvisan ni alucinan un número.</p></div>
+      <div class="prop rv" style="--d:.1s"><b>Trazable</b><p>Si el cliente pregunta de dónde salió una cifra, la respuesta es un documento suyo.</p></div>
+      <div class="prop rv"><b>Declara sus vacíos</b><p>En nueve giros no existe fuente oficial publicada, y el motor lo dice en pantalla.</p></div>
+      <div class="prop rv" style="--d:.05s"><b>Auditable por terceros</b><p>Un contador externo puede seguir el razonamiento renglón por renglón.</p></div>
+      <div class="prop rv" style="--d:.1s"><b>Incertidumbre a la vista</b><p>Cada hallazgo lleva un rango que se ensancha según qué tan respaldado está el dato.</p></div>
+    </div>
 
-        <ul class="check-list">
-          <li>Detección automática de gastos duplicados y suscripciones activas sin uso</li>
-          <li>Alertas en tiempo real cuando un gasto supera tu presupuesto definido</li>
-          <li>Negociación directa con proveedores para reducir tarifas hasta un 40%</li>
-          <li>Reportes ejecutivos semanales con KPIs financieros clave</li>
-          <li>Dashboard unificado con todas tus cuentas en un solo lugar</li>
-          <li>Equipo de asesores financieros disponibles vía chat de lunes a sábado</li>
-          <li>Cumplimiento normativo y privacidad de datos garantizada (ISO 27001)</li>
+    <div class="evid up rv" id="evid">
+      <h3 class="h3">Cada cifra lleva su nivel de evidencia</h3>
+      <p class="small" style="margin-top:6px">No es lo mismo un estado de cuenta que un dato de memoria. MERIDIAN asigna a cada número una letra y ajusta su rango de incertidumbre en consecuencia.</p>
+      <div style="margin-top:12px">
+        <div class="ev-row"><span class="ev-k">A</span><b>Documentado</b><p>Respaldado en documento verificable: estado de cuenta, factura, conteo físico.</p><div class="ev-band"><span>± 5%</span><i style="--w:10%"></i></div></div>
+        <div class="ev-row"><span class="ev-k">B</span><b>Conciliado</b><p>Cruzado contra una segunda fuente independiente.</p><div class="ev-band"><span>± 10%</span><i style="--w:20%"></i></div></div>
+        <div class="ev-row"><span class="ev-k">C</span><b>Declarado</b><p>Informado por la empresa, sin documento de respaldo.</p><div class="ev-band"><span>± 20%</span><i style="--w:40%"></i></div></div>
+        <div class="ev-row"><span class="ev-k">D</span><b>Estimado</b><p>Derivado de un cálculo sobre variables declaradas.</p><div class="ev-band"><span>± 35%</span><i style="--w:70%"></i></div></div>
+        <div class="ev-row"><span class="ev-k">E</span><b>Supuesto</b><p>Basado en un supuesto interno, sin dato de la empresa.</p><div class="ev-band"><span>± 50%</span><i style="--w:100%"></i></div></div>
+      </div>
+      <p class="ev-note">Las cifras capturadas en la primera sesión entran como <b>declaradas (C)</b>. Al respaldarlas con estados de cuenta, comprobantes del SAT o conteo físico suben de nivel y el rango se estrecha.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FUENTES ═══ -->
+<section class="sec" id="fuentes" aria-labelledby="h-src">
+  <div class="wrap">
+    <div class="head rv"><p class="eyebrow">Procedencia</p>
+      <h2 class="h2" id="h-src">De dónde sale cada referencia. <span class="mute">Y dónde no hay.</span></h2></div>
+    <div class="src-grid">
+      <div class="src up rv">
+        <h3 class="h3">Referentes sectoriales</h3>
+        <p class="small">Márgenes y rangos de referencia por giro.</p>
+        <div class="src-it"><div><b>INEGI, Censos Económicos 2024</b><p>Datos de 2023, negocios de 0 a 50 empleados, por código SCIAN. Margen = (ingresos − gastos − remuneraciones) ÷ ingresos.</p></div><span class="chip ok">64 giros</span></div>
+        <div class="src-it"><div><b>Sin fuente oficial publicada</b><p>Jugos, maderería, spa, soporte técnico, manufactura, agricultura, ganadería, apicultura y artesanías. El rango se marca como estimado.</p></div><span class="chip">9 giros</span></div>
+      </div>
+      <div class="src up rv" style="--d:.08s">
+        <h3 class="h3">Calibración de la recuperación</h3>
+        <p class="small">Cuánto de cada hallazgo es realista recuperar.</p>
+        <div class="src-it"><div><b>Merma y desperdicio</b><p>Champions 12.3 (WRAP y WRI, 2019): 114 restaurantes de 12 países redujeron en promedio 26% su desperdicio en el primer año.</p></div><span class="chip ok">Calibrado</span></div>
+        <div class="src-it"><div><b>Trabajo entregado sin cobrar</b><p>Casos publicados de automatización de cobranza: reducción del saldo por cobrar de 13% a 25%. Evidencia débil: fuentes de proveedores.</p></div><span class="chip">Débil</span></div>
+        <div class="src-it"><div><b>Horas sin facturar</b><p>Encuestas del sector indican que 12% a 16% de las horas trabajadas no se factura en despachos legales y contables.</p></div><span class="chip">Referencia</span></div>
+        <div class="src-it"><div><b>Descuentos, clientes perdidos, gasto sobre referente</b><p>Supuesto interno, sin fuente pública verificada. Se declara así en el reporte.</p></div><span class="chip">Supuesto</span></div>
+        <div class="esc">
+          <div><span>Conservador</span><b>×0.65</b></div>
+          <div class="act"><span>Base</span><b>×1.00</b></div>
+          <div><span>Favorable</span><b>×1.30</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ COMPARATIVA ═══ -->
+<section class="sec" id="comparativa" aria-labelledby="h-cmp">
+  <div class="wrap">
+    <div class="head split">
+      <div class="rv"><p class="eyebrow">Comparativa</p><h2 class="h2" id="h-cmp">MERIDIAN no es un ERP.</h2></div>
+      <p class="sub rv" style="--d:.08s">Tampoco es contabilidad ni un dictamen. La misma pregunta, hecha a las cuatro opciones, lado a lado.</p>
+    </div>
+    <div class="cmp">
+      <article class="cmp-c me well-l rv"><span class="cmp-tag">MERIDIAN</span><h3>Encuentra la fuga y le pone precio.</h3><p>Toma las cifras que ya produce su empresa, las contrasta con su giro y devuelve el monto que se escurre.</p>
+        <div class="cmp-rows"><div class="cmp-r"><span>¿Detecta la fuga?</span><b>Sí. Es su única función.</b></div><div class="cmp-r"><span>¿Cuándo entrega la cifra?</span><b>En menos de un minuto.</b></div><div class="cmp-r"><span>¿Para arrancar?</span><b>Una sesión.</b></div><div class="cmp-r"><span>¿Cómo se paga?</span><b>Tarifa por facturación anual, publicada.</b></div></div></article>
+      <article class="cmp-c up rv" style="--d:.05s"><span class="cmp-tag">Equipo contable</span><h3>Registra lo que ya se fue.</h3><p>Estados financieros, declaraciones y nómina sobre el mes ya cerrado.</p>
+        <div class="cmp-rows"><div class="cmp-r"><span>¿Detecta la fuga?</span><b>No es su encargo.</b></div><div class="cmp-r"><span>¿Cuándo entrega la cifra?</span><b>En el cierre mensual.</b></div><div class="cmp-r"><span>¿Para arrancar?</span><b>Ya está adentro.</b></div><div class="cmp-r"><span>¿Cómo se paga?</span><b>Costo fijo mensual.</b></div></div></article>
+      <article class="cmp-c up rv" style="--d:.1s"><span class="cmp-tag">Software ERP</span><h3>Ordena lo que alguien capturó.</h3><p>Lo que no se registró no existe para el sistema: ahí vive la fuga.</p>
+        <div class="cmp-rows"><div class="cmp-r"><span>¿Detecta la fuga?</span><b>No. Reporta lo capturado.</b></div><div class="cmp-r"><span>¿Cuándo entrega la cifra?</span><b>Tras la implementación.</b></div><div class="cmp-r"><span>¿Para arrancar?</span><b>Migración y capacitación.</b></div><div class="cmp-r"><span>¿Cómo se paga?</span><b>Licencia recurrente.</b></div></div></article>
+      <article class="cmp-c up rv" style="--d:.15s"><span class="cmp-tag">Auditoría externa</span><h3>Mide la norma, no la fuga.</h3><p>Dictamina si los estados financieros son razonables. Pregunta distinta.</p>
+        <div class="cmp-rows"><div class="cmp-r"><span>¿Detecta la fuga?</span><b>Sólo si es material.</b></div><div class="cmp-r"><span>¿Cuándo entrega la cifra?</span><b>Al corte del ejercicio.</b></div><div class="cmp-r"><span>¿Para arrancar?</span><b>Semanas de campo.</b></div><div class="cmp-r"><span>¿Cómo se paga?</span><b>Honorario pactado antes.</b></div></div></article>
+    </div>
+    <p class="cmp-note rv"><b>MERIDIAN no los reemplaza.</b> Se sienta encima de lo que ya tiene y hace la pregunta que a nadie le tocaba hacer. Los ERP se citan como categoría; las marcas pertenecen a sus titulares.</p>
+  </div>
+</section>
+
+<!-- ═══ GIROS ═══ -->
+<section class="sec" id="giros" aria-labelledby="h-gir">
+  <div class="wrap">
+    <div class="head split">
+      <div class="rv"><p class="eyebrow">Cobertura</p><h2 class="h2" id="h-gir">No importa el giro. <span class="mute">Busque el suyo.</span></h2></div>
+      <p class="sub rv" style="--d:.08s">Setenta y tres giros con parámetros propios. La etiqueta indica si su referencia proviene del INEGI o si el giro no tiene fuente oficial publicada.</p>
+    </div>
+    <div class="giros up rv">
+      <div class="g-top">
+        <label class="search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="gq" type="search" placeholder="Taller, farmacia, hotel…" aria-label="Buscar giro" autocomplete="off"></label>
+        <span class="g-count" id="gcount" aria-live="polite"><b>73</b> giros</span>
+      </div>
+      <div class="g-chips" id="gchips" role="group" aria-label="Filtrar por grupo"></div>
+      <div class="g-list" id="glist"></div>
+    </div>
+
+    <div class="req">
+      <div class="req-c up-s rv"><span class="step-n">1</span><b>Que facture</b><p>Sus ventas y compras ya viven en los comprobantes del SAT: la primera fuente independiente contra la que se contrasta cada cifra.</p></div>
+      <div class="req-c up-s rv" style="--d:.06s"><span class="step-n">2</span><b>Que tenga historial</b><p>Al menos tres meses de operación registrada. Sin patrón no hay cifra que se pueda defender.</p></div>
+      <div class="req-c up-s rv" style="--d:.12s"><span class="step-n">3</span><b>Que registre</b><p>Estados de cuenta, transferencias con folio, inventario que se pueda contar. Donde hay huella documental, hay fuga medible.</p></div>
+    </div>
+    <div class="warn-box rv"><span class="warn-i">!</span><div><b>Donde no aplica, se lo decimos.</b> Un negocio que opera mayormente en efectivo y sin registro no deja la huella que MERIDIAN necesita. Lo sabrá desde la primera conversación.</div></div>
+  </div>
+</section>
+
+<!-- ═══ INVERSIÓN ═══ -->
+<section class="sec" id="inversion" aria-labelledby="h-inv">
+  <div class="wrap">
+    <div class="head split">
+      <div class="rv"><p class="eyebrow">Inversión</p><h2 class="h2" id="h-inv">Precio por tamaño de empresa. <span class="mute">Publicado, sin letras chiquitas.</span></h2></div>
+      <p class="sub rv" style="--d:.08s">El diagnóstico se paga una sola vez. El seguimiento, mes a mes y como máximo seis meses. Mueva los controles para calcular su caso.</p>
+    </div>
+    <div class="inv" id="inv">
+      <div class="inv-calc up rv">
+        <div class="inv-row">
+          <div class="inv-lbl"><b id="lFact">Facturación anual de la empresa</b><output id="oFact" for="rFact">$3.0 M</output></div>
+          <input type="range" id="rFact" min="0" max="1000" step="1" value="500" aria-labelledby="lFact">
+          <div class="inv-ends"><span>$300 mil</span><span>$30 M</span></div>
+        </div>
+        <div class="inv-row" style="border-bottom:0">
+          <div class="inv-lbl"><b id="lMes">Meses de seguimiento</b><output id="oMes" for="rMes">6 meses</output></div>
+          <input type="range" id="rMes" min="0" max="6" step="1" value="6" aria-labelledby="lMes">
+          <div class="inv-ends"><span>Sólo diagnóstico</span><span>6 meses</span></div>
+        </div>
+        <div class="inv-out">
+          <div class="fee"><span>Diagnóstico</span><b id="fDx">$5,500</b><i>Pago único</i></div>
+          <div class="fee"><span>Seguimiento</span><b id="fMes">$2,500</b><i id="fMesN">por mes · 6 meses</i></div>
+          <div class="fee mine"><span>Total</span><b id="fTot">$20,500</b><i>antes de IVA</i></div>
+        </div>
+        <div class="inv-medida">Para empresas que facturan más de <b>$25 millones</b> al año, el diagnóstico y el seguimiento se cotizan a la medida. <a href="#contacto" style="color:var(--acc);text-decoration:underline">Escríbanos</a>.</div>
+      </div>
+      <div class="inv-tbl up rv" style="--d:.08s">
+        <h3 class="h3">Tabla base</h3>
+        <table class="tbl" id="tbl">
+          <thead><tr><th>Facturación anual</th><th class="r">Diagnóstico</th><th class="r">Por mes</th></tr></thead>
+          <tbody>
+            <tr><td>hasta $1.2 millones</td><td class="r">$3,500</td><td class="r">$1,500</td></tr>
+            <tr><td>de $1.2 a $3.6 millones</td><td class="r">$5,500</td><td class="r">$2,500</td></tr>
+            <tr><td>de $3.6 a $6 millones</td><td class="r">$8,500</td><td class="r">$5,500</td></tr>
+            <tr><td>de $6 a $12 millones</td><td class="r">$12,000</td><td class="r">$7,500</td></tr>
+            <tr><td>de $12 a $25 millones</td><td class="r">$18,000</td><td class="r">$10,000</td></tr>
+            <tr><td>más de $25 millones</td><td class="r" colspan="2">A la medida</td></tr>
+          </tbody>
+        </table>
+        <ul class="inv-notes">
+          <li>Precios en pesos mexicanos, antes de IVA.</li>
+          <li>El seguimiento dura como máximo seis meses. Sin contratos indefinidos.</li>
+          <li>Los honorarios cubren el diagnóstico y el acompañamiento; la decisión de implementar y sus resultados corresponden a la empresa.</li>
         </ul>
       </div>
-
-      <div class="features__panel reveal reveal--right">
-        <div class="features__panel-title">Impacto por categoría · Mes actual</div>
-
-        <div class="feature-row">
-          <div>
-            <div class="feature-row__label">Suscripciones redundantes</div>
-            <div class="feature-row__bar">
-              <div class="feature-row__fill" style="width:82%"></div>
-            </div>
-          </div>
-          <div class="feature-row__value">-$1,240</div>
-        </div>
-
-        <div class="feature-row">
-          <div>
-            <div class="feature-row__label">Comisiones bancarias</div>
-            <div class="feature-row__bar">
-              <div class="feature-row__fill" style="width:65%"></div>
-            </div>
-          </div>
-          <div class="feature-row__value">-$890</div>
-        </div>
-
-        <div class="feature-row">
-          <div>
-            <div class="feature-row__label">Gastos sin aprobación</div>
-            <div class="feature-row__bar">
-              <div class="feature-row__fill" style="width:48%"></div>
-            </div>
-          </div>
-          <div class="feature-row__value">-$620</div>
-        </div>
-
-        <div class="feature-row">
-          <div>
-            <div class="feature-row__label">Contratos sobrevaluados</div>
-            <div class="feature-row__bar">
-              <div class="feature-row__fill" style="width:73%"></div>
-            </div>
-          </div>
-          <div class="feature-row__value">-$3,100</div>
-        </div>
-
-        <div class="feature-row">
-          <div>
-            <div class="feature-row__label">Cargos erróneos de proveedores</div>
-            <div class="feature-row__bar">
-              <div class="feature-row__fill" style="width:35%"></div>
-            </div>
-          </div>
-          <div class="feature-row__value">-$420</div>
-        </div>
-
-        <div style="margin-top:var(--space-6);padding-top:var(--space-6);border-top:1px solid var(--color-navy-light);display:flex;justify-content:space-between;align-items:center;">
-          <span style="font-size:var(--text-sm);color:var(--color-gray-400)">Ahorro total del mes</span>
-          <span style="font-size:var(--text-2xl);font-weight:var(--font-bold);color:var(--color-green)">-$6,270</span>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
 
-
-<!-- ══════════════════════════════════════════
-     TESTIMONIALS
-══════════════════════════════════════════ -->
-<section class="section bg-navy" id="testimonios" aria-labelledby="testimonios-heading">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="section-label">Casos de Éxito</span>
-      <h2 id="testimonios-heading">Empresas que ya recuperaron su dinero</h2>
-      <p class="text-muted">
-        Resultados reales de empresas reales. Sin trucos, sin letra pequeña.
-      </p>
-    </div>
-
-    <div class="grid-3">
-
-      <div class="card reveal" data-delay="0" style="display:flex;flex-direction:column;">
-        <div class="testimonial-card">
-          <p class="testimonial-card__quote">
-            En el primer mes INTELIS identificó 14 suscripciones que nadie en el equipo recordaba haber contratado. Recuperamos más de $3,800 mensuales sin tocar nuestras operaciones.
-          </p>
-          <div class="testimonial-card__result">Ahorro mensual: +$3,800</div>
-          <div class="testimonial-card__author">
-            <div class="avatar" aria-hidden="true">ML</div>
-            <div class="testimonial-card__info">
-              <strong>María López</strong>
-              <span>CFO · Distribuidora Monterrey S.A.</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card reveal" data-delay="150" style="display:flex;flex-direction:column;border-color:var(--color-green);">
-        <div class="testimonial-card">
-          <p class="testimonial-card__quote">
-            Teníamos contratos con proveedores que llevaban 3 años sin renegociar. INTELIS negoció por nosotros y bajamos costos logísticos un 31%. Fue la mejor inversión del año.
-          </p>
-          <div class="testimonial-card__result">Reducción de costos: 31%</div>
-          <div class="testimonial-card__author">
-            <div class="avatar" aria-hidden="true">CR</div>
-            <div class="testimonial-card__info">
-              <strong>Carlos Ramírez</strong>
-              <span>Director General · Grupo Nexo MX</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card reveal" data-delay="300" style="display:flex;flex-direction:column;">
-        <div class="testimonial-card">
-          <p class="testimonial-card__quote">
-            Lo que más me sorprendió fue la velocidad. En 72 horas ya tenía un reporte completo de 23 fugas detectadas. En 30 días habíamos cerrado 18 de ellas y el ROI fue del 480%.
-          </p>
-          <div class="testimonial-card__result">ROI alcanzado: 480%</div>
-          <div class="testimonial-card__author">
-            <div class="avatar" aria-hidden="true">SA</div>
-            <div class="testimonial-card__info">
-              <strong>Sofía Ávila</strong>
-              <span>CEO · TechOps Bogotá</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
+<!-- ═══ PRIVACIDAD ═══ -->
+<section class="sec" id="privacidad" aria-labelledby="h-priv">
+  <div class="wrap">
+    <div class="head rv"><p class="eyebrow">Confidencialidad</p><h2 class="h2" id="h-priv">Sus cifras no salen <span class="mute">del dispositivo.</span></h2></div>
+    <div class="priv">
+      <div class="priv-c up rv"><span class="tool-i"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="14" rx="2.2"/><path d="M8 21h8"/></svg></span><b>Se calcula ahí mismo</b><p>MERIDIAN corre en el navegador. Los datos no se envían a ningún servidor.</p></div>
+      <div class="priv-c up rv" style="--d:.06s"><span class="tool-i"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg></span><b>Se borran al cerrar</b><p>Viven en la pestaña hasta cerrarla o iniciar un análisis nuevo. INTELIS no conserva documentos de la empresa.</p></div>
+      <div class="priv-c up rv" style="--d:.12s"><span class="tool-i"><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6z"/></svg></span><b>Sólo para su diagnóstico</b><p>No se comparten ni se usan como ejemplo sin su autorización por escrito. <a href="aviso-privacidad.html" style="color:var(--acc);text-decoration:underline">Aviso de privacidad</a>.</p></div>
     </div>
   </div>
 </section>
 
-
-<!-- ══════════════════════════════════════════
-     PRICING
-══════════════════════════════════════════ -->
-<section class="section bg-navy-mid" id="precios" aria-labelledby="precios-heading">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="section-label">Planes</span>
-      <h2 id="precios-heading">Precios que se pagan solos</h2>
-      <p class="text-muted">
-        El primer mes de ahorro cubre el costo de cualquier plan. Elige el nivel de profundidad que tu empresa necesita.
-      </p>
+<!-- ═══ QUIÉN ═══ -->
+<section class="sec" id="quien" aria-labelledby="h-who">
+  <div class="wrap who">
+    <div class="who-card up rv">
+      <div class="who-av grad" aria-hidden="true">JH</div>
+      <b>Javier Hernández</b><span>Fundador de INTELIS · Mérida, Yucatán</span>
+      <span class="wm">INTELIS</span>
     </div>
-
-    <!-- Toggle -->
-    <div class="billing-toggle reveal" role="group" aria-label="Ciclo de facturación">
-      <span class="active" id="label-monthly">Mensual</span>
-      <div class="toggle-switch">
-        <input type="checkbox" id="billing-toggle" aria-labelledby="label-monthly label-annual" />
-        <label for="billing-toggle"><span class="sr-only">Cambiar a facturación anual</span></label>
-      </div>
-      <span id="label-annual">
-        Anual
-        <span class="annual-badge">Ahorra 20%</span>
-      </span>
-    </div>
-
-    <div class="pricing-grid" id="pricing-section" data-billing="monthly">
-
-      <!-- Básico -->
-      <div class="pricing-card reveal" data-delay="0">
-        <div class="pricing-card__name">Básico</div>
-        <p class="pricing-card__desc">Para freelancers y pequeñas empresas que quieren dar el primer paso.</p>
-        <div class="pricing-card__price">
-          <div class="price-monthly">
-            <div class="pricing-card__amount">$297<span style="font-size:var(--text-lg);font-weight:var(--font-normal);color:var(--color-gray-400)">/mes</span></div>
-          </div>
-          <div class="price-annual">
-            <div class="pricing-card__amount">$237<span style="font-size:var(--text-lg);font-weight:var(--font-normal);color:var(--color-gray-400)">/mes</span></div>
-          </div>
-          <div class="pricing-card__period">Facturado mensualmente · Sin contrato</div>
-        </div>
-        <ul class="pricing-card__features">
-          <li class="pricing-card__feature pricing-card__feature--yes">Hasta 3 cuentas conectadas</li>
-          <li class="pricing-card__feature pricing-card__feature--yes">Detección de suscripciones activas</li>
-          <li class="pricing-card__feature pricing-card__feature--yes">Reporte mensual de fugas</li>
-          <li class="pricing-card__feature pricing-card__feature--yes">Dashboard básico</li>
-          <li class="pricing-card__feature pricing-card__feature--yes">Soporte por email</li>
-          <li class="pricing-card__feature pricing-card__feature--no">Negociación con proveedores</li>
-          <li class="pricing-card__feature pricing-card__feature--no">Asesor financiero dedicado</li>
-          <li class="pricing-card__feature pricing-card__feature--no">Reportes en tiempo real</li>
-        </ul>
-        <a href="#contacto" class="btn btn-secondary" style="text-align:center;justify-content:center;">Empezar Gratis 14 días</a>
-      </div>
-
-      <!-- Profesional (Popular) -->
-      <div class="pricing-card pricing-card--popular reveal" data-delay="150">
-        <div class="pricing-card__popular-label">
-          <span class="badge badge-popular">Más Popular</span>
-        </div>
-        <div class="pricing-card__name gradient-text">Profesional</div>
-        <p class="pricing-card__desc">Para empresas en crecimiento que buscan resultados tangibles y rápidos.</p>
-        <div class="pricing-card__price">
-          <div class="price-monthly">
-            <div class="pricing-card__amount">$697<span style="font-size:var(--text-lg);font-weight:var(--font-normal);color:var(--color-gray-400)">/mes</span></div>
-          </div>
-          <div class="price-annual">
-            <div class="pricing-card__amount">$557<span style="font-size:var(--text-lg);font-weight:var(--font-normal);color:var(--color-gray-400)">/mes</span></div>
-          </div>
-          <div class="pricing-card__period">Facturado mensualmente · Sin contrato</div>
-        </div>
-        <ul class="pricing-card__features">
-          <li class="pricing-card__feature pricing-card__feature--yes">Hasta 10 cuentas conectadas</li>
-          <li class="pricing-card__feature pricing-card__feature--yes">Detección avanzada de fugas</li>
-          <li class="pricing-card__feature pricing-card__feature--yes">Reportes semanales detallados</li>
-          <li class="pricing-card__feature pricing-card__feature--yes">Dashboard en tiempo real</li>
-          <li class="pricing-card__feature pricing-card__feature--yes">Soporte prioritario por chat</li>
-          <li class="pricing-card__feature pricing-card__feature--yes">Negociación con proveedores</li>
-          <li class="pricing-card__feature pricing-card__feature--yes">1 asesor financiero dedicado</li>
-          <li class="pricing-card__feature pricing-card__feature--no">API e integraciones enterprise</li>
-        </ul>
-        <a href="#contacto" class="btn btn-primary" style="text-align:center;justify-content:center;">Empezar Gratis 14 días</a>
-      </div>
-
-      <!-- Empresarial -->
-      <div class="pricing-card reveal" data-delay="300">
-        <div class="pricing-card__name">Empresarial</div>
-        <p class="pricing-card__desc">Para corporativos y grupos empresariales con necesidades avanzadas y múltiples entidades.</p>
-        <div class="pricing-card__price">
-          <div class="price-monthly">
-            <div class="pricing-card__amount" style="font-size:var(--text-3xl)">A medida</div>
-          </div>
-          <div class="price-annual">
-            <div class="pricing-card__amount" style="font-size:var(--text-3xl)">A medida</div>
-          </div>
-          <div class="pricing-card__period">Precio personalizado según volumen</div>
-        </div>
-        <ul class="pricing-card__features">
-          <li class="pricing-card__feature pricing-card__feature--yes">Cuentas ilimitadas</li>
-          <li class="pricing-card__feature pricing-card__feature--yes">Detección IA personalizada</li>
-          <li class="pricing-card__feature pricing-card__feature--yes">Reportes en tiempo real 24/7</li>
-          <li class="pricing-card__feature pricing-card__feature--yes">Dashboard multi-entidad</li>
-          <li class="pricing-card__feature pricing-card__feature--yes">Soporte 24/7 con SLA garantizado</li>
-          <li class="pricing-card__feature pricing-card__feature--yes">Negociación avanzada</li>
-          <li class="pricing-card__feature pricing-card__feature--yes">Equipo de asesores dedicados</li>
-          <li class="pricing-card__feature pricing-card__feature--yes">API, webhooks e integraciones</li>
-        </ul>
-        <a href="#contacto" class="btn btn-secondary" style="text-align:center;justify-content:center;">Contactar Ventas</a>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ══════════════════════════════════════════
-     FAQ
-══════════════════════════════════════════ -->
-<section class="section bg-navy" id="faq" aria-labelledby="faq-heading">
-  <div class="container" style="max-width:800px">
-    <div class="section-header reveal">
-      <span class="section-label">Preguntas Frecuentes</span>
-      <h2 id="faq-heading">Resolvemos tus dudas</h2>
-    </div>
-
-    <div class="reveal" data-delay="100">
-
-      <div class="accordion-item">
-        <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-1">
-          ¿Cuánto tiempo tarda en verse el primer resultado?
-          <span class="accordion-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </span>
-        </button>
-        <div class="accordion-content" id="faq-1" role="region">
-          <div class="accordion-body">
-            El análisis inicial se completa en menos de 72 horas tras conectar tus cuentas. En ese tiempo recibirás el primer reporte con fugas detectadas priorizadas por impacto económico. La mayoría de nuestros clientes comienza a ver ahorros reales en los primeros 7-14 días de implementar las recomendaciones.
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-2">
-          ¿Mis datos financieros están seguros?
-          <span class="accordion-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </span>
-        </button>
-        <div class="accordion-content" id="faq-2" role="region">
-          <div class="accordion-body">
-            La seguridad es nuestra prioridad número uno. Utilizamos conexiones OAuth de solo lectura (nunca almacenamos credenciales bancarias), cifrado AES-256 en reposo y TLS 1.3 en tránsito. Cumplimos con ISO 27001, PCI-DSS y las normativas de protección de datos de cada país. Nuestros servidores están auditados trimestralmente por firmas de seguridad independientes.
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-3">
-          ¿Funciona para empresas de cualquier tamaño?
-          <span class="accordion-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </span>
-        </button>
-        <div class="accordion-content" id="faq-3" role="region">
-          <div class="accordion-body">
-            Sí. Tenemos clientes desde freelancers con facturación de $5,000 mensuales hasta corporativos con más de 500 empleados. El plan Básico está optimizado para negocios pequeños, el Profesional para pymes en crecimiento, y el Empresarial para grupos corporativos con múltiples entidades y necesidades complejas.
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-4">
-          ¿Qué pasa si no encuentran fugas en mi empresa?
-          <span class="accordion-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </span>
-        </button>
-        <div class="accordion-content" id="faq-4" role="region">
-          <div class="accordion-body">
-            Nunca ha ocurrido — en más de 500 análisis realizados, hemos encontrado fugas en absolutamente todos los casos. Sin embargo, si en tu caso no detectáramos ningún ahorro potencial durante los 14 días de prueba, te devolvemos el dinero sin preguntas. Es nuestra garantía de resultados.
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-5">
-          ¿Necesito conocimientos financieros para usar INTELIS?
-          <span class="accordion-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </span>
-        </button>
-        <div class="accordion-content" id="faq-5" role="region">
-          <div class="accordion-body">
-            No. INTELIS está diseñado para que cualquier dueño de negocio, aunque no tenga formación financiera, pueda entender sus resultados y tomar decisiones con confianza. El dashboard es visual e intuitivo, los reportes usan lenguaje simple, y siempre tienes un asesor disponible para explicarte cualquier punto.
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-6">
-          ¿Puedo cancelar en cualquier momento?
-          <span class="accordion-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </span>
-        </button>
-        <div class="accordion-content" id="faq-6" role="region">
-          <div class="accordion-body">
-            Absolutamente. No hay contratos de permanencia ni penalizaciones. Puedes cancelar tu suscripción en cualquier momento desde tu panel de control con un solo clic. Si cancelas, sigues teniendo acceso hasta el final del período pagado. Tus datos son tuyos y puedes exportarlos en cualquier momento.
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-7">
-          ¿Con qué bancos y sistemas contables son compatibles?
-          <span class="accordion-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </span>
-        </button>
-        <div class="accordion-content" id="faq-7" role="region">
-          <div class="accordion-body">
-            Tenemos integración directa con más de 2,000 instituciones financieras en México, Colombia, Argentina, Chile y España. En cuanto a software contable, conectamos con SAP, QuickBooks, Contpaq, Aspel, Xero, Zoho Books y muchos más. Si tu banco o sistema no está en la lista, podemos incorporarlo en días mediante importación de estados de cuenta.
-          </div>
-        </div>
-      </div>
-
+    <div class="rv" style="--d:.08s">
+      <p class="eyebrow">Quién está detrás</p>
+      <h2 class="h2" id="h-who">Un método que se audita <span class="mute">renglón por renglón.</span></h2>
+      <p>Construí MERIDIAN porque me cansé de ver empresas que sabían que estaban perdiendo dinero y no podían decir cuánto ni por dónde. Su contador les cerraba el mes, su sistema les mostraba lo capturado, y la pregunta seguía sin respuesta.</p>
+      <p>No hay detrás un edificio ni un equipo de veinte personas. Hay un motor parametrizado giro por giro y alguien que responde el teléfono.</p>
+      <ul class="commit">
+        <li>Si al final de la sesión no hay fuga, se lo digo y ahí termina.</li>
+        <li>Cada cifra del informe apunta al documento del que salió.</li>
+        <li>El acompañamiento dura como máximo seis meses.</li>
+        <li>Sus datos de operación no se usan para ningún otro fin.</li>
+      </ul>
     </div>
   </div>
 </section>
 
+<!-- ═══ PREGUNTAS ═══ -->
+<section class="sec" id="preguntas" aria-labelledby="h-faq">
+  <div class="wrap">
+    <div class="head rv"><p class="eyebrow">Preguntas</p><h2 class="h2" id="h-faq">Lo que más <span class="mute">nos preguntan.</span></h2></div>
+    <div class="faq rv">
+      <div class="card up"><button class="card-tab" aria-expanded="false"><span class="card-name">¿Qué es MERIDIAN?</span><svg class="card-chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="card-body"><div><p>La herramienta propietaria de INTELIS que localiza por dónde se va el dinero de una empresa, lo cuantifica en pesos y documenta cada hallazgo con su fuente. Cubre 73 giros de negocio.</p></div></div></div>
+      <div class="card up"><button class="card-tab" aria-expanded="false"><span class="card-name">¿En qué empresas funciona?</span><svg class="card-chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="card-body"><div><p>En cualquier negocio que factura y lleva al menos tres meses de registros. No aplica a negocios que operan mayormente en efectivo y sin registro, porque no dejan la huella documental necesaria.</p></div></div></div>
+      <div class="card up"><button class="card-tab" aria-expanded="false"><span class="card-name">¿Cuánto tarda?</span><svg class="card-chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="card-body"><div><p>El cálculo tarda menos de un minuto una vez que la información está completa. Reunir los datos depende de cada empresa; la primera sesión usa cifras que el dueño conoce de memoria.</p></div></div></div>
+      <div class="card up"><button class="card-tab" aria-expanded="false"><span class="card-name">¿Cuánto cuesta?</span><svg class="card-chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="card-body"><div><p>Depende de la facturación anual: el diagnóstico va de $3,500 a $18,000 y el seguimiento de $1,500 a $10,000 por mes, hasta seis meses, antes de IVA. Arriba de $25 millones se cotiza a la medida. La tabla completa está en la sección Inversión.</p></div></div></div>
+      <div class="card up"><button class="card-tab" aria-expanded="false"><span class="card-name">¿Usa inteligencia artificial?</span><svg class="card-chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="card-body"><div><p>No. El diagnóstico corre sobre AZIMUT, un motor de reglas determinístico: los mismos datos producen siempre el mismo resultado, y ninguna cifra proviene de un modelo generativo.</p></div></div></div>
+      <div class="card up"><button class="card-tab" aria-expanded="false"><span class="card-name">¿Sustituye a mi contador o a mi ERP?</span><svg class="card-chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="card-body"><div><p>No. MERIDIAN no lleva la contabilidad ni ordena la operación. Trabaja con las cifras que la empresa ya produce y responde otra pregunta: cuánto dinero se está yendo, por dónde y cuánto vale corregirlo.</p></div></div></div>
+      <div class="card up"><button class="card-tab" aria-expanded="false"><span class="card-name">¿Qué tan exacta es la cifra?</span><svg class="card-chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="card-body"><div><p>Tanto como el dato que la respalda. Cada cifra lleva un nivel de evidencia de A (documentada, ±5%) a E (supuesto, ±50%), y la recuperación se presenta en tres escenarios en lugar de una promesa única.</p></div></div></div>
+      <div class="card up"><button class="card-tab" aria-expanded="false"><span class="card-name">¿Mi información está segura?</span><svg class="card-chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="card-body"><div><p>Sí. MERIDIAN calcula en el navegador y no envía los datos a ningún servidor; se borran al cerrar la pestaña. Nada se comparte con terceros ni se usa como ejemplo sin autorización por escrito.</p></div></div></div>
+    </div>
+  </div>
+</section>
 
-<!-- ══════════════════════════════════════════
-     FINAL CTA
-══════════════════════════════════════════ -->
-<section class="section cta-section" id="contacto" aria-labelledby="cta-heading">
-  <div class="container">
-    <div class="cta-section__inner reveal">
-      <h2 id="cta-heading" style="font-size:var(--text-4xl);margin-bottom:var(--space-4)">
-        Deja de perder dinero hoy mismo
-      </h2>
-      <p style="font-size:var(--text-xl);margin-bottom:var(--space-10);max-width:560px;margin-inline:auto;">
-        Agenda una llamada de 30 minutos sin costo. Analizamos tu situación y te mostramos exactamente cuánto podrías estar recuperando.
-      </p>
-      <div style="display:flex;flex-wrap:wrap;gap:var(--space-4);justify-content:center;">
-        <a href="mailto:hola@intelis.io" class="btn btn-dark btn-lg">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          Agendar Llamada Gratis
-        </a>
-        <a href="#precios" class="btn btn-secondary btn-lg" style="border-color:rgba(10,22,40,0.3);color:var(--color-navy);">Ver Planes</a>
+<!-- ═══ CONTACTO ═══ -->
+<section class="sec" id="contacto" aria-labelledby="h-ct">
+  <div class="wrap">
+    <div class="contact well-l rv">
+      <p class="eyebrow" style="justify-content:center">Contacto</p>
+      <h2 class="h2" id="h-ct">¿Cuánto está <span class="grad">perdiendo</span>?</h2>
+      <p class="sub">Una sesión de 15 minutos con sus datos disponibles basta para saberlo. Si al final no hay fuga, se lo decimos igual y ahí termina.</p>
+      <div class="contact-cta">
+        <a class="cta wa press" href="https://wa.me/529991412506?text=Hola,%20quiero%20saber%20cu%C3%A1nto%20se%20est%C3%A1%20fugando%20en%20mi%20empresa." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm4.52 11.99c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.15.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.47c-.16 0-.43.06-.65.31-.22.25-.85.84-.85 2.04s.87 2.37 1 2.53c.12.16 1.72 2.63 4.17 3.69 1.97.85 2.45.68 2.93.64.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.22-.16-.47-.29Z"/></svg>Escribir por WhatsApp</a>
+        <a class="cta alt press" href="mailto:jhernandez@intelis.mx?subject=MERIDIAN%20%E2%80%94%20quiero%20un%20diagn%C3%B3stico">jhernandez@intelis.mx</a>
       </div>
-      <p style="margin-top:var(--space-6);font-size:var(--text-sm);opacity:0.6;">
-        Sin tarjeta de crédito · 14 días gratis · Cancela cuando quieras
-      </p>
     </div>
   </div>
 </section>
 
 </main>
 
-
-<!-- ══════════════════════════════════════════
-     FOOTER
-══════════════════════════════════════════ -->
-<footer class="footer" role="contentinfo">
-  <div class="container">
-    <div class="footer__grid">
-
-      <div class="footer__brand">
-        <a href="#" class="nav__logo" style="font-size:var(--text-xl)">
-          INTELIS<span class="nav__logo-dot"></span>
-        </a>
-        <p>Inteligencia financiera para empresas que quieren dejar de perder dinero y empezar a crecer con control y confianza.</p>
-        <div class="footer__social" style="margin-top:var(--space-5)">
-          <a href="#" aria-label="LinkedIn de INTELIS">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          </a>
-          <a href="#" aria-label="Twitter/X de INTELIS">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
-          </a>
-          <a href="#" aria-label="Instagram de INTELIS">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <div class="footer__col">
-        <div class="footer__col-title">Servicios</div>
-        <ul>
-          <li><a href="#servicios">Auditoría Financiera</a></li>
-          <li><a href="#servicios">Rastreo de Gastos</a></li>
-          <li><a href="#servicios">Eliminación de Fugas</a></li>
-          <li><a href="#servicios">Inteligencia Financiera</a></li>
-          <li><a href="#precios">Planes y Precios</a></li>
-        </ul>
-      </div>
-
-      <div class="footer__col">
-        <div class="footer__col-title">Empresa</div>
-        <ul>
-          <li><a href="#">Sobre INTELIS</a></li>
-          <li><a href="#">Blog Financiero</a></li>
-          <li><a href="#">Casos de Éxito</a></li>
-          <li><a href="#">Trabaja con Nosotros</a></li>
-          <li><a href="#">Prensa</a></li>
-        </ul>
-      </div>
-
-      <div class="footer__col">
-        <div class="footer__col-title">Contacto</div>
-        <ul>
-          <li><a href="mailto:hola@intelis.io">hola@intelis.io</a></li>
-          <li><a href="tel:+525512345678">+52 55 1234 5678</a></li>
-          <li><a href="#">Centro de Ayuda</a></li>
-          <li><a href="#">Estado del Sistema</a></li>
-        </ul>
-      </div>
-
-    </div>
-
-    <div class="footer__bottom">
-      <span>© 2026 INTELIS Technologies S.A. de C.V. Todos los derechos reservados.</span>
-      <div style="display:flex;gap:var(--space-6)">
-        <a href="#">Privacidad</a>
-        <a href="#">Términos de Uso</a>
-        <a href="#">Cookies</a>
-      </div>
-    </div>
-
+<footer class="footer">
+  <div class="wrap">
+    <div class="f-logos"><span class="wm" style="font-size:12px">INTELIS</span><span class="hdr-div" aria-hidden="true"></span><img src="assets/meridian.png" alt="MERIDIAN" width="76" height="12"></div>
+    INTELIS · Innovación empresarial y reingeniería de procesos · Mérida, Yucatán · 999 141 2506<br>
+    MERIDIAN · Motor de reglas determinístico · Sin IA generativa en los cálculos<br>
+    Referentes sectoriales: INEGI, Censos Económicos 2024 (datos 2023), negocios de 0–50 empleados<br>
+    © 2026 INTELIS. MERIDIAN es una herramienta propietaria; su metodología de cálculo es información reservada. · <a href="aviso-privacidad.html">Aviso de privacidad</a>
   </div>
 </footer>
 
-<script type="module" src="js/main.js"></script>
+<a class="float" id="float" href="https://wa.me/529991412506?text=Hola,%20quiero%20saber%20cu%C3%A1nto%20se%20est%C3%A1%20fugando%20en%20mi%20empresa." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm4.52 11.99c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.15.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.47c-.16 0-.43.06-.65.31-.22.25-.85.84-.85 2.04s.87 2.37 1 2.53c.12.16 1.72 2.63 4.17 3.69 1.97.85 2.45.68 2.93.64.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.22-.16-.47-.29Z"/></svg><span>WhatsApp</span></a>
+
+<script src="js/giros.js" defer></script>
+<script src="js/app.js" defer></script>
 </body>
 </html>

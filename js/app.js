@@ -167,10 +167,10 @@
         if (t && idx[i].indexOf(t) < 0) continue;
         n++;
         out.push('<div class="g-it"><div class="gt"><b>'+esc(g[0])+'</b><span>'+esc(g[1])+'</span></div>' +
-          (g[3] ? '<span class="g-src" title="INEGI, Censos Económicos 2024 · SCIAN '+g[3]+'">INEGI · '+g[3]+'</span>'
-                : '<span class="g-src no" title="No existe fuente oficial publicada; el rango es estimado">Sin fuente oficial</span>') + '</div>');
+          (g[3] ? '<span class="g-src">Referencia INEGI</span>'
+                : '<span class="g-src no" title="No existe fuente oficial publicada; el referente se identifica como estimado">Sin fuente oficial</span>') + '</div>');
       }
-      list.innerHTML = n ? out.join('') : '<div class="g-empty">Su giro no aparece en la lista. Escríbanos: lo evaluamos con usted antes de cotizar.</div>';
+      list.innerHTML = n ? out.join('') : '<div class="g-empty">Su giro no aparece en la lista. Escríbanos y lo evaluaremos antes de cotizar.</div>';
       count.innerHTML = '<b>' + n + '</b> ' + (n === 1 ? 'giro' : 'giros');
     }
     chips.addEventListener('click', function(e){

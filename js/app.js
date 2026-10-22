@@ -47,6 +47,12 @@
     $$('[data-count]').concat([$('#azNum'), $('#evid')]).forEach(function(e){ if (e) cio.observe(e); });
   }
 
+  /* ── AZIMUT: el destello sólo corre mientras el título está en pantalla ── */
+  var az = $('.az-hero');
+  if (az && IO && !RM){
+    new IntersectionObserver(function(es){ az.classList.toggle('az-on', es[0].isIntersecting); }, {threshold:.2}).observe(az);
+  }
+
   /* ── Cabecera: progreso, sección activa, botón flotante ── */
   var prog = $('#prog'), flt = $('#float'), ticking = false, docH = 1, vh = 1;
   function measure(){ vh = window.innerHeight; docH = Math.max(1, document.documentElement.scrollHeight - vh); }

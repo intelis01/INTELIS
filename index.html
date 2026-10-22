@@ -65,7 +65,7 @@
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <img class="hero-mark rv" src="assets/meridian.png" alt="MERIDIAN" width="407" height="64">
+        <img class="hero-mark rv" src="assets/meridian.png" alt="MERIDIAN" width="407" height="64" decoding="async">
         <h1 class="h1 rv" id="h-hero" style="--d:.06s">La fuga tiene forma.</h1>
         <p class="sub rv" style="--d:.14s">MERIDIAN identifica por dónde sale el dinero de su empresa, lo traduce a una cifra en pesos y documenta cada hallazgo con su fuente. Cubre setenta y tres giros de negocio y entrega el cálculo en menos de un minuto.</p>
         <div class="hero-cta rv" style="--d:.22s">
@@ -220,13 +220,17 @@
       <h3 class="h3">Cada cifra declara su nivel de evidencia</h3>
       <p class="small">Un estado de cuenta no tiene el mismo peso que un dato de memoria. MERIDIAN clasifica cada número y amplía o estrecha su rango de incertidumbre según su respaldo.</p>
       <div class="ev-rows">
-        <div class="ev-row"><span class="ev-k">A</span><b>Documentado</b><p>Respaldado en documento verificable: estado de cuenta, factura o conteo físico.</p><div class="ev-m" aria-hidden="true"><i class="f"></i><i></i><i></i><i></i><i></i></div></div>
-        <div class="ev-row"><span class="ev-k">B</span><b>Conciliado</b><p>Cruzado con una segunda fuente independiente.</p><div class="ev-m" aria-hidden="true"><i class="f"></i><i class="f" style="--dd:.06s"></i><i></i><i></i><i></i></div></div>
-        <div class="ev-row"><span class="ev-k">C</span><b>Declarado</b><p>Informado por la empresa, sin documento de respaldo.</p><div class="ev-m" aria-hidden="true"><i class="f"></i><i class="f" style="--dd:.06s"></i><i class="f" style="--dd:.12s"></i><i></i><i></i></div></div>
-        <div class="ev-row"><span class="ev-k">D</span><b>Estimado</b><p>Derivado de un cálculo sobre variables declaradas.</p><div class="ev-m" aria-hidden="true"><i class="f"></i><i class="f" style="--dd:.06s"></i><i class="f" style="--dd:.12s"></i><i class="f" style="--dd:.18s"></i><i></i></div></div>
-        <div class="ev-row"><span class="ev-k">E</span><b>Supuesto</b><p>Basado en un supuesto declarado, sin dato de la empresa.</p><div class="ev-m" aria-hidden="true"><i class="f"></i><i class="f" style="--dd:.06s"></i><i class="f" style="--dd:.12s"></i><i class="f" style="--dd:.18s"></i><i class="f" style="--dd:.24s"></i></div></div>
+        <div class="ev-row" data-l="a"><span class="ev-k">A</span><b>Documentado</b><p>Respaldado en documento verificable: estado de cuenta, factura o conteo físico.</p><div class="ev-v"><em>Incertidumbre mínima</em><div class="ev-m" aria-hidden="true"><i class="f"></i><i></i><i></i><i></i><i></i></div></div></div>
+        <div class="ev-row" data-l="b"><span class="ev-k">B</span><b>Conciliado</b><p>Cruzado con una segunda fuente independiente.</p><div class="ev-v"><em>Incertidumbre baja</em><div class="ev-m" aria-hidden="true"><i class="f"></i><i class="f" style="--dd:0.06s"></i><i></i><i></i><i></i></div></div></div>
+        <div class="ev-row" data-l="c"><span class="ev-k">C</span><b>Declarado</b><p>Informado por la empresa, sin documento de respaldo.</p><div class="ev-v"><em>Incertidumbre moderada</em><div class="ev-m" aria-hidden="true"><i class="f"></i><i class="f" style="--dd:0.06s"></i><i class="f" style="--dd:0.12s"></i><i></i><i></i></div></div></div>
+        <div class="ev-row" data-l="d"><span class="ev-k">D</span><b>Estimado</b><p>Derivado de un cálculo sobre variables declaradas.</p><div class="ev-v"><em>Incertidumbre alta</em><div class="ev-m" aria-hidden="true"><i class="f"></i><i class="f" style="--dd:0.06s"></i><i class="f" style="--dd:0.12s"></i><i class="f" style="--dd:0.18s"></i><i></i></div></div></div>
+        <div class="ev-row" data-l="e"><span class="ev-k">E</span><b>Supuesto</b><p>Basado en un supuesto declarado, sin dato de la empresa.</p><div class="ev-v"><em>Incertidumbre máxima</em><div class="ev-m" aria-hidden="true"><i class="f"></i><i class="f" style="--dd:0.06s"></i><i class="f" style="--dd:0.12s"></i><i class="f" style="--dd:0.18s"></i><i class="f" style="--dd:0.24s"></i></div></div></div>
       </div>
-      <div class="ev-scale"><span>Las barras indican la amplitud del rango de incertidumbre: <b>más barras, rango más amplio</b>.</span><span>Las cifras de la primera sesión entran como <b>declaradas</b> y suben de nivel al documentarse.</span></div>
+      <div class="ev-key" aria-hidden="true"><span>Rango estrecho · cifra confiable</span><i></i><span>Rango amplio · cifra aproximada</span></div>
+      <div class="ev-scale">
+        <p>Cada barra encendida representa un tramo adicional del <b>rango de incertidumbre</b>: el margen dentro del cual puede encontrarse el valor real de la cifra. <b>Menos barras y color verde</b> indican una cifra precisa, respaldada en documentos. <b>Más barras y color rojo</b> indican una aproximación cuyo valor real puede alejarse de forma considerable.</p>
+        <p>Las cifras capturadas en la primera sesión entran como <b>declaradas (C)</b>. Al respaldarlas con estados de cuenta, comprobantes del SAT o conteo físico, suben de nivel y su rango se estrecha.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -305,7 +309,7 @@
         <div class="col"><span class="col-k">Requisito 2</span><b>Historial</b><p>Al menos tres meses de operación registrada. Sin un patrón, ninguna cifra es defendible.</p></div>
         <div class="col"><span class="col-k">Requisito 3</span><b>Registro</b><p>Estados de cuenta, transferencias con folio e inventario que pueda contarse.</p></div>
       </div>
-      <div class="panel-foot"><span class="ico-w" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 7v6M12 17h.01"/></svg></span><div><b>Cuando el método no aplica, se informa desde el inicio.</b> Un negocio que opera principalmente en efectivo y sin registros no deja la huella documental que MERIDIAN requiere.</div></div>
+      <div class="panel-foot"><span class="ico-w" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 6.5v7.5M12 18h.01"/></svg></span><div><b class="warn-t">Cuando el método no aplica, se informa desde el inicio.</b> Un negocio que opera principalmente en efectivo y sin registros no deja la huella documental que MERIDIAN requiere.</div></div>
     </div>
   </div>
 </section>
@@ -314,16 +318,24 @@
 <section class="sec" id="inversion" aria-labelledby="h-inv">
   <div class="wrap">
     <div class="head split">
-      <div class="rv"><p class="eyebrow">Inversión</p><h2 class="h2" id="h-inv">Honorarios según el tamaño de la empresa.</h2></div>
-      <p class="sub rv" style="--d:.08s">El honorario se determina por la facturación anual y no por el monto encontrado. Ninguna de las partes tiene incentivo para inflar la cifra.</p>
+      <div class="rv"><p class="eyebrow">Inversión</p><h2 class="h2" id="h-inv">Una inversión con retorno medible, <span class="mute">no un gasto.</span></h2></div>
+      <p class="sub rv" style="--d:.08s">El propósito del diagnóstico es localizar dinero que hoy se pierde y que la empresa puede recuperar. El honorario es fijo y se conoce desde el inicio; el retorno se mide en pesos, mes a mes.</p>
     </div>
     <div class="panel up rv">
+      <p class="lead-inv">El honorario se determina por la <b>facturación anual</b> de la empresa, no por el monto que se encuentre. Así ninguna de las partes tiene incentivo para inflar la cifra, y usted puede comparar con claridad <b>lo que invierte contra lo que el diagnóstico identifica como recuperable</b>.</p>
       <div class="cols">
-        <div class="col"><span class="col-k">Pago único</span><b>Diagnóstico</b><p>Según el rango de facturación anual. Incluye las dieciocho cartas y el reporte con fuente citada.</p></div>
-        <div class="col"><span class="col-k">Mensual · máximo 6 meses</span><b>Seguimiento</b><p>Opcional. Compara mes a mes lo ocurrido con lo proyectado, sin contratos indefinidos.</p></div>
-        <div class="col"><span class="col-k">Más de $25 millones</span><b>Empresas de mayor tamaño</b><p>El diagnóstico y el seguimiento se cotizan a la medida.</p></div>
+        <div class="col"><span class="col-k">Pago único</span><b>Diagnóstico</b><p>Según el rango de facturación anual de la empresa.</p>
+          <ul><li>Captura de los cinco módulos en sesión</li><li>Las dieciocho cartas del diagnóstico</li><li>Presentación de resultados a la dirección</li><li>Reporte ejecutivo en PDF con fuente citada</li><li>Plan de acción a 90 días</li></ul></div>
+        <div class="col"><span class="col-k">Mensual · máximo 6 meses</span><b>Seguimiento</b><p>Opcional. Acompaña la implementación de las correcciones.</p>
+          <ul><li>Comparación mensual de lo ocurrido contra lo proyectado</li><li>Verificación de los controles instalados</li><li>Ajuste del plan según los resultados</li><li>Sin contratos indefinidos</li></ul></div>
+        <div class="col"><span class="col-k">Más de $25 millones</span><b>Empresas de mayor tamaño</b><p>El diagnóstico y el seguimiento se cotizan a la medida, con el mismo método y el mismo nivel de detalle.</p></div>
       </div>
-      <p class="ref-note"><b>Montos de referencia, antes de IVA.</b> Diagnóstico desde $3,500 (facturación anual de hasta $1.2 millones) hasta $18,000 (de $12 a $25 millones); seguimiento desde $1,500 hasta $10,000 por mes, en los mismos rangos. Valores orientativos sujetos a cambio; la cotización definitiva se entrega por escrito antes de iniciar. Los honorarios cubren el diagnóstico y el acompañamiento; la decisión de implementar los cambios y sus resultados corresponden a la empresa.</p>
+      <div class="roi">
+        <div class="roi-s"><span>Paso 1</span><b>Se identifica la fuga</b><p>Cada hallazgo se expresa en pesos y se respalda con su fuente.</p></div>
+        <div class="roi-s"><span>Paso 2</span><b>Se prioriza la corrección</b><p>Las acciones se ordenan por lo que aportan y por el plazo en que rinden.</p></div>
+        <div class="roi-s"><span>Paso 3</span><b>Se mide lo recuperado</b><p>El seguimiento compara mes a mes el resultado real con lo proyectado.</p></div>
+      </div>
+      <p class="ref-note"><b>Montos de referencia, antes de IVA.</b> Diagnóstico desde $3,500 (facturación anual de hasta $1.2 millones) hasta $18,000 (de $12 a $25 millones); seguimiento desde $1,500 hasta $10,000 por mes, en los mismos rangos. La recuperación posible se presenta en tres escenarios —conservador, base y favorable— para que la inversión se compare contra un rango realista y no contra una promesa. Valores orientativos sujetos a cambio; la cotización definitiva se entrega por escrito antes de iniciar. Los honorarios cubren el diagnóstico y el acompañamiento; la decisión de implementar los cambios y sus resultados corresponden a la empresa.</p>
     </div>
   </div>
 </section>
